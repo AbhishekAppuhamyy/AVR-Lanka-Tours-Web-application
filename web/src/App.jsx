@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Home from "./pages/Home";
+import Packages from "./pages/Packages";
+import Destinations from "./pages/Destinations";
+import Review from "./pages/Review";
 
 
 
@@ -12,6 +15,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/destinations" element={<Destinations />} />
+        <Route path="/review" element={<Review />} />
       </Routes>
       <Footer />
     </Router>
