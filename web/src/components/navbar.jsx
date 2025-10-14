@@ -2,85 +2,82 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-white/30 border-b border-white/20 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl z-50 backdrop-blur-xl bg-white/20 border border-white/10 rounded-xl shadow-lg">
+      <div className="flex justify-between items-center h-16 px-6">
 
-          {/* Logo */}
-          <Link to="/" className="text-xl font-bold text-[#4F6F52]">
-            AVR Lanka Tours
-          </Link>
+        {/* Logo */}
+        <Link
+          to="/"
+          className="text-2xl font-extrabold text-[#4F6F52] tracking-tight"
+        >
+          AVR Lanka Tours
+        </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="hover:text-[#86A789] transition duration-300">
-              Home
-            </Link>
-            <Link to="/packages" className="hover:text-[#86A789] transition duration-300">
-              Packages
-            </Link>
-            <Link to="/destinations" className="hover:text-[#86A789] transition duration-300">
-              Destinations
-            </Link>
-            <Link to="/review" className="hover:text-[#86A789] transition duration-300">
-              Review
-            </Link>
-
-            {/* Contact Button */}
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-6">
+          {["Home", "Packages", "Destinations", "Review"].map((item) => (
             <Link
-              to="/contact"
-              className="ml-4 bg-[#86A789]/80 text-[#4F6F52] font-semibold px-4 py-2 rounded-lg backdrop-blur-sm hover:bg-[#D2E3C8]/80 transition duration-300"
+              key={item}
+              to={`/${item.toLowerCase()}`}
+              className="text-[#4F6F52] font-medium hover:text-[#86A789] transition duration-300"
             >
-              Contact
+              {item}
             </Link>
-          </div>
+          ))}
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              className="focus:outline-none"
-              onClick={() => {
-                const menu = document.getElementById("mobile-menu");
-                menu.classList.toggle("hidden");
-              }}
+          {/* Contact Button */}
+          <Link
+            to="/contact"
+            className="ml-4 px-5 py-2 rounded-full bg-[#86A789] text-white font-semibold shadow-lg hover:bg-[#739072] transition duration-300"
+          >
+            Contact
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => {
+              const menu = document.getElementById("mobile-menu");
+              menu.classList.toggle("hidden");
+            }}
+            className="text-[#4F6F52] focus:outline-none"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                className="h-6 w-6 text-[#4F6F52]"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          </div>
-
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div id="mobile-menu" className="md:hidden hidden bg-white/30 backdrop-blur-md border-t border-white/20">
-        <Link to="/" className="block px-4 py-2 text-[#4F6F52] hover:bg-[#86A789]/30 rounded transition duration-300">
-          Home
-        </Link>
-        <Link to="/packages" className="block px-4 py-2 text-[#4F6F52] hover:bg-[#86A789]/30 rounded transition duration-300">
-          Packages
-        </Link>
-        <Link to="/destinations" className="block px-4 py-2 text-[#4F6F52] hover:bg-[#86A789]/30 rounded transition duration-300">
-          Destinations
-        </Link>
-        <Link to="/review" className="block px-4 py-2 text-[#4F6F52] hover:bg-[#86A789]/30 rounded transition duration-300">
-          Review
-        </Link>
+      <div
+        id="mobile-menu"
+        className="hidden md:hidden bg-white/20 backdrop-blur-xl border-t border-white/10 rounded-b-xl"
+      >
+        {["Home", "Packages", "Destinations", "Review"].map((item) => (
+          <Link
+            key={item}
+            to={`/${item.toLowerCase()}`}
+            className="block px-6 py-3 text-[#4F6F52] font-medium hover:bg-[#86A789]/20 transition duration-300"
+          >
+            {item}
+          </Link>
+        ))}
         <Link
           to="/contact"
-          className="block px-4 py-2 text-[#4F6F52] bg-[#86A789]/50 rounded m-2 text-center hover:bg-[#D2E3C8]/50 transition duration-300"
+          className="block mx-4 my-2 px-5 py-2 rounded-full text-white bg-[#86A789] text-center font-semibold hover:bg-[#739072] transition duration-300"
         >
           Contact
         </Link>
