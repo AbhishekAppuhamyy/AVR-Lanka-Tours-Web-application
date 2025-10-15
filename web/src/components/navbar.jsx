@@ -18,7 +18,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="text-2xl font-extrabold text-[#4F6F52] tracking-tight"
+          className="text-2xl font-extrabold text-white tracking-tight"
         >
           AVR Lanka Tours
         </Link>
@@ -34,7 +34,7 @@ export default function Navbar() {
             >
               <Link
                 to={`/${item.toLowerCase()}`}
-                className="text-[#4F6F52] font-medium hover:text-[#86A789] transition duration-300"
+                className="text-white font-medium hover:text-[#86A789] transition duration-300"
               >
                 {item}
               </Link>
@@ -60,7 +60,7 @@ export default function Navbar() {
         <div className="md:hidden">
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-[#4F6F52] focus:outline-none"
+            className="text-white focus:outline-none"
           >
             <svg
               className="w-6 h-6"
@@ -99,7 +99,7 @@ export default function Navbar() {
               >
                 <Link
                   to={`/${item.toLowerCase()}`}
-                  className="block px-6 py-3 text-[#4F6F52] font-medium hover:bg-[#86A789]/20 transition duration-300"
+                  className="block px-6 py-3 text-white font-medium hover:bg-[#86A789]/20 transition duration-300"
                 >
                   {item}
                 </Link>
