@@ -1,298 +1,246 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FaMapMarkerAlt, FaCompass, FaSearch, FaFilter } from "react-icons/fa";
 
 export default function Destinations() {
   const destinations = [
     {
-      name: "Sigiriya",
-      image:
-        "https://images.unsplash.com/photo-1592833159155-c0e9b48d46b4?auto=format&fit=crop&w=800&q=80",
-      description:
-        "Climb the ancient rock fortress of Sigiriya, one of Sri Lanka's most iconic landmarks and UNESCO World Heritage Sites.",
+      name: "Sigiriya Rock Fortress",
+      image: "https://images.unsplash.com/photo-1592833159155-c0e9b48d46b4?auto=format&fit=crop&w=800&q=80",
+      description: "Climb the ancient rock fortress of Sigiriya, one of Sri Lanka's most iconic landmarks and UNESCO World Heritage Sites.",
       category: "Cultural Heritage",
-      bestTime: "Year-round",
+      bestTime: "Jan-Jul",
       highlights: ["Lion Rock", "Ancient Frescoes", "Water Gardens"]
     },
     {
-      name: "Ella",
-      image:
-        "https://images.unsplash.com/photo-1577968897966-3d62df5f4953?auto=format&fit=crop&w=800&q=80",
-      description:
-        "A picturesque mountain town surrounded by lush tea plantations, waterfalls, and scenic hiking trails.",
-      category: "Hill Country",
-      bestTime: "Dec-Mar",
-      highlights: ["Nine Arch Bridge", "Ella Rock", "Tea Estates"]
-    },
-    {
-      name: "Galle",
-      image:
-        "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=800&q=80",
-      description:
-        "A charming coastal city with colonial architecture, cobblestone streets, and stunning ocean views.",
-      category: "Coastal",
-      bestTime: "Nov-Apr",
-      highlights: ["Galle Fort", "Lighthouse", "Dutch Architecture"]
-    },
-    {
-      name: "Kandy",
-      image:
-        "https://images.unsplash.com/photo-1604328698692-71b3f6a2e54b?auto=format&fit=crop&w=800&q=80",
-      description:
-        "Home to the Temple of the Tooth Relic, Kandy offers rich culture, history, and beautiful lake views.",
+      name: "Temple of the Tooth, Kandy",
+      image: "https://images.unsplash.com/photo-1604328698692-71b3f6a2e54b?auto=format&fit=crop&w=800&q=80",
+      description: "Home to the sacred tooth relic of Buddha, a must-visit spiritual and cultural site in Kandy.",
       category: "Cultural",
       bestTime: "Year-round",
       highlights: ["Temple of Tooth", "Kandy Lake", "Cultural Shows"]
     },
     {
-      name: "Mirissa",
-      image:
-        "https://images.unsplash.com/photo-1584801158908-4b9fbc74d59f?auto=format&fit=crop&w=800&q=80",
-      description:
-        "Relax on golden beaches, go whale watching, or enjoy beachside cafes and nightlife in this tropical paradise.",
-      category: "Beach",
+      name: "Galle Fort",
+      image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=800&q=80",
+      description: "A charming coastal city with colonial architecture, cobblestone streets, and stunning ocean views.",
+      category: "Coastal",
       bestTime: "Nov-Apr",
-      highlights: ["Whale Watching", "Beach Parties", "Surfing"]
+      highlights: ["Galle Fort", "Lighthouse", "Dutch Architecture"]
     },
     {
-      name: "Nuwara Eliya",
-      image:
-        "https://images.unsplash.com/photo-1582967742001-97e96b1645e4?auto=format&fit=crop&w=800&q=80",
-      description:
-        "Known as 'Little England', Nuwara Eliya features cool weather, tea estates, and breathtaking mountain scenery.",
+      name: "Dambulla Cave Temple",
+      image: "https://images.unsplash.com/photo-1613026263091-f4e8289d92ff?auto=format&fit=crop&w=800&q=80",
+      description: "Explore Sri Lanka's largest cave temple complex, with impressive Buddhist murals and statues.",
+      category: "Cultural Heritage",
+      bestTime: "Jan-Jul",
+      highlights: ["Cave Murals", "Golden Buddha", "Ancient Artifacts"]
+    },
+    {
+      name: "Adam’s Peak (Sri Pada)",
+      image: "https://images.unsplash.com/photo-1603354351366-9d13f5f0f1c8?auto=format&fit=crop&w=800&q=80",
+      description: "Famous pilgrimage mountain with a sacred footprint, offering spectacular sunrise views.",
       category: "Hill Country",
-      bestTime: "Mar-May",
-      highlights: ["Tea Factories", "Gregory Lake", "Horse Racing"]
+      bestTime: "Dec-May",
+      highlights: ["Sunrise Views", "Pilgrimage Path", "Sacred Footprint"]
+    },
+    {
+      name: "Polonnaruwa",
+      image: "https://images.unsplash.com/photo-1571127331850-3ec1f7e15f68?auto=format&fit=crop&w=800&q=80",
+      description: "Ancient city with well-preserved ruins of palaces, temples, and statues from Sri Lanka's medieval period.",
+      category: "Cultural Heritage",
+      bestTime: "Jan-Jul",
+      highlights: ["Royal Palace", "Gal Vihara", "Ancient Statues"]
     },
     {
       name: "Yala National Park",
-      image:
-        "https://images.unsplash.com/photo-1549887534-3db1bd59dcca?auto=format&fit=crop&w=800&q=80",
-      description:
-        "Sri Lanka's top wildlife destination — spot elephants, leopards, and exotic birds in their natural habitat.",
+      image: "https://images.unsplash.com/photo-1587825140708-6aa6ecf0529d?auto=format&fit=crop&w=800&q=80",
+      description: "Experience wildlife safaris with leopards, elephants, and exotic birds in Sri Lanka's famous national park.",
       category: "Wildlife",
       bestTime: "Feb-Jul",
-      highlights: ["Leopard Spotting", "Safari", "Bird Watching"]
+      highlights: ["Leopards", "Elephants", "Birdwatching"]
     },
     {
-      name: "Jaffna",
-      image:
-        "https://images.unsplash.com/photo-1579876578997-58f3e7f71b4b?auto=format&fit=crop&w=800&q=80",
-      description:
-        "Experience northern Sri Lanka's culture, temples, and beaches — a unique blend of heritage and spirituality.",
-      category: "Cultural",
+      name: "Nuwara Eliya",
+      image: "https://images.unsplash.com/photo-1577968897966-3d62df5f4953?auto=format&fit=crop&w=800&q=80",
+      description: "Also called 'Little England', known for tea plantations, waterfalls, and cool hill country scenery.",
+      category: "Hill Country",
+      bestTime: "Dec-Mar",
+      highlights: ["Tea Plantations", "Gregory Lake", "Waterfalls"]
+    },
+    {
+      name: "Ella",
+      image: "https://images.unsplash.com/photo-1577968897966-3d62df5f4953?auto=format&fit=crop&w=800&q=80",
+      description: "A picturesque mountain town surrounded by lush tea plantations, waterfalls, and scenic hiking trails.",
+      category: "Hill Country",
+      bestTime: "Dec-Mar",
+      highlights: ["Nine Arch Bridge", "Ella Rock", "Tea Estates"]
+    },
+    {
+      name: "Bentota",
+      image: "https://images.unsplash.com/photo-1582719478173-1f0b27a0f7be?auto=format&fit=crop&w=800&q=80",
+      description: "A coastal town famous for beaches, water sports, and luxury resorts.",
+      category: "Beach",
+      bestTime: "Nov-Apr",
+      highlights: ["Beaches", "Water Sports", "Luxury Resorts"]
+    },
+    {
+      name: "Mirissa",
+      image: "https://images.unsplash.com/photo-1583337130417-50c9c07c8495?auto=format&fit=crop&w=800&q=80",
+      description: "Popular beach destination ideal for whale watching, surfing, and relaxing on golden sands.",
+      category: "Beach",
+      bestTime: "Nov-Apr",
+      highlights: ["Whale Watching", "Surfing", "Beaches"]
+    },
+    {
+      name: "Hikkaduwa",
+      image: "https://images.unsplash.com/photo-1549887536-40b4cf96ee35?auto=format&fit=crop&w=800&q=80",
+      description: "Vibrant beach town known for coral reefs, snorkeling, and lively nightlife.",
+      category: "Beach",
+      bestTime: "Nov-Apr",
+      highlights: ["Coral Reefs", "Snorkeling", "Nightlife"]
+    },
+    {
+      name: "Anuradhapura",
+      image: "https://images.unsplash.com/photo-1577968897806-3e4d9cf8d1c1?auto=format&fit=crop&w=800&q=80",
+      description: "Ancient city with sacred Buddhist stupas, monasteries, and archaeological treasures.",
+      category: "Cultural Heritage",
+      bestTime: "Jan-Jul",
+      highlights: ["Ruwanwelisaya", "Isurumuniya", "Ancient Monasteries"]
+    },
+    {
+      name: "Knuckles Mountain Range",
+      image: "https://images.unsplash.com/photo-1615383707467-4f7a9d2ff3e1?auto=format&fit=crop&w=800&q=80",
+      description: "UNESCO-listed mountains with trekking routes, rivers, and rich biodiversity.",
+      category: "Hill Country",
+      bestTime: "Jan-Apr",
+      highlights: ["Trekking", "Rivers", "Biodiversity"]
+    },
+    {
+      name: "Arugam Bay",
+      image: "https://images.unsplash.com/photo-1591107100251-ef4b9b6e99b2?auto=format&fit=crop&w=800&q=80",
+      description: "World-class surfing destination with laid-back beach vibes and vibrant nightlife.",
+      category: "Beach",
       bestTime: "Apr-Sep",
-      highlights: ["Nallur Temple", "Jaffna Fort", "Local Cuisine"]
+      highlights: ["Surfing", "Beaches", "Nightlife"]
     },
   ];
 
-  const categories = ["All", "Cultural", "Beach", "Hill Country", "Wildlife", "Coastal"];
+  const stats = [
+    { number: "15+", label: "Destinations" },
+    { number: "6+", label: "Categories" },
+    { number: "Year-round", label: "Best Time" },
+    { number: "4.9★", label: "Traveler Rating" },
+  ];
+
+  const regions = [
+    { name: "All", count: 15 },
+    { name: "Cultural Heritage", count: 5 },
+    { name: "Cultural", count: 1 },
+    { name: "Beach", count: 4 },
+    { name: "Hill Country", count: 4 },
+    { name: "Wildlife", count: 1 },
+    { name: "Coastal", count: 1 },
+  ];
+
+  const types = ["All", "Cultural Heritage", "Cultural", "Beach", "Hill Country", "Wildlife", "Coastal"];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Modern Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-        {/* Background with Gradient Overlay */}
+      {/* HERO SECTION */}
+      <section className="relative min-h-[80vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=80')",
-          }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/assets/destination.avif')" }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#4F6F52]/80 to-[#4F6F52]/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         </div>
-        
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-8">
-              <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-              Discover Sri Lanka's Hidden Gems
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 text-center text-white">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="space-y-6 sm:space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/10 text-sm sm:text-base backdrop-blur-md">
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+              Explore Sri Lanka's Diversity
             </div>
-            
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              Explore <span className="text-white">Incredible</span> Destinations
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg">
+              Discover Amazing{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8F5E9] to-[#C8E6C9]">
+                Destinations
+              </span>
             </h1>
-            
-            <p className="text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-              From ancient cities to pristine beaches, discover the diverse beauty of Sri Lanka 
-              through our carefully curated destinations.
+            <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto drop-shadow-md">
+              From ancient cultural sites to pristine beaches and wildlife adventures — explore the diverse landscapes and rich heritage of Sri Lanka.
             </p>
-
-            {/* Quick Stats */}
-            <div className="flex flex-wrap justify-center gap-8 mt-12">
-              {[
-                { number: "8+", label: "Regions" },
-                { number: "50+", label: "Attractions" },
-                { number: "2000+", label: "Years of History" },
-                { number: "All", label: "Seasons" }
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.1 + 0.5 }}
-                  className="text-center"
-                >
-                  <div className="text-2xl lg:text-3xl font-bold mb-1">{stat.number}</div>
-                  <div className="text-white/70 text-sm">{stat.label}</div>
-                </motion.div>
-              ))}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
+              <Link to="/tours" className="bg-white text-[#4F6F52] px-6 py-3 rounded-xl font-semibold text-base sm:text-lg hover:scale-105 transition-all duration-300 shadow-lg">
+                Book Tours
+              </Link>
+              <Link to="/contact" className="border border-white/40 text-white px-6 py-3 rounded-xl text-base sm:text-lg hover:bg-white/10 transition-all">
+                Get Custom Plan
+              </Link>
             </div>
-          </motion.div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Category Filter */}
-      <section className="py-12 bg-white/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Browse by <span className="text-[#4F6F52]">Category</span>
-            </h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              {categories.map((category, index) => (
-                <motion.button
-                  key={category}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 rounded-2xl bg-white text-gray-700 font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-[#4F6F52] hover:text-white border border-gray-200"
-                >
-                  {category}
-                </motion.button>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Destinations Grid Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Featured <span className="text-[#4F6F52]">Destinations</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover the most breathtaking places Sri Lanka has to offer. 
-              Each destination offers unique experiences and unforgettable memories.
-            </p>
-          </motion.div>
-
-          {/* Destinations Grid */}
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-            {destinations.map((dest, index) => (
-              <motion.div
-                key={dest.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer"
-              >
-                {/* Image Container */}
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={dest.image}
-                    alt={dest.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-gray-900 px-3 py-1 rounded-full text-sm font-semibold">
-                    {dest.category}
-                  </div>
-                  
-                  {/* Best Time Badge */}
-                  <div className="absolute top-4 right-4 bg-[#4F6F52] text-white px-3 py-1 rounded-full text-sm font-medium">
-                    Best: {dest.bestTime}
-                  </div>
-                  
-                  {/* Destination Name */}
-                  <div className="absolute bottom-4 left-4">
-                    <h3 className="text-2xl font-bold text-white">{dest.name}</h3>
-                  </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 pt-8 sm:pt-12">
+              {stats.map((s, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-xl sm:text-2xl font-bold">{s.number}</div>
+                  <div className="text-white/70 text-sm">{s.label}</div>
                 </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
-                {/* Content */}
-                <div className="p-6">
-                  <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                    {dest.description}
-                  </p>
+      {/* SEARCH AND FILTER */}
+      <section className="py-8 bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-4 items-center justify-between">
+          <div className="relative flex-1 max-w-2xl">
+            <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <input type="text" placeholder="Search destinations..." className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4F6F52] focus:border-transparent" />
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <select className="px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4F6F52]">
+              {regions.map((region, index) => <option key={index} value={region.name}>{region.name} ({region.count})</option>)}
+            </select>
+            <select className="px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4F6F52]">
+              {types.map((type, index) => <option key={index} value={type}>{type}</option>)}
+            </select>
+            <button className="flex items-center gap-2 px-4 py-3 bg-[#4F6F52] text-white rounded-2xl hover:bg-[#3b5540] transition">
+              <FaFilter /> Filter
+            </button>
+          </div>
+        </div>
+      </section>
 
-                  {/* Highlights */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-900 mb-3">Key Highlights</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {dest.highlights.map((highlight, idx) => (
-                        <span
-                          key={idx}
-                          className="inline-flex items-center gap-1 px-3 py-1 bg-[#4F6F52]/10 text-[#4F6F52] rounded-full text-xs"
-                        >
-                          <span className="w-1.5 h-1.5 bg-[#4F6F52] rounded-full"></span>
-                          {highlight}
-                        </span>
-                      ))}
-                    </div>
+      {/* DESTINATIONS GRID */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+              Explore <span className="text-[#4F6F52]">Destinations</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Curated selection of Sri Lanka's most breathtaking locations and cultural landmarks
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {destinations.map((destination, index) => (
+              <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} whileHover={{ y: -5 }} className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all">
+                <div className="relative h-48">
+                  <img src={destination.image} alt={destination.name} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className="absolute bottom-3 left-3 text-white font-semibold">{destination.name}</div>
+                </div>
+                <div className="p-5">
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">{destination.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {destination.highlights.slice(0, 3).map((highlight, i) => (
+                      <span key={i} className="px-2 py-1 bg-[#4F6F52]/10 text-[#4F6F52] rounded-full text-xs">{highlight}</span>
+                    ))}
                   </div>
-
-                  {/* CTA Button */}
-                  <div className="flex justify-between items-center">
-                    <Link
-                      to={`/destinations/${dest.name.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="group/btn flex items-center gap-2 text-[#4F6F52] font-semibold hover:text-[#3b5540] transition-colors text-sm"
-                    >
-                      Explore Destination
-                      <svg 
-                        className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </Link>
-                    
-                    <button className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 hover:bg-gray-100 rounded-lg">
-                      <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                      </svg>
-                    </button>
+                  <div className="flex gap-2">
+                    <Link to={`/destinations/${index}`} className="flex-1 bg-[#4F6F52] text-white py-2 rounded-xl text-center font-semibold text-sm hover:bg-[#3b5540] transition">View Details</Link>
+                    <Link to="/contact" className="flex-1 border border-[#4F6F52] text-[#4F6F52] py-2 rounded-xl text-center font-semibold text-sm hover:bg-[#4F6F52] hover:text-white transition">Book Tour</Link>
                   </div>
                 </div>
               </motion.div>
@@ -301,110 +249,56 @@ export default function Destinations() {
         </div>
       </section>
 
-      {/* Interactive Map Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Explore Sri Lanka's <span className="text-[#4F6F52]">Geography</span>
+      {/* REGIONS OVERVIEW */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center mb-10 sm:mb-14">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+              Sri Lanka's <span className="text-[#4F6F52]">Regions</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover how these amazing destinations are spread across the island paradise of Sri Lanka.
+            <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
+              Discover the unique character of each region across the island paradise
             </p>
           </motion.div>
 
-          {/* Simplified Map Visualization */}
-          <div className="relative bg-gradient-to-br from-blue-50 to-green-50 rounded-3xl p-8 shadow-2xl">
-            <div className="grid grid-cols-3 gap-8">
-              {/* Regions */}
-              {[
-                { region: "Cultural Triangle", color: "bg-amber-500", destinations: ["Sigiriya", "Kandy"] },
-                { region: "Hill Country", color: "bg-emerald-500", destinations: ["Ella", "Nuwara Eliya"] },
-                { region: "Southern Coast", color: "bg-blue-500", destinations: ["Galle", "Mirissa"] },
-                { region: "Wildlife Zones", color: "bg-orange-500", destinations: ["Yala National Park"] },
-                { region: "Northern Province", color: "bg-purple-500", destinations: ["Jaffna"] },
-              ].map((area, index) => (
-                <motion.div
-                  key={area.region}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.2 }}
-                  className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
-                >
-                  <div className={`w-12 h-12 ${area.color} rounded-full mx-auto mb-4 flex items-center justify-center`}>
-                    <span className="text-white text-lg font-bold">{index + 1}</span>
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{area.region}</h3>
-                  <div className="text-sm text-gray-600">
-                    {area.destinations.join(", ")}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[{
+              region: "Cultural Triangle", description: "Ancient cities and UNESCO heritage sites", destinations: "Sigiriya, Kandy, Dambulla", color: "from-amber-500 to-orange-500"
+            }, {
+              region: "Hill Country", description: "Tea plantations and mountain scenery", destinations: "Ella, Nuwara Eliya, Hatton", color: "from-emerald-500 to-green-600"
+            }, {
+              region: "Southern Coast", description: "Beaches and coastal adventures", destinations: "Galle, Mirissa, Tangalle", color: "from-blue-500 to-cyan-500"
+            }, {
+              region: "Wildlife Zones", description: "National parks and safari experiences", destinations: "Yala, Wilpattu, Udawalawe", color: "from-orange-500 to-red-500"
+            }, {
+              region: "Northern Province", description: "Cultural heritage and unique landscapes", destinations: "Jaffna, Mannar, Vavuniya", color: "from-purple-500 to-indigo-500"
+            }, {
+              region: "Eastern Coast", description: "Pristine beaches and water sports", destinations: "Arugam Bay, Trincomalee, Batticaloa", color: "from-teal-500 to-blue-600"
+            }].map((region, index) => (
+              <motion.div key={region.region} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: index * 0.1 }} whileHover={{ y: -4 }} className="flex flex-col items-center text-center bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all">
+                <div className={`w-16 h-16 bg-gradient-to-r ${region.color} text-white rounded-2xl flex items-center justify-center text-2xl mb-4`}>
+                  <FaMapMarkerAlt />
+                </div>
+                <h3 className="font-semibold text-lg sm:text-xl mb-2">{region.region}</h3>
+                <p className="text-gray-600 text-sm mb-3">{region.description}</p>
+                <p className="text-[#4F6F52] text-sm font-medium">{region.destinations}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Modern CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#4F6F52] to-[#5A7D5A]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 bg-black/10">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-              }}></div>
-            </div>
-            
-            <div className="relative py-16 px-8 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-2xl backdrop-blur-sm mb-6">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                  </svg>
-                </div>
-                
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                  Ready to Explore?
-                </h2>
-                
-                <p className="text-white/90 text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-                  Let us create your perfect Sri Lankan adventure. Combine multiple destinations 
-                  for an unforgettable journey through this beautiful island.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                  <Link
-                    to="/contact"
-                    className="group bg-white text-[#4F6F52] px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg inline-flex items-center gap-3"
-                  >
-                    <span>Start Planning</span>
-                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </Link>
-                  
-                  <Link
-                    to="/packages"
-                    className="group text-white/90 px-6 py-4 rounded-2xl font-medium text-lg transition-all duration-300 hover:text-white hover:bg-white/10 inline-flex items-center gap-2"
-                  >
-                    <span>View Tour Packages</span>
-                    <svg className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </Link>
-                </div>
-              </motion.div>
-            </div>
+      {/* FINAL CTA */}
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-[#4F6F52] to-[#5A7D5A] text-center text-white px-4">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <FaCompass className="text-5xl mx-auto mb-2 text-white/90" />
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2">Ready to Explore Sri Lanka?</h2>
+          <p className="text-white/90 text-sm sm:text-base mb-4">
+            Let us craft your perfect journey through paradise with personalized itineraries and unforgettable experiences across multiple destinations.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-3">
+            <Link to="/contact" className="bg-white text-[#4F6F52] px-6 py-3 rounded-xl font-semibold text-base hover:scale-105 shadow-lg transition-all">Start Your Journey</Link>
+            <Link to="/tours" className="border border-white/40 px-6 py-3 rounded-xl text-base text-white/90 hover:bg-white/10">Browse Tours</Link>
           </div>
         </div>
       </section>
