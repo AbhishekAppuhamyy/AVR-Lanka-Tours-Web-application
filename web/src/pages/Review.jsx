@@ -14,39 +14,7 @@ export default function Reviews() {
     };
   }, []);
 
-  // Sample featured reviews for when widget is loading
-  const featuredReviews = [
-    {
-      id: 1,
-      name: "Sarah & James Wilson",
-      location: "London, UK",
-      rating: 5,
-      date: "March 2024",
-      tour: "Cultural Triangle Tour",
-      comment: "Absolutely incredible experience! The attention to detail and personalized service made our Sri Lankan adventure unforgettable. Our guide was knowledgeable and made us feel like family.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      id: 2,
-      name: "Michael Chen",
-      location: "Toronto, Canada",
-      rating: 5,
-      date: "February 2024",
-      tour: "Hill Country Escape",
-      comment: "The tea plantations, waterfalls, and mountain views were breathtaking. AVR Lanka Tours handled everything perfectly - from accommodations to transportation. Highly recommended!",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      id: 3,
-      name: "Emma Rodriguez",
-      location: "Sydney, Australia",
-      rating: 5,
-      date: "January 2024",
-      tour: "Southern Beach Getaway",
-      comment: "Our honeymoon was pure magic thanks to AVR Lanka Tours. The private beach dinners and whale watching experiences were highlights we'll cherish forever.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80"
-    }
-  ];
+  
 
   const stats = [
     { number: "4.9★", label: "Average Rating", icon: <FaStar className="text-yellow-400" /> },
