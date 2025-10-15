@@ -6,7 +6,7 @@ export default function Footer() {
   const linkHover = { scale: 1.05, color: "#D2E3C8", textDecoration: "underline" };
 
   return (
-    <footer className="bg-gradient-to-tr from-[#2c3e2b] to-[#4f6f52] text-white mt-20 relative z-10">
+    <footer className="bg-gradient-to-tr from-[#2c3e2b] to-[#4f6f52] text-white mt- relative z-10">
       <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
 
         {/* Brand & Tagline */}
