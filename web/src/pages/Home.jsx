@@ -86,18 +86,26 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* HERO */}
+      {/* HERO SECTION WITH VIDEO BACKGROUND */}
       <section className="relative min-h-[80vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')",
-          }}
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#4F6F52]/80 to-[#4F6F52]/60" />
-        </div>
+          <source
+            src="https://videos.pexels.com/video-files/34287702/34287702-uhd_2560_1440_30fps.mp4"
+            type="video/mp4"
+          />
+        </video>
 
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#4F6F52]/80 to-[#4F6F52]/60" />
+
+        {/* Hero Content */}
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 text-center text-white">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
