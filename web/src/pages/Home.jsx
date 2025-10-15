@@ -95,16 +95,13 @@ export default function Home() {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-         // poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
+          poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
         >
-          <source
-            src="/assets/beach.mp4"
-            type="video/mp4"
-          />
+          <source src="/assets/beach.mp4" type="video/mp4" />
         </video>
 
-        {/* Gradient Overlay */}
-       
+        {/* Dark Overlay (for clarity and contrast) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
 
         {/* Hero Content */}
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 text-center text-white">
@@ -114,19 +111,19 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="space-y-6 sm:space-y-8"
           >
-            <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/10 text-sm sm:text-base">
+            <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-white/10 text-sm sm:text-base backdrop-blur-md">
               <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
               Sri Lanka's Premier Tour Experience
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-lg">
               Discover The{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8F5E9] to-[#C8E6C9]">
                 Pearl of the Indian Ocean
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto drop-shadow-md">
               From sun-kissed beaches to misty highlands, ancient cities to
               wildlife adventures — experience Sri Lanka like never before.
             </p>
@@ -158,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURES */}
+      {/* FEATURES SECTION */}
       <section className="py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -195,7 +192,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* POPULAR TOURS */}
+      {/* POPULAR TOURS SECTION */}
       <section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
