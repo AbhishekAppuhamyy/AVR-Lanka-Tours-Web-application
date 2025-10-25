@@ -1,10 +1,16 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FaMapMarkerAlt, FaCompass, FaFilter, FaMountain, FaUmbrellaBeach, FaMonument, FaPaw, FaWater, FaCity } from "react-icons/fa";
-import { useState } from "react";
+import { 
+  FaMapMarkerAlt, FaCompass, FaFilter, FaMountain, 
+  FaUmbrellaBeach, FaMonument, FaPaw, FaWater, 
+  FaCity, FaChevronDown 
+} from "react-icons/fa";
+import { useState, useEffect, useRef } from "react";
 
 export default function Destinations() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const destinations = [
     {
@@ -156,14 +162,27 @@ export default function Destinations() {
     return category ? category.icon : <FaCompass className="inline mr-2" />;
   };
 
-  const handleCategoryChange = (event) => {
-    setSelectedCategory(event.target.value);
-  };
+  // Get the full object for the selected category to display its icon
+  const selectedCategoryObject = categories.find(cat => cat.name === selectedCategory) || categories[0];
+
+  // Handle click outside to close dropdown
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef]);
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* HERO SECTION */}
-      <section className="relative min-h-[80vh] sm:min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/assets/destination.avif')" }}
@@ -186,32 +205,71 @@ export default function Destinations() {
             <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
               From ancient cultural wonders to pristine beaches and wildlife adventures — explore the diverse landscapes of paradise.
             </p>
-          </motion.div>          
-        </div>
-      </section>
+          </motion.div>
 
-      {/* FILTER SECTION */}
-      <section className="py-8 bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-4 items-center justify-center">
-          <div className="flex flex-wrap gap-3 justify-center">
-            <select 
-              value={selectedCategory}
-              onChange={handleCategoryChange}
-              className="px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4F6F52] bg-white"
-            >
-              {categories.map((category, index) => (
-                <option key={index} value={category.name}>
-                  {category.icon} {category.name} ({category.count})
-                </option>
-              ))}
-            </select>
-            <button 
-              onClick={() => setSelectedCategory("All")}
-              className="flex items-center gap-2 px-6 py-3 bg-[#4F6F52] text-white rounded-2xl hover:bg-[#3b5540] transition shadow-md"
-            >
-              <FaFilter /> Reset Filters
-            </button>
-          </div>
+          {/* FILTER SECTION (MOVED & RESTYLED) */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-12"
+          >
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center max-w-2xl mx-auto">
+              
+              {/* === CUSTOM DROPDOWN START === */}
+              <div className="relative w-full sm:w-auto" ref={dropdownRef}>
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="w-full sm:w-64 flex items-center justify-between px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4F6F52] bg-white text-gray-900"
+                >
+                  <span className="flex items-center gap-3">
+                    {selectedCategoryObject.icon}
+                    <span className="font-medium">{selectedCategoryObject.name}</span>
+                  </span>
+                  <FaChevronDown className={`text-gray-500 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                </button>
+
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 right-0 mt-2 w-full sm:w-64 bg-white rounded-2xl shadow-lg overflow-hidden z-10 border border-gray-100"
+                    >
+                      <ul className="py-1 max-h-60 overflow-y-auto">
+                        {categories.map((category) => (
+                          <li key={category.name}>
+                            <button
+                              onClick={() => {
+                                setSelectedCategory(category.name);
+                                setIsOpen(false);
+                              }}
+                              className="w-full flex items-center gap-3 px-4 py-3 text-gray-800 hover:bg-[#E8F5E9] transition-colors"
+                            >
+                              {category.icon}
+                              <span>{category.name}</span>
+                              <span className="text-gray-500 text-sm ml-auto">({category.count})</span>
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              {/* === CUSTOM DROPDOWN END === */}
+              
+              <button 
+                onClick={() => setSelectedCategory("All")}
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 bg-[#4F6F52] text-white rounded-2xl hover:bg-[#3b5540] transition shadow-md"
+              >
+                <FaFilter /> Reset Filters
+              </button>
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
