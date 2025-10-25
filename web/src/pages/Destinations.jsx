@@ -217,7 +217,7 @@ export default function Destinations() {
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center max-w-2xl mx-auto">
               
               {/* === CUSTOM DROPDOWN START === */}
-              <div className="relative w-full sm:w-auto" ref={dropdownRef}>
+              <div className="relative w-full sm:w-auto z-20" ref={dropdownRef}>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   className="w-full sm:w-64 flex items-center justify-between px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4F6F52] bg-white text-gray-900"
