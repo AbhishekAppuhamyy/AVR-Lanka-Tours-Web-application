@@ -63,8 +63,8 @@ export default function Sigiriya() {
     { icon: <FaMountain />, label: "Height", value: "200 meters (660 ft)", detail: "370m above sea level" },
     { icon: <FaClock />, label: "Visit Duration", value: "3-4 hours", detail: "Including gardens & climb" },
     { icon: <FaSun />, label: "Best Time", value: "6 AM - 9 AM", detail: "Cooler temperatures" },
-    { icon: <FaTicketAlt />, label: "Ticket Price", value: "$30 USD", detail: "Foreign adult rate" },
-    { icon: <FaHiking />, label: "Difficulty", value: "Moderate", detail: "1,200 steps to summit" },
+    { icon: <FaHiking />, label: "Climb Steps", value: "1,200 steps", detail: "To the summit" },
+    { icon: <FaMonument />, label: "Built", value: "5th Century", detail: "By King Kashyapa" },
   ];
 
   const faqs = [
@@ -88,7 +88,7 @@ export default function Sigiriya() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-      {/* HERO SECTION (Unchanged) */}
+      {/* HERO SECTION */}
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex">
         <div
           className="absolute inset-0 bg-cover bg-[50%_18%]"
@@ -134,8 +134,6 @@ export default function Sigiriya() {
         </div>
       </section>
 
-      {/* REDESIGNED CONTENT STARTS HERE */}
-      
       {/* QUICK FACTS BAR */}
       <section className="relative -mt-8 sm:-mt-12 max-w-6xl mx-auto px-4">
         <motion.div
