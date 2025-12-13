@@ -151,7 +151,7 @@ export default function Destinations() {
   ];
 
   const stats = [
-    { number: "15+", label: "Destinations" },
+    { number: "50+", label: "Destinations" },
     { number: "6+", label: "Categories" },
     { number: "Year-round", label: "Best Time" },
     { number: "4.9★", label: "Traveler Rating" },
@@ -503,7 +503,7 @@ export default function Destinations() {
               Start Your Journey
             </Link>
             <Link
-              to="/tours"
+              to="/Packages"
               className="border border-white/40 px-6 py-3 rounded-xl text-base text-white/90 hover:bg-white/10"
             >
               Browse Tours

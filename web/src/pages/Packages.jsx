@@ -52,17 +52,7 @@ export default function Packages() {
       description:
         "Romantic stays, private beaches, and luxury experiences crafted for unforgettable honeymoons.",
       highlights: ["Private Villas", "Luxury Spas", "Romantic Dining"],
-    },
-    {
-      id: 6,
-      name: "Northern Heritage Tour",
-      image:
-        "https://images.unsplash.com/photo-1579876578997-58f3e7f71b4b?auto=format&fit=crop&w=800&q=80",
-      duration: "6 Days / 5 Nights",
-      description:
-        "Explore Jaffna’s culture, ancient temples, and the unique charm of Sri Lanka’s north.",
-      highlights: ["Jaffna Culture", "Historic Temples", "Coastal Views"],
-    },
+    }
   ];
 
   return (
@@ -162,6 +152,56 @@ export default function Packages() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Modern CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-[#4F6F52] to-[#5A7D5A]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-black/10">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+              }}></div>
+            </div>
+            
+            <div className="relative py-16 px-8 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-2xl backdrop-blur-sm mb-6">
+                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                  </svg>
+                </div>
+                
+                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                  Customize Your Dream Tour
+                </h2>
+                
+                <p className="text-white/90 text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+                  Can't find exactly what you're looking for? We specialize in creating 
+                  personalized itineraries that match your unique travel style and preferences.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <Link
+                    to="/contact"
+                    className="group bg-white text-[#4F6F52] px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg inline-flex items-center gap-3"
+                  >
+                    <span>Design Your Tour</span>
+                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                                   
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
