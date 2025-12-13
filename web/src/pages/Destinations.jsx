@@ -366,12 +366,7 @@ export default function Destinations() {
                     >
                       View Details
                     </Link>
-                    <Link
-                      to="/contact"
-                      className="flex-1 border border-[#4F6F52] text-[#4F6F52] py-2 rounded-xl text-center font-semibold text-sm hover:bg-[#4F6F52] hover:text-white transition"
-                    >
-                      Book Tour
-                    </Link>
+                    
                   </div>
                 </div>
               </motion.div>
