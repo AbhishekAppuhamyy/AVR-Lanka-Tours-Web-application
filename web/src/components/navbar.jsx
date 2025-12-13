@@ -48,7 +48,7 @@ export default function Navbar() {
             transition={{ delay: 0.5 }}
           >
             <Link
-              to="/contact"
+              to="/ContactUs"
               className="ml-4 px-5 py-2 rounded-full bg-[#86A789] text-white font-semibold shadow-lg hover:bg-[#739072] transition duration-300"
             >
               Contact us
@@ -111,7 +111,7 @@ export default function Navbar() {
               transition={{ delay: 0.3 }}
             >
               <Link
-                to="/contact"
+                to="/ContactUs"
                 className="block mx-4 my-2 px-5 py-2 rounded-full text-white bg-[#86A789] text-center font-semibold hover:bg-[#739072] transition duration-300"
               >
                 Contact Us

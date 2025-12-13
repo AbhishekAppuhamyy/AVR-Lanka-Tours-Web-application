@@ -7,7 +7,7 @@ export default function Packages() {
       id: 1,
       name: "Cultural Triangle Tour",
       image:
-        "https://images.unsplash.com/photo-1602934585418-8ec9b8b3d08f?auto=format&fit=crop&w=800&q=80",
+        "/assets/packages-pic/cultural.webp",
       duration: "6 Days / 5 Nights",
       description:
         "Explore ancient wonders like Sigiriya, Dambulla, and Kandy while experiencing Sri Lanka’s rich heritage.",
@@ -17,7 +17,7 @@ export default function Packages() {
       id: 2,
       name: "Hill Country Escape",
       image:
-        "https://images.unsplash.com/photo-1577968897966-3d62df5f4953?auto=format&fit=crop&w=800&q=80",
+        "/assets/packages-pic/hill.jpg",
       duration: "5 Days / 4 Nights",
       description:
         "Breathe fresh mountain air in Ella and Nuwara Eliya, surrounded by tea plantations and waterfalls.",
@@ -27,7 +27,7 @@ export default function Packages() {
       id: 3,
       name: "Southern Beach Getaway",
       image:
-        "https://images.unsplash.com/photo-1540206352-093d6281c5d3?auto=format&fit=crop&w=800&q=80",
+        "/assets/packages-pic/beach.webp",
       duration: "4 Days / 3 Nights",
       description:
         "Relax on golden beaches, enjoy whale watching, and explore the historic Galle Fort.",
@@ -37,7 +37,7 @@ export default function Packages() {
       id: 4,
       name: "Wildlife & Safari Adventure",
       image:
-        "https://images.unsplash.com/photo-1549887534-3db1bd59dcca?auto=format&fit=crop&w=800&q=80",
+        "/assets/packages-pic/wildlife.jpg",
       duration: "5 Days / 4 Nights",
       description:
         "Get close to nature with unforgettable safaris in Yala and Udawalawe National Parks.",
@@ -45,14 +45,14 @@ export default function Packages() {
     },
     {
       id: 5,
-      name: "Luxury Honeymoon Escape",
+      name: "Ultimate Adventure Expedition",
       image:
-        "https://images.unsplash.com/photo-1526768291563-3c8a8af6d9a2?auto=format&fit=crop&w=800&q=80",
+        "/assets/packages-pic/adventure.jpg",
       duration: "7 Days / 6 Nights",
       description:
-        "Romantic stays, private beaches, and luxury experiences crafted for unforgettable honeymoons.",
-      highlights: ["Private Villas", "Luxury Spas", "Romantic Dining"],
-    }
+        "An action-packed journey featuring thrilling outdoor adventures, rugged landscapes, and unforgettable adrenaline-filled experiences.",
+      highlights: ["Mountain Hiking", "White Water Rafting", "Jungle Camping"],
+    },
   ];
 
   return (
@@ -61,7 +61,9 @@ export default function Packages() {
       <section className="relative min-h-[70vh] flex items-center justify-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/assets/destinations-pics/bentota.avif')" }}
+          style={{
+            backgroundImage: "url('/assets/destinations-pics/bentota.avif')",
+          }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
         </div>
@@ -90,8 +92,6 @@ export default function Packages() {
       {/* PACKAGES GRID */}
       <section className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {packages.map((pkg, index) => (
               <motion.div
@@ -162,11 +162,14 @@ export default function Packages() {
           <div className="relative rounded-3xl overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-black/10">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-              }}></div>
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                }}
+              ></div>
             </div>
-            
+
             <div className="relative py-16 px-8 text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -174,31 +177,51 @@ export default function Packages() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-2xl backdrop-blur-sm mb-6">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                  <svg
+                    className="w-10 h-10 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+                    />
                   </svg>
                 </div>
-                
+
                 <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                   Customize Your Dream Tour
                 </h2>
-                
+
                 <p className="text-white/90 text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-                  Can't find exactly what you're looking for? We specialize in creating 
-                  personalized itineraries that match your unique travel style and preferences.
+                  Can't find exactly what you're looking for? We specialize in
+                  creating personalized itineraries that match your unique
+                  travel style and preferences.
                 </p>
-                
+
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                   <Link
                     to="/contact"
                     className="group bg-white text-[#4F6F52] px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg inline-flex items-center gap-3"
                   >
                     <span>Design Your Tour</span>
-                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <svg
+                      className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
                     </svg>
                   </Link>
-                                   
                 </div>
               </motion.div>
             </div>

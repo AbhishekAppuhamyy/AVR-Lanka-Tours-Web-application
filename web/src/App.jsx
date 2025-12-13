@@ -7,6 +7,7 @@ import Packages from "./pages/Packages";
 import Destinations from "./pages/Destinations";
 import Review from "./pages/Review";
 import Sigiriya from "./Destinations/sigiriya"; 
+import Contact from "./pages/ContactUs";
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/review" element={<Review />} />
         <Route path="/destinations/sigiriya" element={<Sigiriya />} />
+        <Route path="/ContactUs" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>
