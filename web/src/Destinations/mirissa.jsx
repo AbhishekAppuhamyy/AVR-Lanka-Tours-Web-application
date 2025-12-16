@@ -95,7 +95,7 @@ export default function Mirissa() {
         <div
           className="absolute inset-0 bg-cover bg-[50%_18%]"
           style={{
-            backgroundImage: "url('/assets/destinations-pics/mirissa.jpg')",
+            backgroundImage: "url('/assets/destinations-pics/mirissa.webp')",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/40" />
