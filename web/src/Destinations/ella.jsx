@@ -16,7 +16,7 @@ import {
   FaHistory,
   FaCrown,
   FaLandmark,
-  FaArrowRight
+  FaArrowRight,
 } from "react-icons/fa";
 
 export default function Ella() {
@@ -33,62 +33,95 @@ export default function Ella() {
       title: "Hill Country Views",
       description: "Breathtaking mountain scenery and lush green valleys",
       color: "bg-emerald-50",
-      iconColor: "text-emerald-600"
+      iconColor: "text-emerald-600",
     },
     {
       icon: <FaHiking />,
       title: "Hiking Adventures",
       description: "Popular hikes to Ella Rock and Little Adam’s Peak",
       color: "bg-amber-50",
-      iconColor: "text-amber-600"
+      iconColor: "text-amber-600",
     },
     {
       icon: <FaCamera />,
       title: "Photography Hotspot",
       description: "Iconic Nine Arch Bridge and misty landscapes",
       color: "bg-blue-50",
-      iconColor: "text-blue-600"
+      iconColor: "text-blue-600",
     },
     {
       icon: <FaWater />,
       title: "Waterfalls",
       description: "Visit Ravana Falls and nearby natural pools",
       color: "bg-purple-50",
-      iconColor: "text-purple-600"
-    }
+      iconColor: "text-purple-600",
+    },
   ];
 
   const quickFacts = [
-    { icon: <FaMapMarkerAlt />, label: "Location", value: "Ella", detail: "Badulla District" },
-    { icon: <FaMountain />, label: "Elevation", value: "1,041 m", detail: "Above sea level" },
-    { icon: <FaClock />, label: "Visit Duration", value: "1–2 Days", detail: "Relaxed pace" },
-    { icon: <FaSun />, label: "Best Time", value: "Jan – May", detail: "Clear views" },
-    { icon: <FaRoute />, label: "Famous For", value: "Hikes & Views", detail: "Nature escape" },
-    { icon: <FaLandmark />, label: "Vibe", value: "Chill & Scenic", detail: "Backpacker favorite" },
+    {
+      icon: <FaMapMarkerAlt />,
+      label: "Location",
+      value: "Ella",
+      detail: "Badulla District",
+    },
+    {
+      icon: <FaMountain />,
+      label: "Elevation",
+      value: "1,041 m",
+      detail: "Above sea level",
+    },
+    {
+      icon: <FaClock />,
+      label: "Visit Duration",
+      value: "1–2 Days",
+      detail: "Relaxed pace",
+    },
+    {
+      icon: <FaSun />,
+      label: "Best Time",
+      value: "Jan – May",
+      detail: "Clear views",
+    },
+    {
+      icon: <FaRoute />,
+      label: "Famous For",
+      value: "Hikes & Views",
+      detail: "Nature escape",
+    },
+    {
+      icon: <FaLandmark />,
+      label: "Vibe",
+      value: "Chill & Scenic",
+      detail: "Backpacker favorite",
+    },
   ];
 
   const faqs = [
     {
       question: "Why is Ella popular among travelers?",
-      answer: "Ella is loved for its cool climate, stunning views, hiking trails, waterfalls, and relaxed atmosphere.",
+      answer:
+        "Ella is loved for its cool climate, stunning views, hiking trails, waterfalls, and relaxed atmosphere.",
     },
     {
       question: "Is Ella suitable for hiking beginners?",
-      answer: "Yes. Little Adam’s Peak is an easy hike, while Ella Rock is moderately challenging.",
+      answer:
+        "Yes. Little Adam’s Peak is an easy hike, while Ella Rock is moderately challenging.",
     },
     {
       question: "How many days should I spend in Ella?",
-      answer: "1 to 2 days is ideal to explore the main attractions without rushing.",
+      answer:
+        "1 to 2 days is ideal to explore the main attractions without rushing.",
     },
     {
       question: "Can I visit Nine Arch Bridge by train?",
-      answer: "Yes. The scenic train ride between Kandy and Ella is one of the most beautiful in the world.",
+      answer:
+        "Yes. The scenic train ride between Kandy and Ella is one of the most beautiful in the world.",
     },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-
       {/* HERO SECTION */}
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex">
         <div
@@ -162,9 +195,7 @@ export default function Ella() {
                 <p className="text-sm sm:text-base font-bold text-gray-900 mt-1">
                   {fact.value}
                 </p>
-                <p className="text-xs text-gray-500 mt-1">
-                  {fact.detail}
-                </p>
+                <p className="text-xs text-gray-500 mt-1">{fact.detail}</p>
               </div>
             ))}
           </div>
@@ -174,7 +205,6 @@ export default function Ella() {
       {/* MAIN CONTENT */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid lg:grid-cols-3 gap-8">
-
           {/* LEFT COLUMN */}
           <div className="lg:col-span-2 space-y-8">
             <motion.div
@@ -192,7 +222,9 @@ export default function Ella() {
                   <h2 className="text-2xl font-bold text-gray-900">
                     Ella Hill Country
                   </h2>
-                  <p className="text-gray-600">Nature, Adventure & Relaxation</p>
+                  <p className="text-gray-600">
+                    Nature, Adventure & Relaxation
+                  </p>
                 </div>
               </div>
 
@@ -247,7 +279,9 @@ export default function Ella() {
                     className={`${exp.color} rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300`}
                   >
                     <div className="flex items-center gap-4 mb-4">
-                      <div className={`p-3 rounded-xl ${exp.iconColor} bg-white`}>
+                      <div
+                        className={`p-3 rounded-xl ${exp.iconColor} bg-white`}
+                      >
                         <span className="text-xl">{exp.icon}</span>
                       </div>
                       <h4 className="font-bold text-lg text-gray-900">
@@ -293,9 +327,7 @@ export default function Ella() {
 
                   <div>
                     <h4 className="font-semibold mb-2">Climate</h4>
-                    <p className="text-sm">
-                      Cool & pleasant year-round
-                    </p>
+                    <p className="text-sm">Cool & pleasant year-round</p>
                   </div>
                 </div>
 
@@ -310,12 +342,11 @@ export default function Ella() {
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
 
       {/* FAQ SECTION */}
-      <section className="py-12 sm:py-16 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-2 sm:py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -330,6 +361,9 @@ export default function Ella() {
               </div>
               Visitor FAQs
             </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Everything you need to know before visiting Sigiriya Rock Fortress
+            </p>
           </motion.div>
 
           <div className="space-y-4">
@@ -340,15 +374,47 @@ export default function Ella() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-md p-6 border border-gray-100"
+                className="group"
               >
-                <h3 className="font-semibold text-gray-900 mb-2">
-                  {item.question}
-                </h3>
-                <p className="text-gray-600">{item.answer}</p>
+                <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow p-5 sm:p-6 border border-gray-100">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-8 h-8 rounded-lg bg-[#4F6F52]/10 flex items-center justify-center group-hover:bg-[#4F6F52]/20 transition">
+                        <FaInfoCircle className="text-[#4F6F52] text-sm" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
+                        {item.question}
+                      </h3>
+                      <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        {item.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="text-center mt-10 pt-8 border-t border-gray-200"
+          >
+            <p className="text-gray-600 mb-4">
+              Still have questions about visiting Sigiriya?
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 text-[#4F6F52] font-semibold hover:text-[#3b5540] transition"
+            >
+              Contact our travel experts
+              <FaArrowRight />
+            </Link>
+          </motion.div>
         </div>
       </section>
     </div>
