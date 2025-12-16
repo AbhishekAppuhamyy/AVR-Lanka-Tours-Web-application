@@ -95,7 +95,7 @@ export default function Bentota() {
         <div
           className="absolute inset-0 bg-cover bg-[50%_18%]"
           style={{
-            backgroundImage: "url('/assets/destinations-pics/bentota.jpg')",
+            backgroundImage: "url('/assets/destinations-pics/bentota.avif')",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/40" />
