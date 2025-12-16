@@ -23,6 +23,7 @@ import NuwaraEliya from "./Destinations/nuwara-eliya.jsx";
 import Ella from "./Destinations/ella.jsx";
 import Bentota from "./Destinations/bentota.jsx";
 import Mirissa from "./Destinations/mirissa.jsx";
+import Hikkaduwa from "./Destinations/hikkaduwa.jsx";
 
 
 
@@ -59,6 +60,7 @@ function App() {
         <Route path="/destinations/ella" element={<Ella />} />
         <Route path="/destinations/bentota" element={<Bentota />} />
         <Route path="/destinations/mirissa" element={<Mirissa />} />
+        <Route path="/destinations/hikkaduwa" element={<Hikkaduwa />} />
         
         {/* Packages */}
         <Route path="/packages/cultural-triangle" element={<Cultural />} />
