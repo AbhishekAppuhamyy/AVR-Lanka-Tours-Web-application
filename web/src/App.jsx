@@ -28,10 +28,11 @@ import Anuradhapura from "./Destinations/anuradhapura.jsx";
 import KnucklesMountainRange from "./Destinations/knuckles-mountain-range.jsx";
 import ArugamBay from "./Destinations/arugam-bay.jsx";
 
+
 // Packages
 import Cultural from "./Packages/cultural-triangle.jsx";
 import HillCountry from "./Packages/hill-country.jsx";
-
+import SouthernBeachGetaway from "./packages/southern-beach.jsx";
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
         {/* Packages */}
         <Route path="/packages/cultural-triangle" element={<Cultural />} />
         <Route path="/packages/hill-country" element={<HillCountry />} />
+        <Route path="/packages/southern-beach" element={<SouthernBeachGetaway />} />
         
       </Routes>
 
