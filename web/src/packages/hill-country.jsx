@@ -16,27 +16,27 @@ export default function HillCountryEscape() {
     {
       name: "Nuwara Eliya",
       image:
-        "https://images.unsplash.com/photo-1594897030264-ab7d87efc473?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Hill/NuwaraELiya.jpg",
     },
     {
       name: "Ella",
       image:
-        "https://images.unsplash.com/photo-1605007493699-af65834f8a00?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Hill/ella-houses.jpg",
     },
     {
       name: "Nine Arch Bridge",
       image:
-        "https://images.unsplash.com/photo-1602154663343-89fe0bf5411b?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Hill/nine-arch.jpg",
     },
     {
       name: "Horton Plains",
       image:
-        "https://images.unsplash.com/photo-1603436326446-ef7c7cfa8a16?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Hill/hortanplains.jpg",
     },
     {
       name: "Tea Plantations",
       image:
-        "https://images.unsplash.com/photo-1549880187-1d6f3f1f30f8?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Hill/tea.jpeg",
     },
   ];
 

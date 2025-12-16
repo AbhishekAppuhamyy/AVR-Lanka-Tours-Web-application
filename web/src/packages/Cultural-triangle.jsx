@@ -14,27 +14,27 @@ export default function CulturalTriangle() {
     {
       name: "Anuradhapura",
       image:
-        "https://images.unsplash.com/photo-1588159343745-445ae0b16383?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Cultural/Anuradhapura.webp",
     },
     {
       name: "Sigiriya Rock Fortress",
       image:
-        "https://images.unsplash.com/photo-1602934585418-8ec9b8b3d08f?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Cultural/sigiriya.jpg",
     },
     {
       name: "Dambulla Cave Temple",
       image:
-        "https://images.unsplash.com/photo-1598940603846-a1edd0ef2574?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Cultural/templecave.jpeg",
     },
     {
       name: "Polonnaruwa",
       image:
-        "https://images.unsplash.com/photo-1624029353681-8f87f5fa1c64?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Cultural/polonnaruwa.jpg",
     },
     {
       name: "Temple of the Tooth – Kandy",
       image:
-        "https://images.unsplash.com/photo-1586500036706-41963de24d8b?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Cultural/temple.jpg",
     },
   ];
 

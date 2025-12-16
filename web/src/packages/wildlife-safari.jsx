@@ -16,27 +16,27 @@ export default function WildlifeSafariAdventure() {
     {
       name: "Yala National Park",
       image:
-        "https://images.unsplash.com/photo-1599639668273-8c3b3e6a4f7c?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Wildlife/leopard-yala.jpg",
     },
     {
       name: "Udawalawe National Park",
       image:
-        "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Wildlife/udawalawe-national-park.webp",
     },
     {
       name: "Sri Lankan Elephants",
       image:
-        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Wildlife/elephants.jpeg",
     },
     {
       name: "Leopard – Yala",
       image:
-        "https://images.unsplash.com/photo-1610878180933-b5d3aaf45c6d?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Wildlife/Crowded-Yala-national-park.jpg",
     },
     {
       name: "Safari Jeep Experience",
       image:
-        "https://images.unsplash.com/photo-1603570419939-3b4b6d4c88d6?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Wildlife/Yala-National-Park-Elephant-Tusker.webp",
     },
   ];
 

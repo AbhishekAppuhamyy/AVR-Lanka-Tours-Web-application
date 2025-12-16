@@ -17,27 +17,27 @@ export default function SouthernBeachGetaway() {
     {
       name: "Galle Fort",
       image:
-        "https://images.unsplash.com/photo-1588167101076-6a3f3d6a9b9a?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Beach/galle-fort.jpg",
     },
     {
       name: "Mirissa Beach",
       image:
-        "https://images.unsplash.com/photo-1599658880436-c61792e70672?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Beach/mirissa-top.JPG",
     },
     {
       name: "Unawatuna Beach",
       image:
-        "https://images.unsplash.com/photo-1602424441851-33fdb2b93f35?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Beach/unawatuna.jpeg",
     },
     {
       name: "Whale Watching – Mirissa",
       image:
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Beach/whalewatching.jpg",
     },
     {
       name: "Southern Coastline",
       image:
-        "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Beach/coastline.jpeg",
     },
   ];
 
