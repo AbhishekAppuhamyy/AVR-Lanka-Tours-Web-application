@@ -28,12 +28,10 @@ import Anuradhapura from "./Destinations/anuradhapura.jsx";
 import KnucklesMountainRange from "./Destinations/knuckles-mountain-range.jsx";
 import ArugamBay from "./Destinations/arugam-bay.jsx";
 
-
-
-
 // Packages
 import Cultural from "./Packages/cultural-triangle.jsx";
 import HillCountry from "./Packages/hill-country.jsx";
+
 
 
 function App() {
