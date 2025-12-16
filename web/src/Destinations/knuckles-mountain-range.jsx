@@ -93,9 +93,9 @@ export default function KnucklesMountainRange() {
       {/* HERO SECTION */}
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex">
         <div
-          className="absolute inset-0 bg-cover bg-[50%_18%]"
+          className="absolute inset-0 bg-cover bg-[50%_50%]"
           style={{
-            backgroundImage: "url('/assets/destinations-pics/knuckles.jpg')",
+            backgroundImage: "url('/assets/destinations-pics/knuckles.avif')",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/40" />
