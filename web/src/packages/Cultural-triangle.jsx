@@ -319,19 +319,34 @@ export default function CulturalTriangle() {
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="bg-gradient-to-r from-[#4F6F52] to-[#5A7D5A] text-white text-center py-16 px-6">
-        <h2 className="text-3xl font-bold mb-4">
-          Want a Custom Cultural Triangle Tour?
-        </h2>
-        <p className="mb-6 text-white/90">
-          Tell us your preferences and we’ll craft a personalized itinerary.
-        </p>
-        <Link
-          to="/contact"
-          className="bg-white text-[#4F6F52] px-8 py-3 rounded-xl font-semibold hover:scale-105 transition"
+      <section className="bg-gradient-to-r from-[#4F6F52] to-[#5A7D5A] py-14 sm:py-16 px-4 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto text-center text-white"
         >
-          Customize My Trip
-        </Link>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+            Want a Custom Cultural Triangle Tour?
+          </h2>
+
+          <p className="text-white/90 text-sm sm:text-base mb-6 leading-relaxed">
+            Tell us your preferences and we’ll craft a personalized itinerary
+            just for you.
+          </p>
+
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center w-full sm:w-auto
+                 bg-white text-[#4F6F52] px-8 py-4 rounded-xl
+                 font-semibold text-sm sm:text-base
+                 shadow-md transition
+                 hover:scale-105 active:scale-95"
+          >
+            Customize My Trip
+          </Link>
+        </motion.div>
       </section>
     </div>
   );
