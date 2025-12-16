@@ -20,8 +20,11 @@ import AdamsPeak from "./Destinations/adams-peak.jsx";
 import Polonaruwa from "./Destinations/polonaruwa.jsx";
 import Yala from "./Destinations/yala-national-park.jsx";
 import NuwaraEliya from "./Destinations/nuwara-eliya.jsx";
-import Bentota from "./Destinations/bentota.jsx";
 import Ella from "./Destinations/ella.jsx";
+import Bentota from "./Destinations/bentota.jsx";
+import Mirissa from "./Destinations/mirissa.jsx";
+
+
 
 
 
@@ -53,9 +56,10 @@ function App() {
         <Route path="/destinations/polonaruwa" element={<Polonaruwa />} />
         <Route path="/destinations/yala-national-park" element={<Yala />} />
         <Route path="/destinations/nuwara-eliya" element={<NuwaraEliya />} />
-        <Route path="/destinations/bentota" element={<Bentota />} />
         <Route path="/destinations/ella" element={<Ella />} />
-
+        <Route path="/destinations/bentota" element={<Bentota />} />
+        <Route path="/destinations/mirissa" element={<Mirissa />} />
+        
         {/* Packages */}
         <Route path="/packages/cultural-triangle" element={<Cultural />} />
         <Route path="/packages/hill-country" element={<HillCountry />} />
