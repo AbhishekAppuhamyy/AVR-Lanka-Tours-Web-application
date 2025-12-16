@@ -356,17 +356,37 @@ export default function CulturalTriangle() {
 
 function AutoPlacesSlider({ places }) {
   const [active, setActive] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
+  // ---------- AUTO SLIDE ----------
   useEffect(() => {
+    if (isDragging) return;
+
     const timer = setInterval(() => {
       setActive((prev) => (prev + 1) % places.length);
     }, 4000);
+
     return () => clearInterval(timer);
-  }, [places.length]);
+  }, [places.length, isDragging]);
+
+  // ---------- SWIPE HANDLER ----------
+  const handleDragEnd = (_, info) => {
+    setIsDragging(false);
+
+    if (info.offset.x < -80) {
+      // swipe left → next
+      setActive((prev) => (prev + 1) % places.length);
+    } else if (info.offset.x > 80) {
+      // swipe right → prev
+      setActive((prev) =>
+        prev === 0 ? places.length - 1 : prev - 1
+      );
+    }
+  };
 
   return (
-    <div className="relative max-w-6xl mx-auto px-6">
-      {/* Blurred Background */}
+    <div className="relative max-w-6xl mx-auto px-6 ">
+      {/* ===== BLURRED BACKGROUND ===== */}
       <motion.img
         key={active}
         src={places[active].image}
@@ -376,26 +396,35 @@ function AutoPlacesSlider({ places }) {
         transition={{ duration: 1 }}
       />
 
-      {/* Slider Cards */}
+      {/* ===== SLIDER ===== */}
       <div className="relative flex justify-center items-center h-[420px]">
         {places.map((place, index) => (
           <motion.div
             key={index}
-            className="absolute rounded-3xl overflow-hidden shadow-2xl"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragStart={() => setIsDragging(true)}
+            onDragEnd={handleDragEnd}
+            className="absolute rounded-3xl overflow-hidden shadow-2xl cursor-grab active:cursor-grabbing"
             animate={{
               x: (index - active) * 260,
               scale: index === active ? 1 : 0.85,
               opacity: index === active ? 1 : 0.4,
               zIndex: index === active ? 10 : 1,
             }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.7, ease: "easeInOut" }}
           >
             <img
               src={place.image}
               alt={place.name}
-              className="w-[320px] h-[420px] object-cover"
+              className="w-[300px] sm:w-[320px] h-[420px] object-cover"
             />
+
+            {/* Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+
+            {/* Text */}
             <div className="absolute bottom-6 left-6 right-6 text-white">
               <h3 className="text-xl font-bold">{place.name}</h3>
               <p className="text-sm text-white/80">
@@ -406,14 +435,16 @@ function AutoPlacesSlider({ places }) {
         ))}
       </div>
 
-      {/* Dots */}
+      {/* ===== DOTS ===== */}
       <div className="flex justify-center mt-10 gap-3">
         {places.map((_, i) => (
           <button
             key={i}
             onClick={() => setActive(i)}
             className={`w-3 h-3 rounded-full transition-all ${
-              active === i ? "bg-[#4F6F52] scale-125" : "bg-gray-400/40"
+              active === i
+                ? "bg-[#4F6F52] scale-125"
+                : "bg-gray-400/40"
             }`}
           />
         ))}

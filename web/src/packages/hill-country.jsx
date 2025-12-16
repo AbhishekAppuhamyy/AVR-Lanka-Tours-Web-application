@@ -7,35 +7,36 @@ import {
   FaLandmark,
   FaQuestionCircle,
   FaMountain,
+  FaWater,
 } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
 export default function HillCountryEscape() {
   const places = [
     {
+      name: "Nuwara Eliya",
+      image:
+        "https://images.unsplash.com/photo-1594897030264-ab7d87efc473?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
       name: "Ella",
       image:
-        "https://images.unsplash.com/photo-1591172419968-3b90c8c7c8d3?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1605007493699-af65834f8a00?auto=format&fit=crop&w=1200&q=80",
     },
     {
       name: "Nine Arch Bridge",
       image:
-        "https://images.unsplash.com/photo-1601121141528-4308f7c6b52f?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      name: "Nuwara Eliya",
-      image:
-        "https://images.unsplash.com/photo-1624029353681-8f87f5fa1c64?auto=format&fit=crop&w=1200&q=80",
-    },
-    {
-      name: "Tea Plantations",
-      image:
-        "https://images.unsplash.com/photo-1586500036706-41963de24d8b?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1602154663343-89fe0bf5411b?auto=format&fit=crop&w=1200&q=80",
     },
     {
       name: "Horton Plains",
       image:
-        "https://images.unsplash.com/photo-1610878180933-1236b3c4b7fa?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1603436326446-ef7c7cfa8a16?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      name: "Tea Plantations",
+      image:
+        "https://images.unsplash.com/photo-1549880187-1d6f3f1f30f8?auto=format&fit=crop&w=1200&q=80",
     },
   ];
 
@@ -54,22 +55,20 @@ export default function HillCountryEscape() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-center text-white
-               text-center sm:text-left"
+          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-center text-white text-center sm:text-left"
         >
           <h1 className="text-3xl sm:text-5xl font-extrabold mb-3 sm:mb-4 leading-tight mt-20 sm:mt-0">
             Hill Country Escape
           </h1>
 
           <p className="max-w-2xl mx-auto sm:mx-0 text-base sm:text-lg text-white/90 mb-6">
-            Breathe fresh mountain air in Ella and Nuwara Eliya, surrounded by
-            misty hills, tea estates, and waterfalls.
+            Breathe fresh mountain air among misty hills, waterfalls, and endless
+            tea estates.
           </p>
 
           <Link
             to="/contact"
-            className="mx-auto sm:mx-0 bg-[#4F6F52] w-fit px-7 py-3 rounded-xl font-semibold
-                 hover:scale-105 transition"
+            className="mx-auto sm:mx-0 bg-[#4F6F52] w-fit px-7 py-3 rounded-xl font-semibold hover:scale-105 transition"
           >
             Plan Your Tour
           </Link>
@@ -94,25 +93,26 @@ export default function HillCountryEscape() {
             </span>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight">
-              About the <span className="text-[#4F6F52]">Hill Country</span>
+              About the{" "}
+              <span className="text-[#4F6F52]">Hill Country Escape</span>
             </h2>
 
             <div className="w-20 h-1 bg-[#4F6F52] rounded-full" />
 
             <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-              Sri Lanka’s hill country is a cool-climate paradise known for lush
-              tea plantations, rolling mountains, colonial towns, and scenic
-              hiking trails. This region offers a peaceful escape into nature,
-              culture, and breathtaking landscapes.
+              Sri Lanka’s hill country offers a refreshing retreat filled with
+              rolling tea plantations, cool climates, colonial towns, and
+              breathtaking viewpoints. From Ella to Nuwara Eliya, this region is
+              perfect for nature lovers and slow travelers.
             </p>
 
             {/* STATS */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6">
               {[
-                { value: "5 Days", label: "Duration" },
-                { value: "1,800m+", label: "Altitude" },
-                { value: "20°C", label: "Cool Climate" },
-                { value: "100+", label: "Waterfalls" },
+                { value: "5D / 4N", label: "Duration" },
+                { value: "2,000m+", label: "Elevation" },
+                { value: "10+", label: "Waterfalls" },
+                { value: "Cool", label: "Climate" },
               ].map((stat, i) => (
                 <div
                   key={i}
@@ -135,40 +135,25 @@ export default function HillCountryEscape() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="backdrop-blur-xl bg-white/80 border border-white/40 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-lg sm:shadow-xl"
+            className="relative backdrop-blur-xl bg-white/80 border border-white/40 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-lg sm:shadow-xl"
           >
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
               Quick Facts
             </h3>
 
-            <ul className="space-y-5">
+            <ul className="space-y-4 sm:space-y-5">
               {[
-                {
-                  icon: <FaMountain />,
-                  text: "Cool climate & misty mountains",
-                },
-                {
-                  icon: <FaLeaf />,
-                  text: "Endless tea plantations",
-                },
-                {
-                  icon: <FaMapMarkerAlt />,
-                  text: "Ella, Nuwara Eliya & Horton Plains",
-                },
-                {
-                  icon: <FaClock />,
-                  text: "Perfect 5-day getaway",
-                },
-                {
-                  icon: <FaLandmark />,
-                  text: "Colonial architecture & viewpoints",
-                },
+                { icon: <FaMountain />, text: "Cool-climate highlands" },
+                { icon: <FaLeaf />, text: "World-famous tea estates" },
+                { icon: <FaWater />, text: "Scenic waterfalls & rivers" },
+                { icon: <FaMapMarkerAlt />, text: "Ella & Nuwara Eliya towns" },
+                { icon: <FaLandmark />, text: "Colonial-era architecture" },
               ].map((item, i) => (
-                <li key={i} className="flex gap-4 items-start">
-                  <span className="text-[#4F6F52] text-xl mt-0.5">
+                <li key={i} className="flex gap-3 sm:gap-4 items-start">
+                  <span className="text-[#4F6F52] text-lg sm:text-xl mt-0.5">
                     {item.icon}
                   </span>
-                  <span className="text-sm sm:text-base text-gray-700">
+                  <span className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     {item.text}
                   </span>
                 </li>
@@ -196,8 +181,8 @@ export default function HillCountryEscape() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {[
             {
-              title: "Tea Plantation Walks",
-              desc: "Explore lush tea estates and learn about Ceylon tea production.",
+              title: "Tea Estate Walks",
+              desc: "Stroll through lush tea plantations and learn about tea production.",
               icon: <FaLeaf />,
               duration: "3 Hours",
             },
@@ -209,7 +194,7 @@ export default function HillCountryEscape() {
             },
             {
               title: "Nature & Hiking",
-              desc: "Hike Horton Plains and witness breathtaking viewpoints.",
+              desc: "Explore Horton Plains and panoramic viewpoints.",
               icon: <FaMountain />,
               duration: "5 Hours",
             },
@@ -230,7 +215,7 @@ export default function HillCountryEscape() {
                 {item.title}
               </h3>
 
-              <p className="text-gray-600 text-sm sm:text-base mb-4">
+              <p className="text-gray-600 text-sm sm:text-base mb-4 leading-relaxed">
                 {item.desc}
               </p>
 
@@ -243,12 +228,9 @@ export default function HillCountryEscape() {
         </div>
       </section>
 
-      
-
       {/* ================= MAP ================= */}
       <section className="max-w-7xl mx-auto px-6 py-0 sm:py-2">
         <h2 className="text-3xl font-bold mb-6">Tour Location</h2>
-
         <div className="rounded-2xl overflow-hidden shadow">
           <iframe
             title="Hill Country Map"
@@ -268,16 +250,16 @@ export default function HillCountryEscape() {
         <div className="space-y-4">
           {[
             {
-              q: "What is the best time to visit the hill country?",
-              a: "The best time is from January to April when the weather is cool and dry.",
+              q: "Is the weather cold?",
+              a: "Yes. Evenings can be chilly, especially in Nuwara Eliya.",
             },
             {
-              q: "Is the hill country suitable for families?",
-              a: "Yes. The destinations are family-friendly with scenic views and easy walks.",
+              q: "Is hiking difficult?",
+              a: "Most hikes are moderate and suitable for beginners.",
             },
             {
-              q: "Do we need warm clothing?",
-              a: "Yes. Nuwara Eliya and Horton Plains can be quite cool, especially in the mornings.",
+              q: "Best time to visit?",
+              a: "January to April offers the best weather conditions.",
             },
           ].map((faq, index) => (
             <motion.div
@@ -286,19 +268,17 @@ export default function HillCountryEscape() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              whileTap={{ scale: 0.98 }}
               className="bg-white rounded-2xl p-5 sm:p-6 shadow-md"
             >
-              {/* Question */}
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 shrink-0 rounded-lg bg-[#4F6F52]/10 flex items-center justify-center text-[#4F6F52]">
+                <div className="w-9 h-9 rounded-lg bg-[#4F6F52]/10 flex items-center justify-center text-[#4F6F52]">
                   <FaQuestionCircle />
                 </div>
-
-                <h4 className="font-semibold text-sm sm:text-base">{faq.q}</h4>
+                <h4 className="font-semibold text-sm sm:text-base">
+                  {faq.q}
+                </h4>
               </div>
 
-              {/* Answer */}
               <p className="text-gray-600 text-sm sm:text-base mt-3 leading-relaxed ml-12">
                 {faq.a}
               </p>
@@ -317,18 +297,16 @@ export default function HillCountryEscape() {
           className="max-w-3xl mx-auto text-center text-white"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-            Ready for a Hill Country Escape?
+            Ready for a Hill Country Getaway?
           </h2>
 
           <p className="text-white/90 text-sm sm:text-base mb-6">
-            Let us plan the perfect mountain retreat for you.
+            Let us craft your perfect highland escape.
           </p>
 
           <Link
             to="/contact"
-            className="inline-flex items-center justify-center w-full sm:w-auto
-                 bg-white text-[#4F6F52] px-8 py-4 rounded-xl font-semibold
-                 shadow-md hover:scale-105 transition"
+            className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-[#4F6F52] px-8 py-4 rounded-xl font-semibold shadow-md hover:scale-105"
           >
             Customize My Trip
           </Link>
@@ -338,15 +316,16 @@ export default function HillCountryEscape() {
   );
 }
 
-/* ================= AUTO SLIDER (UNCHANGED) ================= */
+/* ================= AUTO SLIDER ================= */
 
 function AutoPlacesSlider({ places }) {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % places.length);
-    }, 4000);
+    const timer = setInterval(
+      () => setActive((p) => (p + 1) % places.length),
+      4000
+    );
     return () => clearInterval(timer);
   }, [places.length]);
 
@@ -359,17 +338,17 @@ function AutoPlacesSlider({ places }) {
       />
 
       <div className="relative flex justify-center items-center h-[420px]">
-        {places.map((place, index) => (
+        {places.map((place, i) => (
           <motion.div
-            key={index}
+            key={i}
             className="absolute rounded-3xl overflow-hidden shadow-2xl"
             animate={{
-              x: (index - active) * 260,
-              scale: index === active ? 1 : 0.85,
-              opacity: index === active ? 1 : 0.4,
-              zIndex: index === active ? 10 : 1,
+              x: (i - active) * 260,
+              scale: i === active ? 1 : 0.85,
+              opacity: i === active ? 1 : 0.4,
+              zIndex: i === active ? 10 : 1,
             }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.8 }}
           >
             <img
               src={place.image}
@@ -377,9 +356,8 @@ function AutoPlacesSlider({ places }) {
               className="w-[320px] h-[420px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 text-white">
+            <div className="absolute bottom-6 left-6 text-white">
               <h3 className="text-xl font-bold">{place.name}</h3>
-              <p className="text-sm text-white/80">Hill Country Landmark</p>
             </div>
           </motion.div>
         ))}
@@ -390,7 +368,7 @@ function AutoPlacesSlider({ places }) {
           <button
             key={i}
             onClick={() => setActive(i)}
-            className={`w-3 h-3 rounded-full transition-all ${
+            className={`w-3 h-3 rounded-full ${
               active === i ? "bg-[#4F6F52] scale-125" : "bg-gray-400/40"
             }`}
           />
