@@ -190,7 +190,7 @@ export default function Sigiriya() {
                 </div>
               </div>
               
-              <p className="text-gray-700 leading-relaxed mb-6">
+              <p className="text-gray-700 leading-relaxed mb-6 text-base sm:text-lg ">
                 Sigiriya, also known as Lion Rock, is an ancient rock fortress and palace built in the 5th century by King Kashyapa. Rising dramatically 200 meters above the surrounding jungle, this UNESCO World Heritage Site showcases remarkable engineering, stunning frescoes, and symmetrical water gardens that demonstrate advanced ancient urban planning.
               </p>
               
