@@ -92,9 +92,9 @@ export default function Anuradhapura() {
       {/* HERO SECTION */}
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex">
         <div
-          className="absolute inset-0 bg-cover bg-[50%_18%]"
+          className="absolute inset-0 bg-cover bg-[50%_30%]"
           style={{
-            backgroundImage: "url('/assets/destinations-pics/anuradhapura.jpg')",
+            backgroundImage: "url('/assets/destinations-pics/ruwanwalisaya.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/40" />
