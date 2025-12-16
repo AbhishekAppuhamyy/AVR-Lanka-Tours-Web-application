@@ -34,7 +34,7 @@ import Cultural from "./Packages/cultural-triangle.jsx";
 import HillCountry from "./Packages/hill-country.jsx";
 import SouthernBeachGetaway from "./packages/southern-beach.jsx";
 import WildlifeSafariAdventure from "./packages/wildlife-safari.jsx";
-import UltimateAdventureExpedition from "./packages/adventure.jsx";
+
 
 
 function App() {
@@ -73,7 +73,7 @@ function App() {
         <Route path="/packages/hill-country" element={<HillCountry />} />
         <Route path="/packages/southern-beach" element={<SouthernBeachGetaway />} />
         <Route path="/packages/wildlife-safari" element={<WildlifeSafariAdventure />} />
-        <Route path="/packages/adventure" element={<UltimateAdventureExpedition />} />
+        
         
       </Routes>
 
