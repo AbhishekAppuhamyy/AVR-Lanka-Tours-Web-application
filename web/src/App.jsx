@@ -17,6 +17,8 @@ import TempleOfTooth from "./Destinations/templeofthetooth.jsx"
 import GalleFort from "./Destinations/galle-fort.jsx";
 import Dambulla from "./Destinations/dambulla.jsx";
 import AdamsPeak from "./Destinations/adams-peak.jsx";
+import Polonaruwa from "./Destinations/polonaruwa.jsx";
+import Yala From "./Destinations/yala-national-park.jsx";
 import Ella from "./Destinations/ella.jsx";
 
 
@@ -46,6 +48,8 @@ function App() {
         <Route path="/destinations/galle-fort" element={<GalleFort />} />
         <Route path="/destinations/dambulla" element={<Dambulla />} />
         <Route path="/destinations/adams-peak" element={<AdamsPeak />} />
+        <Route path="/destinations/polonaruwa" element={<Polonaruwa />} />
+        <Route path="/destinations/yala-national-park" element={<Yala />} />
         <Route path="/destinations/ella" element={<Ella />} />
 
         {/* Packages */}

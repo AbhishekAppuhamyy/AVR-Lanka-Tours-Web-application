@@ -215,7 +215,7 @@ export default function Destinations() {
     if (destination.name === "Adam's Peak (Sri Pada)")
       return "/destinations/adams-peak";
 
-    if (destination.name === "Polonnaruwa") return "/destinations/polonnaruwa";
+    if (destination.name === "Polonnaruwa") return "/destinations/polonaruwa";
 
     if (destination.name === "Yala National Park")
       return "/destinations/yala-national-park";
