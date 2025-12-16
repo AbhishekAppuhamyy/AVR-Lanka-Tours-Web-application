@@ -18,7 +18,8 @@ import GalleFort from "./Destinations/galle-fort.jsx";
 import Dambulla from "./Destinations/dambulla.jsx";
 import AdamsPeak from "./Destinations/adams-peak.jsx";
 import Polonaruwa from "./Destinations/polonaruwa.jsx";
-import Yala From "./Destinations/yala-national-park.jsx";
+import Yala from "./Destinations/yala-national-park.jsx";
+
 import Ella from "./Destinations/ella.jsx";
 
 
