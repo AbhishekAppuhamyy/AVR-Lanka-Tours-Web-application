@@ -13,11 +13,17 @@ import Contact from "./pages/ContactUs";
 
 // Destinations
 import Sigiriya from "./Destinations/sigiriya.jsx";
+import TempleOfTooth from "./Destinations/templeofthetooth.jsx"
+import GalleFort from "./Destinations/galle-fort.jsx";
+import Dambulla from "./Destinations/dambulla.jsx";
+import
+import Ella from "./Destinations/ella.jsx";
+
 
 
 // Packages
 import Cultural from "./Packages/cultural-triangle.jsx";
-import HillCountry from "./Packages/hill-country.jsx";
+import HillCountry from "./Packages/hill-country.jsx";.
 
 
 function App() {
@@ -36,7 +42,11 @@ function App() {
 
         {/* Destinations */}
         <Route path="/destinations/sigiriya" element={<Sigiriya />} />
-       
+        <Route path="/destinations/templeofthetooth" element={<TempleOfTooth />} />
+        <Route path="/destinations/galle-fort" element={<GalleFort />} />
+        <Route path="/destinations/dambulla" element={<Dambulla />} />
+        <Route path="/destinations/ella" element={<Ella />} />
+
         {/* Packages */}
         <Route path="/packages/cultural-triangle" element={<Cultural />} />
         <Route path="/packages/hill-country" element={<HillCountry />} />

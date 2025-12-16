@@ -19,70 +19,70 @@ import {
   FaArrowRight
 } from "react-icons/fa";
 
-export default function Ella() {
+export default function Kandy() {
   const highlights = [
-    "Scenic hill-country village",
-    "Nine Arch Bridge",
-    "Ella Rock & Little Adam’s Peak",
-    "Tea plantations & waterfalls",
+    "UNESCO World Heritage Site",
+    "Sacred Tooth Relic of Lord Buddha",
+    "Daily rituals & ceremonies",
+    "Kandy Lake & cultural surroundings",
   ];
 
   const experiencePoints = [
     {
-      icon: <FaMountain />,
-      title: "Hill Country Views",
-      description: "Breathtaking mountain scenery and lush green valleys",
-      color: "bg-emerald-50",
-      iconColor: "text-emerald-600"
-    },
-    {
-      icon: <FaHiking />,
-      title: "Hiking Adventures",
-      description: "Popular hikes to Ella Rock and Little Adam’s Peak",
+      icon: <FaHistory />,
+      title: "Sacred Heritage",
+      description: "Houses the sacred Tooth Relic of Lord Buddha, revered worldwide",
       color: "bg-amber-50",
       iconColor: "text-amber-600"
     },
     {
-      icon: <FaCamera />,
-      title: "Photography Hotspot",
-      description: "Iconic Nine Arch Bridge and misty landscapes",
-      color: "bg-blue-50",
-      iconColor: "text-blue-600"
+      icon: <FaLandmark />,
+      title: "Architectural Beauty",
+      description: "Classic Kandyan architecture with gold-roofed shrine",
+      color: "bg-emerald-50",
+      iconColor: "text-emerald-600"
     },
     {
-      icon: <FaWater />,
-      title: "Waterfalls",
-      description: "Visit Ravana Falls and nearby natural pools",
+      icon: <FaCrown />,
+      title: "Royal Legacy",
+      description: "Former royal temple of the Kandyan Kingdom",
       color: "bg-purple-50",
       iconColor: "text-purple-600"
+    },
+    {
+      icon: <FaCamera />,
+      title: "Cultural Atmosphere",
+      description: "Traditional drummers, rituals, and serene lake views",
+      color: "bg-blue-50",
+      iconColor: "text-blue-600"
     }
   ];
 
   const quickFacts = [
-    { icon: <FaMapMarkerAlt />, label: "Location", value: "Ella", detail: "Badulla District" },
-    { icon: <FaMountain />, label: "Elevation", value: "1,041 m", detail: "Above sea level" },
-    { icon: <FaClock />, label: "Visit Duration", value: "1–2 Days", detail: "Relaxed pace" },
-    { icon: <FaSun />, label: "Best Time", value: "Jan – May", detail: "Clear views" },
-    { icon: <FaRoute />, label: "Famous For", value: "Hikes & Views", detail: "Nature escape" },
-    { icon: <FaLandmark />, label: "Vibe", value: "Chill & Scenic", detail: "Backpacker favorite" },
+    { icon: <FaMapMarkerAlt />, label: "Location", value: "Kandy City", detail: "Central Province" },
+    { icon: <FaMonument />, label: "Established", value: "16th Century", detail: "Kandyan Era" },
+    { icon: <FaClock />, label: "Visit Duration", value: "1-2 hours", detail: "Including rituals" },
+    { icon: <FaSun />, label: "Best Time", value: "Morning / Evening", detail: "During pooja times" },
+    { icon: <FaTicketAlt />, label: "Entry", value: "Ticket Required", detail: "Local & foreign" },
+    { icon: <FaLandmark />, label: "Status", value: "UNESCO Site", detail: "Since 1988" },
   ];
 
   const faqs = [
     {
-      question: "Why is Ella popular among travelers?",
-      answer: "Ella is loved for its cool climate, stunning views, hiking trails, waterfalls, and relaxed atmosphere.",
+      question: "Is the Temple of the Tooth Relic open to visitors?",
+      answer: "Yes. The temple is open daily to both local and foreign visitors, including worshippers and tourists.",
     },
     {
-      question: "Is Ella suitable for hiking beginners?",
-      answer: "Yes. Little Adam’s Peak is an easy hike, while Ella Rock is moderately challenging.",
+      question: "What is the best time to visit?",
+      answer: "Visiting during morning or evening pooja times offers the best spiritual experience.",
     },
     {
-      question: "How many days should I spend in Ella?",
-      answer: "1 to 2 days is ideal to explore the main attractions without rushing.",
+      question: "Is there a dress code?",
+      answer: "Yes. Modest attire is required. Shoulders and knees must be covered, and shoes must be removed before entry.",
     },
     {
-      question: "Can I visit Nine Arch Bridge by train?",
-      answer: "Yes. The scenic train ride between Kandy and Ella is one of the most beautiful in the world.",
+      question: "Can tourists see the Tooth Relic?",
+      answer: "The relic itself is not directly visible, but it is enshrined within a golden casket that is displayed during rituals.",
     },
   ];
 
@@ -92,9 +92,9 @@ export default function Ella() {
       {/* HERO SECTION */}
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex">
         <div
-          className="absolute inset-0 bg-cover bg-[10%_40%]"
+          className="absolute inset-0 bg-cover bg-[50%_45%]"
           style={{
-            backgroundImage: "url('/assets/destinations-pics/ella.jpg')",
+            backgroundImage: "url('/assets/destinations-pics/kandytemple.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/40" />
@@ -108,7 +108,7 @@ export default function Ella() {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white"
             >
-              Ella
+              Temple of the Tooth Relic
             </motion.h1>
 
             <motion.p
@@ -117,8 +117,8 @@ export default function Ella() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-white/90 max-w-md"
             >
-              Escape into Sri Lanka’s hill country — misty mountains, scenic
-              hikes, and unforgettable views await in Ella.
+              Discover Sri Lanka’s most sacred Buddhist temple, a spiritual heart
+              surrounded by culture, history, and serene beauty.
             </motion.p>
 
             <motion.div
@@ -131,7 +131,7 @@ export default function Ella() {
                 to="/contact"
                 className="inline-flex justify-center items-center px-6 py-3 rounded-xl text-sm sm:text-base font-semibold bg-[#4F6F52] text-white hover:bg-[#3b5540] transition shadow-lg shadow-black/30"
               >
-                Plan Your Ella Trip
+                Plan Your Kandy Visit
               </Link>
             </motion.div>
           </div>
@@ -186,21 +186,21 @@ export default function Ella() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 rounded-xl bg-[#4F6F52]/10">
-                  <FaMountain className="text-2xl text-[#4F6F52]" />
+                  <FaLandmark className="text-2xl text-[#4F6F52]" />
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900">
-                    Ella Hill Country
+                    Temple of the Sacred Tooth Relic
                   </h2>
-                  <p className="text-gray-600">Nature, Adventure & Relaxation</p>
+                  <p className="text-gray-600">Sri Lanka’s Holiest Buddhist Shrine</p>
                 </div>
               </div>
 
               <p className="text-gray-700 leading-relaxed mb-6 text-base sm:text-lg">
-                Ella is a charming mountain village surrounded by tea
-                plantations, cloud forests, and scenic viewpoints. It’s the
-                perfect destination for travelers seeking relaxation, light
-                adventure, and breathtaking landscapes.
+                Located in the heart of Kandy, the Temple of the Tooth Relic
+                (Sri Dalada Maligawa) houses the most sacred relic in Buddhism.
+                The temple stands as a symbol of faith, tradition, and royal
+                heritage, drawing pilgrims and travelers from around the world.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -217,7 +217,7 @@ export default function Ella() {
                   to="/contact"
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-[#4F6F52] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#3b5540] transition shadow-md"
                 >
-                  Book Guided Tour
+                  Book Guided Visit
                   <FaArrowRight />
                 </Link>
                 <Link
@@ -278,23 +278,21 @@ export default function Ella() {
 
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-semibold mb-2">Best Activities</h4>
+                    <h4 className="font-semibold mb-2">Opening Hours</h4>
+                    <p className="text-sm">Daily: 5:30 AM – 8:00 PM</p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-2">Dress Code</h4>
                     <p className="text-sm">
-                      Hiking, sightseeing, photography, relaxation
+                      Modest clothing required. Shoes must be removed.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2">Nearby Attractions</h4>
+                    <h4 className="font-semibold mb-2">Photography</h4>
                     <p className="text-sm">
-                      Nine Arch Bridge, Ravana Falls, Tea Estates
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold mb-2">Climate</h4>
-                    <p className="text-sm">
-                      Cool & pleasant year-round
+                      Allowed outside temple buildings only.
                     </p>
                   </div>
                 </div>
@@ -310,7 +308,6 @@ export default function Ella() {
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
 
@@ -349,6 +346,26 @@ export default function Ella() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="text-center mt-10 pt-8 border-t border-gray-200"
+          >
+            <p className="text-gray-600 mb-4">
+              Still have questions about visiting Sigiriya?
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 text-[#4F6F52] font-semibold hover:text-[#3b5540] transition"
+            >
+              Contact our travel experts
+              <FaArrowRight />
+            </Link>
+          </motion.div>
+          
         </div>
       </section>
     </div>

@@ -1,9 +1,16 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { 
-  FaMapMarkerAlt, FaCompass, FaFilter, FaMountain, 
-  FaUmbrellaBeach, FaMonument, FaPaw, FaWater, 
-  FaCity, FaChevronDown 
+import {
+  FaMapMarkerAlt,
+  FaCompass,
+  FaFilter,
+  FaMountain,
+  FaUmbrellaBeach,
+  FaMonument,
+  FaPaw,
+  FaWater,
+  FaCity,
+  FaChevronDown,
 } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
 
@@ -159,10 +166,22 @@ export default function Destinations() {
 
   const categories = [
     { name: "All", count: 15, icon: <FaCompass className="inline mr-2" /> },
-    { name: "Cultural Heritage", count: 5, icon: <FaMonument className="inline mr-2" /> },
+    {
+      name: "Cultural Heritage",
+      count: 5,
+      icon: <FaMonument className="inline mr-2" />,
+    },
     { name: "Cultural", count: 1, icon: <FaCity className="inline mr-2" /> },
-    { name: "Beach", count: 4, icon: <FaUmbrellaBeach className="inline mr-2" /> },
-    { name: "Hill Country", count: 4, icon: <FaMountain className="inline mr-2" /> },
+    {
+      name: "Beach",
+      count: 4,
+      icon: <FaUmbrellaBeach className="inline mr-2" />,
+    },
+    {
+      name: "Hill Country",
+      count: 4,
+      icon: <FaMountain className="inline mr-2" />,
+    },
     { name: "Wildlife", count: 1, icon: <FaPaw className="inline mr-2" /> },
     { name: "Coastal", count: 1, icon: <FaWater className="inline mr-2" /> },
   ];
@@ -182,54 +201,46 @@ export default function Destinations() {
 
   // OPTION 1: special route for Sigiriya, default index-based for others
   const getDetailsLink = (destination, index) => {
-    if (destination.name === "Sigiriya Rock Fortress") {
-      return "/destinations/sigiriya"; 
+    if (destination.name === "Sigiriya Rock Fortress")
+      return "/destinations/sigiriya";
 
-    if (destination.name === "Temple of the Tooth, Kandy") 
-      return `/destinations/kandy`; 
+    if (destination.name === "Temple of the Tooth, Kandy")
+      return "/destinations/templeofthetooth";
 
-    if (destination.name === "Galle Fort")
-      return `/destinations/galle-fort`;
+    if (destination.name === "Galle Fort") return "/destinations/galle-fort";
 
     if (destination.name === "Dambulla Cave Temple")
-      return `/destinations/dambulla`;
+      return "/destinations/dambulla";
 
     if (destination.name === "Adam's Peak (Sri Pada)")
-      return `/destinations/adams-peak`;
+      return "/destinations/adams-peak";
 
-    if (destination.name === "Polonnaruwa")
-      return `/destinations/polonnaruwa`;
+    if (destination.name === "Polonnaruwa") return "/destinations/polonnaruwa";
 
     if (destination.name === "Yala National Park")
-      return `/destinations/yala-national-park`;
+      return "/destinations/yala-national-park";
 
     if (destination.name === "Nuwara Eliya")
-      return `/destinations/nuwara-eliya`;
+      return "/destinations/nuwara-eliya";
 
-    if (destination.name === "Ella")
-      return `/destinations/ella`;
+    if (destination.name === "Ella") return "/destinations/ella";
 
-    if (destination.name === "Bentota")
-      return `/destinations/bentota`;
+    if (destination.name === "Bentota") return "/destinations/bentota";
 
-    if (destination.name === "Mirissa")
-      return `/destinations/mirissa`;
+    if (destination.name === "Mirissa") return "/destinations/mirissa";
 
-    if (destination.name === "Hikkaduwa")
-      return `/destinations/hikkaduwa`;
+    if (destination.name === "Hikkaduwa") return "/destinations/hikkaduwa";
 
     if (destination.name === "Anuradhapura")
-      return `/destinations/anuradhapura`;
+      return "/destinations/anuradhapura";
 
     if (destination.name === "Knuckles Mountain Range")
-      return `/destinations/knuckles-mountain-range`;
+      return "/destinations/knuckles-mountain-range";
 
-    if (destination.name === "Arugam Bay")
-      return `/destinations/arugam-bay`;
+    if (destination.name === "Arugam Bay") return "/destinations/arugam-bay";
 
-    }
-
-    return `/destinations/${index}`; // default route pattern
+    // ✅ fallback (important)
+    return `/destinations/${index}`;
   };
 
   // Get the full object for the selected category to display its icon
@@ -287,10 +298,7 @@ export default function Destinations() {
           >
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center max-w-2xl mx-auto">
               {/* === CUSTOM DROPDOWN START === */}
-              <div
-                className="relative w-full sm:w-auto z-20"
-                ref={dropdownRef}
-              >
+              <div className="relative w-full sm:w-auto z-20" ref={dropdownRef}>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   className="w-full sm:w-64 flex items-center justify-between px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4F6F52] bg-white text-gray-900"
@@ -410,7 +418,6 @@ export default function Destinations() {
                     >
                       View Details
                     </Link>
-                    
                   </div>
                 </div>
               </motion.div>
@@ -445,8 +452,7 @@ export default function Destinations() {
             className="text-center mb-10 sm:mb-14"
           >
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-              Sri Lanka&apos;s{" "}
-              <span className="text-[#4F6F52]">Regions</span>
+              Sri Lanka&apos;s <span className="text-[#4F6F52]">Regions</span>
             </h2>
             <p className="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
               Discover the unique character of each region across the island
