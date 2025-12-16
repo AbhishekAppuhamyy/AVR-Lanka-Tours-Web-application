@@ -118,7 +118,7 @@ export default function HillCountryEscape() {
                   key={i}
                   className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow text-center"
                 >
-                  <p className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[#4F6F52]">
+                  <p className="text-lg sm:text-xl  font-extrabold text-[#4F6F52]">
                     {stat.value}
                   </p>
                   <p className="text-xs sm:text-sm text-gray-500">
