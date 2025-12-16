@@ -292,100 +292,63 @@ export default function Destinations() {
 
           {/* FILTER SECTION */}
           <motion.div
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.3 }}
-  className="mt-10"
->
-  <div className="flex justify-center">
-    {/* === HERO COMMAND DROPDOWN === */}
-    <div
-      ref={dropdownRef}
-      className="relative w-full max-w-xl z-20"
-    >
-      {/* BUTTON */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="
-          w-full flex items-center justify-between
-          px-6 py-4 rounded-2xl
-          bg-white/90 backdrop-blur-xl
-          border border-white/40
-          shadow-2xl
-          hover:shadow-3xl
-          transition-all duration-200
-          focus:outline-none focus:ring-2 focus:ring-[#4F6F52]
-        "
-      >
-        <span className="flex items-center gap-4 text-lg font-semibold text-gray-900">
-          {selectedCategoryObject.icon}
-          {selectedCategoryObject.name}
-        </span>
-
-        <FaChevronDown
-          className={`text-gray-600 transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-
-      {/* DROPDOWN */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -8, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -8, scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-            className="
-              absolute top-full left-0 right-0 mt-3
-              bg-white/95 backdrop-blur-xl
-              rounded-2xl shadow-2xl
-              border border-gray-100
-              overflow-hidden
-            "
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-12"
           >
-            <ul className="max-h-64 overflow-y-auto py-2">
-              {categories.map((category) => (
-                <li key={category.name}>
-                  <button
-                    onClick={() => {
-                      setSelectedCategory(category.name);
-                      setIsOpen(false);
-                    }}
-                    className="
-                      w-full flex items-center gap-4
-                      px-5 py-3
-                      text-gray-900
-                      hover:bg-[#E8F5E9]
-                      transition-colors
-                    "
-                  >
-                    <span className="text-lg">{category.icon}</span>
-
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center max-w-2xl mx-auto">
+              {/* === CUSTOM DROPDOWN START === */}
+              <div className="relative w-full sm:w-auto z-20" ref={dropdownRef}>
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="w-full sm:w-64 flex items-center justify-between px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4F6F52] bg-white text-gray-900"
+                >
+                  <span className="flex items-center gap-3">
+                    {selectedCategoryObject.icon}
                     <span className="font-medium">
-                      {category.name}
+                      {selectedCategoryObject.name}
                     </span>
+                  </span>
+                  <FaChevronDown
+                    className={`text-gray-500 transition-transform duration-200 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
 
-                    <span className="ml-auto text-sm text-gray-500">
-                      {category.count}
-                    </span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* HELPER TEXT */}
-      <p className="mt-2 text-xs text-white/70 text-center">
-        Choose a destination category
-      </p>
-    </div>
-  </div>
-</motion.div>
-
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 right-0 mt-2 w-full sm:w-64 bg-white rounded-2xl shadow-lg overflow-hidden z-10 border border-gray-100"
+                    >
+                      <ul className="py-1 max-h-60 overflow-y-auto">
+                        {categories.map((category) => (
+                          <li key={category.name}>
+                            <button
+                              onClick={() => {
+                                setSelectedCategory(category.name);
+                                setIsOpen(false);
+                              }}
+                              className="w-full flex items-center gap-3 px-4 py-3 text-gray-800 hover:bg-[#E8F5E9] transition-colors"
+                            >
+                              {category.icon}
+                              <span>{category.name}</span>
+                              <span className="text-gray-500 text-sm ml-auto">
+                                ({category.count})
+                              </span>
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               {/* === CUSTOM DROPDOWN END === */}
 
               <button
