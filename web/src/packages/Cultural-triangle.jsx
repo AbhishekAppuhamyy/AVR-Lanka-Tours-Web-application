@@ -76,7 +76,7 @@ export default function CulturalTriangle() {
       </section>
 
       {/* ================= ABOUT (MODERN) ================= */}
-      <section className="relative py-20">
+      <section className="relative py-8 sm:py-15">
         {/* subtle background accent */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#4F6F52]/5 to-transparent pointer-events-none" />
 
@@ -93,14 +93,14 @@ export default function CulturalTriangle() {
               Ancient Sri Lanka
             </span>
 
-            <h2 className="text-4xl font-extrabold leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight">
               About the{" "}
               <span className="text-[#4F6F52]">Cultural Triangle</span>
             </h2>
 
             <div className="w-20 h-1 bg-[#4F6F52] rounded-full" />
 
-            <p className="text-gray-700 text-lg leading-relaxed">
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
               The Cultural Triangle represents the heart of Sri Lanka’s ancient
               civilization. Dating back to the 4th century BC, this region
               preserves sacred Buddhist cities, royal capitals, and monumental
@@ -109,21 +109,23 @@ export default function CulturalTriangle() {
             </p>
 
             {/* STATS */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 sm:pt-6">
               {[
-                { value: "4th  BC", label: "Origins" },
+                { value: "4th BC", label: "Origins" },
                 { value: "6+", label: "UNESCO Sites" },
                 { value: "2,000+", label: "Years Old" },
                 { value: "100+", label: "Sacred Monuments" },
               ].map((stat, i) => (
                 <div
                   key={i}
-                  className="bg-white rounded-2xl p-4 shadow text-center"
+                  className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow text-center"
                 >
-                  <p className="text-2xl font-extrabold text-[#4F6F52]">
+                  <p className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[#4F6F52]">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-gray-500">{stat.label}</p>
+                  <p className="text-xs sm:text-sm text-gray-500">
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -135,11 +137,19 @@ export default function CulturalTriangle() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative backdrop-blur-xl bg-white/70 border border-white/40 rounded-3xl p-8 shadow-xl"
+            className="relative
+            backdrop-blur-xl
+            bg-white/80
+            border border-white/40
+            rounded-2xl sm:rounded-3xl  
+            p-5 sm:p-8
+            shadow-lg sm:shadow-xl"
           >
-            <h3 className="text-2xl font-bold mb-6">Quick Facts</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
+              Quick Facts
+            </h3>
 
-            <ul className="space-y-5">
+            <ul className="pace-y-4 sm:space-y-5">
               {[
                 {
                   icon: <FaLandmark />,
@@ -162,11 +172,16 @@ export default function CulturalTriangle() {
                   text: "Massive stone stupas & sacred temples",
                 },
               ].map((item, i) => (
-                <li key={i} className="flex gap-4 items-start">
-                  <span className="text-[#4F6F52] text-xl mt-1">
+                <li
+                  key={i}
+                  className="flex gap-3 sm:gap-4 items-start mb-2 sm:mb-3"
+                >
+                  <span className="text-[#4F6F52] text-lg sm:text-xl mt-0.5">
                     {item.icon}
                   </span>
-                  <span className="text-gray-700">{item.text}</span>
+                  <span className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                    {item.text}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -175,7 +190,7 @@ export default function CulturalTriangle() {
       </section>
 
       {/* ================= PLACES YOU’LL VISIT (MODERN AUTO SLIDER) ================= */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-7 sm:py-8 overflow-hidden ">
         <h2 className="text-3xl font-bold mb-12 text-center">
           Places You’ll Visit
         </h2>
@@ -184,10 +199,12 @@ export default function CulturalTriangle() {
       </section>
 
       {/* ================= EXPERIENCES ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-10">Featured Experiences</h2>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-14">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-10 text-center md:text-left">
+          Featured Experiences
+        </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {[
             {
               title: "Sacred City Exploration",
@@ -211,21 +228,37 @@ export default function CulturalTriangle() {
             <motion.div
               key={index}
               whileHover={{ y: -6 }}
-              className="bg-white rounded-2xl shadow p-6"
+              whileTap={{ scale: 0.97 }}
+              className="bg-white rounded-2xl shadow-md p-6 sm:p-7 text-center sm:text-left"
             >
-              <div className="text-3xl text-[#4F6F52] mb-4">{item.icon}</div>
-              <h3 className="font-bold text-xl mb-2">{item.title}</h3>
-              <p className="text-gray-600 mb-4">{item.desc}</p>
-              <span className="text-sm text-gray-500 flex items-center gap-2">
-                <FaClock /> {item.duration}
-              </span>
+              {/* Icon */}
+              <div className="flex justify-center sm:justify-start mb-4">
+                <div className="w-14 h-14 rounded-xl bg-[#4F6F52]/10 flex items-center justify-center text-2xl text-[#4F6F52]">
+                  {item.icon}
+                </div>
+              </div>
+
+              {/* Content */}
+              <h3 className="font-bold text-lg sm:text-xl mb-2">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-600 text-sm sm:text-base mb-4 leading-relaxed">
+                {item.desc}
+              </p>
+
+              {/* Duration */}
+              <div className="flex justify-center sm:justify-start items-center gap-2 text-sm text-gray-500">
+                <FaClock className="text-[#4F6F52]" />
+                {item.duration}
+              </div>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* ================= MAP ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      <section className="max-w-7xl mx-auto px-6 py-0 sm:py-2">
         <h2 className="text-3xl font-bold mb-6">Tour Location</h2>
         <div className="rounded-2xl overflow-hidden shadow">
           <iframe
@@ -238,31 +271,51 @@ export default function CulturalTriangle() {
       </section>
 
       {/* ================= FAQ ================= */}
-      <section className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 py-14">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center md:text-left">
+          Frequently Asked Questions
+        </h2>
 
-        {[
-          {
-            q: "What should I wear when visiting temples?",
-            a: "Modest clothing is required. Shoulders and knees must be covered, and shoes removed.",
-          },
-          {
-            q: "Is cycling suitable for all travelers?",
-            a: "Yes. Routes are mostly flat and suitable for all fitness levels.",
-          },
-          {
-            q: "Is a guide recommended?",
-            a: "Yes. A licensed guide enriches the historical and cultural experience.",
-          },
-        ].map((faq, index) => (
-          <div key={index} className="bg-white rounded-xl p-5 shadow mb-4">
-            <h4 className="font-semibold flex items-center gap-2">
-              <FaQuestionCircle className="text-[#4F6F52]" />
-              {faq.q}
-            </h4>
-            <p className="text-gray-600 mt-2">{faq.a}</p>
-          </div>
-        ))}
+        <div className="space-y-4">
+          {[
+            {
+              q: "What should I wear when visiting temples?",
+              a: "Modest clothing is required. Shoulders and knees must be covered, and shoes removed.",
+            },
+            {
+              q: "Is cycling suitable for all travelers?",
+              a: "Yes. Routes are mostly flat and suitable for all fitness levels.",
+            },
+            {
+              q: "Is a guide recommended?",
+              a: "Yes. A licensed guide enriches the historical and cultural experience.",
+            },
+          ].map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="bg-white rounded-2xl p-5 sm:p-6 shadow-md"
+            >
+              {/* Question */}
+              <div className="flex items-start gap-3">
+                <div className="w-9 h-9 shrink-0 rounded-lg bg-[#4F6F52]/10 flex items-center justify-center text-[#4F6F52]">
+                  <FaQuestionCircle />
+                </div>
+
+                <h4 className="font-semibold text-sm sm:text-base">{faq.q}</h4>
+              </div>
+
+              {/* Answer */}
+              <p className="text-gray-600 text-sm sm:text-base mt-3 leading-relaxed ml-12">
+                {faq.a}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       {/* ================= CTA ================= */}
