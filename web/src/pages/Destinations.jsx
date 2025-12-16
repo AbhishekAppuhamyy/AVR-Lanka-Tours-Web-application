@@ -183,8 +183,52 @@ export default function Destinations() {
   // OPTION 1: special route for Sigiriya, default index-based for others
   const getDetailsLink = (destination, index) => {
     if (destination.name === "Sigiriya Rock Fortress") {
-      return "/destinations/sigiriya"; // this should match your Route path for sigiriya.jsx
+      return "/destinations/sigiriya"; 
+
+    if (destination.name === "Temple of the Tooth, Kandy") 
+      return `/destinations/kandy`; 
+
+    if (destination.name === "Galle Fort")
+      return `/destinations/galle-fort`;
+
+    if (destination.name === "Dambulla Cave Temple")
+      return `/destinations/dambulla`;
+
+    if (destination.name === "Adam's Peak (Sri Pada)")
+      return `/destinations/adams-peak`;
+
+    if (destination.name === "Polonnaruwa")
+      return `/destinations/polonnaruwa`;
+
+    if (destination.name === "Yala National Park")
+      return `/destinations/yala-national-park`;
+
+    if (destination.name === "Nuwara Eliya")
+      return `/destinations/nuwara-eliya`;
+
+    if (destination.name === "Ella")
+      return `/destinations/ella`;
+
+    if (destination.name === "Bentota")
+      return `/destinations/bentota`;
+
+    if (destination.name === "Mirissa")
+      return `/destinations/mirissa`;
+
+    if (destination.name === "Hikkaduwa")
+      return `/destinations/hikkaduwa`;
+
+    if (destination.name === "Anuradhapura")
+      return `/destinations/anuradhapura`;
+
+    if (destination.name === "Knuckles Mountain Range")
+      return `/destinations/knuckles-mountain-range`;
+
+    if (destination.name === "Arugam Bay")
+      return `/destinations/arugam-bay`;
+
     }
+
     return `/destinations/${index}`; // default route pattern
   };
 

@@ -7,15 +7,16 @@ export default function Navbar() {
   const menuItems = ["Home", "Packages", "Destinations", "Review"];
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-7xl z-50">
-      {/* Navbar Container */}
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
+      {/* NAVBAR CONTAINER */}
       <motion.div
-        initial={{ y: -50, opacity: 0 }}
+        initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 120, damping: 15 }}
-        className="flex justify-between items-center h-16 px-6 rounded-xl backdrop-blur-xl bg-white/20 border border-white/10 shadow-lg"
+        transition={{ type: "spring", stiffness: 120, damping: 18 }}
+        className="relative flex items-center justify-between h-16 px-6 rounded-xl
+                   bg-black/50 backdrop-blur-xl border border-black/30 shadow-xl"
       >
-        {/* Logo */}
+        {/* LOGO */}
         <Link
           to="/"
           className="text-2xl font-extrabold text-white tracking-tight"
@@ -23,64 +24,63 @@ export default function Navbar() {
           AVR Lanka Tours
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6">
+        {/* DESKTOP MENU */}
+        <div className="hidden md:flex items-center space-x-8">
           {menuItems.map((item, index) => (
             <motion.div
               key={item}
-              initial={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * index }}
+              transition={{ delay: index * 0.08 }}
             >
               <Link
                 to={`/${item.toLowerCase()}`}
-                className="text-white font-medium hover:text-[#86A789] transition duration-300"
+                className="text-white/90 font-medium hover:text-[#86A789] transition"
               >
                 {item}
               </Link>
             </motion.div>
           ))}
 
-          {/* Contact Button */}
+          {/* CONTACT BUTTON */}
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.4 }}
           >
             <Link
               to="/ContactUs"
-              className="ml-4 px-5 py-2 rounded-full bg-[#86A789] text-white font-semibold shadow-lg hover:bg-[#739072] transition duration-300"
+              className="px-5 py-2 rounded-full bg-[#86A789] text-white
+                         font-semibold shadow-md hover:bg-[#739072]
+                         hover:scale-105 transition-all"
             >
-              Contact us
+              Contact Us
             </Link>
           </motion.div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-white focus:outline-none"
+        {/* MOBILE MENU BUTTON */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden text-white focus:outline-none"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-        </div>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
       </motion.div>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -88,31 +88,38 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/20 backdrop-blur-xl border-t border-white/10 rounded-b-xl overflow-hidden"
+            className="md:hidden mt-2 rounded-xl overflow-hidden
+                       bg-black/60 backdrop-blur-xl border border-black/30 shadow-lg"
           >
             {menuItems.map((item, index) => (
               <motion.div
                 key={item}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.05 * index }}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.05 }}
               >
                 <Link
                   to={`/${item.toLowerCase()}`}
-                  className="block px-6 py-3 text-white font-medium hover:bg-[#86A789]/20 transition duration-300"
+                  onClick={() => setMobileOpen(false)}
+                  className="block px-6 py-3 text-white/90 font-medium
+                             hover:bg-white/10 transition"
                 >
                   {item}
                 </Link>
               </motion.div>
             ))}
+
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.25 }}
             >
               <Link
                 to="/ContactUs"
-                className="block mx-4 my-2 px-5 py-2 rounded-full text-white bg-[#86A789] text-center font-semibold hover:bg-[#739072] transition duration-300"
+                onClick={() => setMobileOpen(false)}
+                className="block mx-4 my-3 px-5 py-2 rounded-full
+                           bg-[#86A789] text-white text-center font-semibold
+                           hover:bg-[#739072] transition"
               >
                 Contact Us
               </Link>
