@@ -17,27 +17,27 @@ export default function UltimateAdventureExpedition() {
     {
       name: "Knuckles Mountain Range",
       image:
-        "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Adventure/knuckles.webp",
     },
     {
       name: "Kitulgala",
       image:
-        "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Adventure/kitulgala.jpg",
     },
     {
       name: "Ella Rock",
       image:
-        "https://images.unsplash.com/photo-1605007493699-af65834f8a00?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Adventure/Ellarock.jpg",
     },
     {
       name: "Jungle Camping",
       image:
-        "https://images.unsplash.com/photo-1500534314209-a26db0f5e21c?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Adventure/junglecamp.jpg",
     },
     {
       name: "White Water Rafting",
       image:
-        "https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1200&q=80",
+        "../assets/package-Detail-pics/Adventure/whitrewater.jpg",
     },
   ];
 
