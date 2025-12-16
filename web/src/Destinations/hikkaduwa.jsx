@@ -94,9 +94,9 @@ export default function Hikkaduwa() {
       {/* HERO SECTION */}
       <section className="relative min-h-[60vh] sm:min-h-[70vh] flex">
         <div
-          className="absolute inset-0 bg-cover bg-[50%_18%]"
+          className="absolute inset-0 bg-cover bg-[50%_52%]"
           style={{
-            backgroundImage: "url('/assets/destinations-pics/hikkaduwa.jpg')",
+            backgroundImage: "url('/assets/destinations-pics/hikaduwa.webp')",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/40" />
