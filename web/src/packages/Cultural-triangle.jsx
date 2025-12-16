@@ -6,10 +6,6 @@ import {
   FaLeaf,
   FaLandmark,
   FaQuestionCircle,
-  FaChevronLeft,
-  FaChevronRight,
-  FaPlay,
-  FaPause,
 } from "react-icons/fa";
 import { useState, useEffect } from "react";
 
@@ -17,310 +13,174 @@ export default function CulturalTriangle() {
   const places = [
     {
       name: "Anuradhapura",
-      image: "/assets/places/anuradhapura.jpg",
-      description: "Ancient capital with sacred Buddhist stupas",
-      highlight: "UNESCO World Heritage Site",
-      color: "#4F6F52",
+      image:
+        "https://images.unsplash.com/photo-1588159343745-445ae0b16383?auto=format&fit=crop&w=1200&q=80",
     },
     {
       name: "Sigiriya Rock Fortress",
-      image: "/assets/places/sigiriya.jpg",
-      description: "Lion Rock with ancient palace ruins",
-      highlight: "8th Wonder of the World",
-      color: "#8B4513",
+      image:
+        "https://images.unsplash.com/photo-1602934585418-8ec9b8b3d08f?auto=format&fit=crop&w=1200&q=80",
     },
     {
       name: "Dambulla Cave Temple",
-      image: "/assets/places/dambulla.jpg",
-      description: "Golden Buddha statues in cave temples",
-      highlight: "Largest cave temple complex",
-      color: "#D4A017",
+      image:
+        "https://images.unsplash.com/photo-1598940603846-a1edd0ef2574?auto=format&fit=crop&w=1200&q=80",
     },
     {
       name: "Polonnaruwa",
-      image: "/assets/places/polonnaruwa.jpg",
-      description: "Medieval capital with well-preserved ruins",
-      highlight: "Ancient irrigation systems",
-      color: "#2E8B57",
+      image:
+        "https://images.unsplash.com/photo-1624029353681-8f87f5fa1c64?auto=format&fit=crop&w=1200&q=80",
     },
     {
       name: "Temple of the Tooth – Kandy",
-      image: "/assets/places/kandy.jpg",
-      description: "Sacred tooth relic of Buddha",
-      highlight: "Cultural heart of Sri Lanka",
-      color: "#8B0000",
+      image:
+        "https://images.unsplash.com/photo-1586500036706-41963de24d8b?auto=format&fit=crop&w=1200&q=80",
     },
   ];
-
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
-
-  // Auto-rotate places
-  useEffect(() => {
-    if (!isPlaying) return;
-
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % places.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [isPlaying, places.length]);
-
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % places.length);
-  };
-
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + places.length) % places.length);
-  };
-
-  const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe) handleNext();
-    if (isRightSwipe) handlePrev();
-    
-    setTouchStart(null);
-    setTouchEnd(null);
-  };
 
   return (
     <div className="min-h-screen bg-[#f6faf6]">
       {/* ================= HERO ================= */}
-      <section className="relative h-[75vh]">
+      <section className="relative h-[60vh] sm:h-[70vh] ">
         <img
           src="/assets/packages-pic/cultural.webp"
           alt="Cultural Triangle Tour"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/55" />
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center text-white"
+          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-center text-white
+               text-center sm:text-left"
         >
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
+          <h1 className="text-3xl sm:text-5xl font-extrabold mb-3 sm:mb-4 leading-tight mt-20 sm:mt-0">
             Cultural Triangle Tour
           </h1>
-          <p className="max-w-2xl text-lg text-white/90 mb-6">
-            Explore Sri Lanka's ancient capitals including Anuradhapura,
-            Sigiriya, Dambulla, Polonnaruwa, and Kandy — a journey through
-            history, spirituality, and culture.
+
+          <p className="max-w-2xl mx-auto sm:mx-0 text-base sm:text-lg text-white/90 mb-6">
+            Journey through Sri Lanka’s ancient capitals — where history comes
+            alive.
           </p>
 
           <Link
             to="/contact"
-            className="bg-[#4F6F52] w-fit px-8 py-3 rounded-xl font-semibold hover:scale-105 transition"
+            className="mx-auto sm:mx-0 bg-[#4F6F52] w-fit px-7 py-3 rounded-xl font-semibold
+                 hover:scale-105 transition "
           >
             Plan Your Tour
           </Link>
         </motion.div>
       </section>
 
-      {/* ================= ABOUT ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl font-bold mb-4">
-            About the Cultural Triangle
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            The Cultural Triangle represents the heart of Sri Lanka's ancient
-            civilization. Dating back to the 4th century BC, this region is
-            home to UNESCO World Heritage Sites, sacred Buddhist monuments,
-            royal palaces, and some of the world's most impressive dagobas.
-          </p>
-        </motion.div>
+      {/* ================= ABOUT (MODERN) ================= */}
+      <section className="relative py-20">
+        {/* subtle background accent */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#4F6F52]/5 to-transparent pointer-events-none" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-white rounded-2xl p-6 shadow"
-        >
-          <h3 className="text-xl font-bold mb-4">Quick Facts</h3>
-          <ul className="space-y-3 text-gray-700">
-            <li>✔ UNESCO World Heritage region</li>
-            <li>✔ Ancient capitals: Anuradhapura & Polonnaruwa</li>
-            <li>✔ World's oldest living tree (Sri Maha Bodhi)</li>
-            <li>✔ Sacred Buddhist pilgrimage sites</li>
-            <li>✔ Massive stone stupas & temples</li>
-          </ul>
-        </motion.div>
-      </section>
+        <div className="relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
+          {/* LEFT CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <span className="inline-block text-sm font-semibold tracking-wide text-[#4F6F52] uppercase ">
+              Ancient Sri Lanka
+            </span>
 
-      {/* ================= MODERN PLACES GALLERY ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="flex justify-between items-center mb-10">
-          <h2 className="text-3xl font-bold">Places You'll Visit</h2>
-          
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => setIsPlaying(!isPlaying)}
-              className="p-3 rounded-full bg-white shadow hover:shadow-lg transition"
-              aria-label={isPlaying ? "Pause slideshow" : "Play slideshow"}
-            >
-              {isPlaying ? <FaPause /> : <FaPlay />}
-            </button>
-            
-            <div className="flex gap-2">
-              {places.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    idx === activeIndex
-                      ? "bg-[#4F6F52] scale-125"
-                      : "bg-gray-300"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
+            <h2 className="text-4xl font-extrabold leading-tight">
+              About the{" "}
+              <span className="text-[#4F6F52]">Cultural Triangle</span>
+            </h2>
+
+            <div className="w-20 h-1 bg-[#4F6F52] rounded-full" />
+
+            <p className="text-gray-700 text-lg leading-relaxed">
+              The Cultural Triangle represents the heart of Sri Lanka’s ancient
+              civilization. Dating back to the 4th century BC, this region
+              preserves sacred Buddhist cities, royal capitals, and monumental
+              architecture that shaped the island’s history for over 2,000
+              years.
+            </p>
+
+            {/* STATS */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6">
+              {[
+                { value: "4th  BC", label: "Origins" },
+                { value: "6+", label: "UNESCO Sites" },
+                { value: "2,000+", label: "Years Old" },
+                { value: "100+", label: "Sacred Monuments" },
+              ].map((stat, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl p-4 shadow text-center"
+                >
+                  <p className="text-2xl font-extrabold text-[#4F6F52]">
+                    {stat.value}
+                  </p>
+                  <p className="text-sm text-gray-500">{stat.label}</p>
+                </div>
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
 
-        {/* Main Carousel */}
-        <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-          <div
-            className="relative h-[500px] md:h-[600px] overflow-hidden"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
+          {/* RIGHT – QUICK FACTS (GLASS CARD) */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative backdrop-blur-xl bg-white/70 border border-white/40 rounded-3xl p-8 shadow-xl"
           >
-            {/* Background Image with Parallax Effect */}
-            <motion.div
-              key={activeIndex}
-              initial={{ scale: 1.1 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 1.5 }}
-              className="absolute inset-0"
-            >
-              <img
-                src={places[activeIndex].image}
-                alt={places[activeIndex].name}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-            </motion.div>
+            <h3 className="text-2xl font-bold mb-6">Quick Facts</h3>
 
-            {/* Content Overlay */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="relative z-10 h-full flex flex-col justify-end p-8 md:p-12 text-white"
-            >
-              <div className="max-w-2xl">
-                <div className="inline-block px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-sm text-sm mb-4">
-                  {places[activeIndex].highlight}
-                </div>
-                <h3 className="text-4xl md:text-5xl font-bold mb-3">
-                  {places[activeIndex].name}
-                </h3>
-                <p className="text-lg text-white/90 mb-6">
-                  {places[activeIndex].description}
-                </p>
-                
-                {/* Progress Bar */}
-                <div className="w-full h-1 bg-white/30 rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 4, ease: "linear" }}
-                    className="h-full bg-white"
-                    key={activeIndex}
-                  />
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Navigation Buttons */}
-          <button
-            onClick={handlePrev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all"
-            aria-label="Previous place"
-          >
-            <FaChevronLeft className="text-white text-xl" />
-          </button>
-          <button
-            onClick={handleNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/30 transition-all"
-            aria-label="Next place"
-          >
-            <FaChevronRight className="text-white text-xl" />
-          </button>
-
-          {/* Thumbnail Preview */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3">
-            {places.map((place, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveIndex(idx)}
-                className={`relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
-                  idx === activeIndex
-                    ? "border-white scale-110"
-                    : "border-transparent opacity-70"
-                }`}
-                aria-label={`View ${place.name}`}
-              >
-                <img
-                  src={place.image}
-                  alt={place.name}
-                  className="w-full h-full object-cover"
-                />
-                {idx === activeIndex && (
-                  <div className="absolute inset-0 bg-white/20" />
-                )}
-              </button>
-            ))}
-          </div>
+            <ul className="space-y-5">
+              {[
+                {
+                  icon: <FaLandmark />,
+                  text: "UNESCO World Heritage region",
+                },
+                {
+                  icon: <FaMapMarkerAlt />,
+                  text: "Ancient capitals: Anuradhapura & Polonnaruwa",
+                },
+                {
+                  icon: <FaLeaf />,
+                  text: "World’s oldest living tree (Sri Maha Bodhi)",
+                },
+                {
+                  icon: <FaClock />,
+                  text: "Over 2,000 years of continuous history",
+                },
+                {
+                  icon: <FaLandmark />,
+                  text: "Massive stone stupas & sacred temples",
+                },
+              ].map((item, i) => (
+                <li key={i} className="flex gap-4 items-start">
+                  <span className="text-[#4F6F52] text-xl mt-1">
+                    {item.icon}
+                  </span>
+                  <span className="text-gray-700">{item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
+      </section>
 
-        {/* Place Details Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-8">
-          {places.map((place, idx) => (
-            <motion.button
-              key={idx}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setActiveIndex(idx)}
-              className={`p-4 rounded-xl text-center transition-all duration-300 ${
-                idx === activeIndex
-                  ? "bg-[#4F6F52] text-white shadow-lg"
-                  : "bg-white text-gray-700 shadow hover:shadow-md"
-              }`}
-            >
-              <div
-                className="w-8 h-8 mx-auto mb-2 rounded-full flex items-center justify-center text-white"
-                style={{ backgroundColor: place.color }}
-              >
-                {idx + 1}
-              </div>
-              <span className="font-medium text-sm">{place.name}</span>
-            </motion.button>
-          ))}
-        </div>
+      {/* ================= PLACES YOU’LL VISIT (MODERN AUTO SLIDER) ================= */}
+      <section className="relative py-20 overflow-hidden">
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          Places You’ll Visit
+        </h2>
+
+        <AutoPlacesSlider places={places} />
       </section>
 
       {/* ================= EXPERIENCES ================= */}
@@ -331,22 +191,19 @@ export default function CulturalTriangle() {
           {[
             {
               title: "Sacred City Exploration",
-              desc:
-                "Guided visits to ancient monasteries, stupas, and the sacred Sri Maha Bodhi tree.",
+              desc: "Guided visits to ancient monasteries, stupas, and the sacred Sri Maha Bodhi tree.",
               icon: <FaLandmark />,
               duration: "6 Hours",
             },
             {
               title: "Cycling Heritage Trail",
-              desc:
-                "Cycle through archaeological ruins and hidden historical sites.",
+              desc: "Cycle through archaeological ruins and hidden historical sites.",
               icon: <FaLeaf />,
               duration: "4 Hours",
             },
             {
               title: "Cultural & Spiritual Tour",
-              desc:
-                "Experience Buddhist traditions, rituals, and sacred landmarks.",
+              desc: "Experience Buddhist traditions, rituals, and sacred landmarks.",
               icon: <FaMapMarkerAlt />,
               duration: "5 Hours",
             },
@@ -356,9 +213,7 @@ export default function CulturalTriangle() {
               whileHover={{ y: -6 }}
               className="bg-white rounded-2xl shadow p-6"
             >
-              <div className="text-3xl text-[#4F6F52] mb-4">
-                {item.icon}
-              </div>
+              <div className="text-3xl text-[#4F6F52] mb-4">{item.icon}</div>
               <h3 className="font-bold text-xl mb-2">{item.title}</h3>
               <p className="text-gray-600 mb-4">{item.desc}</p>
               <span className="text-sm text-gray-500 flex items-center gap-2">
@@ -384,31 +239,23 @@ export default function CulturalTriangle() {
 
       {/* ================= FAQ ================= */}
       <section className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="text-3xl font-bold mb-8">
-          Frequently Asked Questions
-        </h2>
+        <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
 
         {[
           {
             q: "What should I wear when visiting temples?",
-            a:
-              "Modest clothing is required. Shoulders and knees must be covered, and shoes removed.",
+            a: "Modest clothing is required. Shoulders and knees must be covered, and shoes removed.",
           },
           {
             q: "Is cycling suitable for all travelers?",
-            a:
-              "Yes. Routes are mostly flat and suitable for all fitness levels.",
+            a: "Yes. Routes are mostly flat and suitable for all fitness levels.",
           },
           {
             q: "Is a guide recommended?",
-            a:
-              "Yes. A licensed guide enriches the historical and cultural experience.",
+            a: "Yes. A licensed guide enriches the historical and cultural experience.",
           },
         ].map((faq, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl p-5 shadow mb-4"
-          >
+          <div key={index} className="bg-white rounded-xl p-5 shadow mb-4">
             <h4 className="font-semibold flex items-center gap-2">
               <FaQuestionCircle className="text-[#4F6F52]" />
               {faq.q}
@@ -424,7 +271,7 @@ export default function CulturalTriangle() {
           Want a Custom Cultural Triangle Tour?
         </h2>
         <p className="mb-6 text-white/90">
-          Tell us your preferences and we'll craft a personalized itinerary.
+          Tell us your preferences and we’ll craft a personalized itinerary.
         </p>
         <Link
           to="/contact"
@@ -433,6 +280,76 @@ export default function CulturalTriangle() {
           Customize My Trip
         </Link>
       </section>
+    </div>
+  );
+}
+
+/* ================= AUTO SLIDER COMPONENT ================= */
+
+function AutoPlacesSlider({ places }) {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % places.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [places.length]);
+
+  return (
+    <div className="relative max-w-6xl mx-auto px-6">
+      {/* Blurred Background */}
+      <motion.img
+        key={active}
+        src={places[active].image}
+        className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-20 scale-110"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.2 }}
+        transition={{ duration: 1 }}
+      />
+
+      {/* Slider Cards */}
+      <div className="relative flex justify-center items-center h-[420px]">
+        {places.map((place, index) => (
+          <motion.div
+            key={index}
+            className="absolute rounded-3xl overflow-hidden shadow-2xl"
+            animate={{
+              x: (index - active) * 260,
+              scale: index === active ? 1 : 0.85,
+              opacity: index === active ? 1 : 0.4,
+              zIndex: index === active ? 10 : 1,
+            }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            <img
+              src={place.image}
+              alt={place.name}
+              className="w-[320px] h-[420px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 text-white">
+              <h3 className="text-xl font-bold">{place.name}</h3>
+              <p className="text-sm text-white/80">
+                Cultural & Historical Landmark
+              </p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center mt-10 gap-3">
+        {places.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setActive(i)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              active === i ? "bg-[#4F6F52] scale-125" : "bg-gray-400/40"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
