@@ -312,7 +312,7 @@ export default function Kandy() {
       </div>
 
       {/* FAQ SECTION */}
-      <section className="py-12 sm:py-16 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-2 sm:py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -327,6 +327,9 @@ export default function Kandy() {
               </div>
               Visitor FAQs
             </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Everything you need to know before visiting Sigiriya Rock Fortress
+            </p>
           </motion.div>
 
           <div className="space-y-4">
@@ -337,12 +340,25 @@ export default function Kandy() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-md p-6 border border-gray-100"
+                className="group"
               >
-                <h3 className="font-semibold text-gray-900 mb-2">
-                  {item.question}
-                </h3>
-                <p className="text-gray-600">{item.answer}</p>
+                <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow p-5 sm:p-6 border border-gray-100">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 mt-1">
+                      <div className="w-8 h-8 rounded-lg bg-[#4F6F52]/10 flex items-center justify-center group-hover:bg-[#4F6F52]/20 transition">
+                        <FaInfoCircle className="text-[#4F6F52] text-sm" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
+                        {item.question}
+                      </h3>
+                      <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        {item.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -365,7 +381,6 @@ export default function Kandy() {
               <FaArrowRight />
             </Link>
           </motion.div>
-          
         </div>
       </section>
     </div>
