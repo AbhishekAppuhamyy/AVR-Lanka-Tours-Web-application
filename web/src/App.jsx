@@ -26,6 +26,7 @@ import Mirissa from "./Destinations/mirissa.jsx";
 import Hikkaduwa from "./Destinations/hikkaduwa.jsx";
 import Anuradhapura from "./Destinations/anuradhapura.jsx";
 import KnucklesMountainRange from "./Destinations/knuckles-mountain-range.jsx";
+import ArugamBay from "./Destinations/arugam-bay.jsx";
 
 
 
@@ -64,6 +65,7 @@ function App() {
         <Route path="/destinations/hikkaduwa" element={<Hikkaduwa />} />
         <Route path="/destinations/anuradhapura" element={<Anuradhapura />} />
         <Route path="/destinations/knuckles-mountain-range" element={<KnucklesMountainRange />} />
+        <Route path="/destinations/arugam-bay" element={<ArugamBay />} />
         
         {/* Packages */}
         <Route path="/packages/cultural-triangle" element={<Cultural />} />
