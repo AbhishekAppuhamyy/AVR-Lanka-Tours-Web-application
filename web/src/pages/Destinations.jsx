@@ -563,30 +563,38 @@ export default function Destinations() {
         </div>
       </section>
 
-      {/* STATS SECTION */}
-      <section className="relative py-16 bg-gradient-to-r from-[#E8F5E9]/50 to-[#C8E6C9]/50">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#A5D6A7]/40 to-[#81C784]/30 -z-10" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-6"
-          >
-            {stats.map((s, i) => (
-              <div
-                key={i}
-                className="text-center bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all"
-              >
-                <div className="text-2xl sm:text-3xl font-bold mb-1">
-                  {s.number}
-                </div>
-                <div className="text-gray-700 text-sm">{s.label}</div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      {/* ================= STATS SECTION ================= */}
+<section className="relative py-12 sm:py-16 bg-gradient-to-r from-[#E8F5E9]/50 to-[#C8E6C9]/50">
+  <div className="absolute inset-0 bg-gradient-to-r from-[#A5D6A7]/40 to-[#81C784]/30 -z-10" />
+
+  <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
+    >
+      {stats.map((s, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ scale: 1.04 }}
+          transition={{ type: "spring", stiffness: 200, damping: 15 }}
+          className="text-center bg-white/70 backdrop-blur-md rounded-2xl px-4 py-5 sm:p-6 shadow-md hover:shadow-xl"
+        >
+          <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-1">
+            {s.number}
+          </div>
+
+          <div className="text-xs sm:text-sm text-gray-700 font-medium tracking-wide">
+            {s.label}
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
+
     </div>
   );
 }
