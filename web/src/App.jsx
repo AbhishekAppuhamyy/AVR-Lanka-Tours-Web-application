@@ -48,7 +48,7 @@ function App() {
         <Route path="/packages" element={<Packages />} />
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/review" element={<Review />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/ContactUs" element={<Contact />} />
 
         {/* Destinations */}
         <Route path="/destinations/sigiriya" element={<Sigiriya />} />
