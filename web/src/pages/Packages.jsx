@@ -10,7 +10,12 @@ export default function Packages() {
       duration: "6 Days / 5 Nights",
       description:
         "Explore ancient wonders like Sigiriya, Dambulla, and Kandy while experiencing Sri Lanka’s rich heritage.",
-      highlights: ["Sigiriya Rock", "Dambulla Cave", "Kandy Temple" , "Anuradhapura"] ,
+      highlights: [
+        "Sigiriya Rock",
+        "Dambulla Cave",
+        "Kandy Temple",
+        "Anuradhapura",
+      ],
     },
     {
       id: 2,
@@ -19,7 +24,12 @@ export default function Packages() {
       duration: "5 Days / 4 Nights",
       description:
         "Breathe fresh mountain air in Ella and Nuwara Eliya, surrounded by tea plantations and waterfalls.",
-      highlights: ["Tea Estates", "Nine Arch Bridge", "Horton Plains","Nuwara eliya" ],
+      highlights: [
+        "Tea Estates",
+        "Nine Arch Bridge",
+        "Horton Plains",
+        "Nuwara eliya",
+      ],
     },
     {
       id: 3,
@@ -55,8 +65,7 @@ export default function Packages() {
     if (pkg.name === "Cultural Triangle Tour")
       return "/packages/Cultural-triangle";
 
-    if (pkg.name === "Hill Country Escape")
-      return "/packages/hill-country";
+    if (pkg.name === "Hill Country Escape") return "/packages/hill-country";
 
     if (pkg.name === "Southern Beach Getaway")
       return "/packages/southern-beach";
@@ -77,8 +86,7 @@ export default function Packages() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage:
-              "url('/assets/destinations-pics/bentota.avif')",
+            backgroundImage: "url('/assets/destinations-pics/bentota.avif')",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
@@ -175,26 +183,34 @@ export default function Packages() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-[#4F6F52] to-[#5A7D5A]">
-        <div className="max-w-4xl mx-auto px-6 text-center text-white">
+      {/* ================= CTA ================= */}
+      <section className="py-14 sm:py-20 bg-gradient-to-r from-[#4F6F52] to-[#5A7D5A] mb-5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="text-center text-white space-y-5 sm:space-y-6"
           >
-            <h2 className="text-4xl font-bold">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
               Customize Your Dream Tour
             </h2>
-            <p className="text-white/90 text-lg">
-              Tell us your preferences and we’ll design a personalized
-              itinerary just for you.
+
+            <p className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+              Tell us your preferences and we’ll design a personalized itinerary
+              just for you.
             </p>
 
             <Link
               to="/contact"
-              className="inline-block bg-white text-[#4F6F52] px-8 py-4 rounded-2xl font-semibold hover:scale-105 transition shadow-xl"
+              className="inline-flex items-center justify-center
+                   w-full sm:w-auto
+                   bg-white text-[#4F6F52]
+                   px-8 py-4 rounded-2xl
+                   font-semibold text-sm sm:text-base
+                   shadow-xl transition
+                   hover:scale-105 active:scale-95"
             >
               Design Your Tour
             </Link>
