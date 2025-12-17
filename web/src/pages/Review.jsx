@@ -269,7 +269,7 @@ export default function Reviews() {
                         justify-center items-stretch sm:items-center"
               >
                 <motion.a
-                  href="https://g.page/YOUR_GOOGLE_BUSINESS_REVIEW_LINK/review"
+                  href="https://g.page/r/CRsm9F0Mya_mEAE/review"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
