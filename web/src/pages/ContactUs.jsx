@@ -1,118 +1,123 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
-  FaPaperPlane,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f4f8f4] to-white">
-      {/* HERO */}
-      <section className="bg-gradient-to-r from-[#2c3e2b] to-[#4f6f52] text-white py-20 px-6">
+    <div className="relative  text-white">
+      {/* ===== FULL PAGE BACKGROUND ===== */}
+      <div
+        className="fixed inset-0 -z-10 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('/assets/destinations-pics/bentota.avif')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
+      </div>
+
+      {/* ================= HERO ================= */}
+      <section className="mt-40 flex items-center justify-center px-4">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="max-w-4xl mx-auto text-center space-y-4"
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl text-center space-y-6"
         >
-          <h1 className="text-4xl sm:text-5xl font-extrabold">
-            Contact <span className="text-[#D2E3C8]">Us</span>
+          <h1 className="text-4xl sm:text-6xl font-bold">
+            Contact{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8F5E9] to-[#C8E6C9]">
+              AVR Lanka Tours
+            </span>
           </h1>
-          <p className="text-white/90 text-lg">
-            Let’s plan your next unforgettable journey together 🌍
+
+          <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto">
+            Let’s plan your perfect Sri Lankan journey — authentic, curated,
+            and unforgettable 
           </p>
         </motion.div>
       </section>
 
-      {/* CONTENT */}
-      <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-16">
-        {/* CONTACT INFO */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-8"
-        >
-          <h2 className="text-3xl font-bold text-[#2c3e2b]">
-            Get in Touch
-          </h2>
-          <p className="text-gray-600 leading-relaxed">
-            Have questions, need a custom tour, or ready to book?  
-            Our team is here to help you every step of the way.
-          </p>
-
-          <div className="space-y-6">
-            <div className="flex items-center space-x-4">
-              <FaPhoneAlt className="text-[#4f6f52] text-xl" />
-              <span className="text-gray-700 font-medium">
-                +94 077 334 4167
-              </span>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <FaEnvelope className="text-[#4f6f52] text-xl" />
-              <span className="text-gray-700 font-medium">
-                avrtourss@gmail.com
-              </span>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <FaMapMarkerAlt className="text-[#4f6f52] text-xl" />
-              <span className="text-gray-700 font-medium">
-                Colombo, Sri Lanka
-              </span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* CONTACT FORM */}
-        <motion.form
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-xl p-8 space-y-6"
-        >
-          <h3 className="text-2xl font-semibold text-[#2c3e2b]">
-            Send Us a Message
-          </h3>
-
-          <div className="grid sm:grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#86A789]"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#86A789]"
-            />
-          </div>
-
-          <input
-            type="text"
-            placeholder="Subject"
-            className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#86A789]"
-          />
-
-          <textarea
-            rows={5}
-            placeholder="Your Message"
-            className="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#86A789]"
-          ></textarea>
-
-          <button
-            type="submit"
-            className="flex items-center justify-center gap-2 bg-[#4f6f52] hover:bg-[#3f5f45] text-white px-6 py-3 rounded-xl font-semibold transition shadow-lg hover:scale-105"
+      {/* ================= CONTACT INFO ================= */}
+      <section className="pb-2 px-4 py-10  mb-10 ">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-8 sm:p-12 text-gray-900"
           >
-            <FaPaperPlane />
-            Send Message
-          </button>
-        </motion.form>
+            <div className="text-center mb-10">
+              <h2 className="text-2xl sm:text-3xl font-bold">
+                Get in Touch With Us
+              </h2>
+              <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+                Custom tours, bookings, or travel advice — our team is ready
+                to assist you anytime.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Phone */}
+              <div className="flex items-center gap-4 p-6 rounded-2xl bg-[#4F6F52]/10">
+                <FaPhoneAlt className="text-2xl text-[#4F6F52]" />
+                <div>
+                  <p className="text-sm text-gray-500">Phone</p>
+                  <p className="font-semibold">+94 77 334 4167</p>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-center gap-4 p-6 rounded-2xl bg-[#4F6F52]/10">
+                <FaEnvelope className="text-2xl text-[#4F6F52]" />
+                <div>
+                  <p className="text-sm text-gray-500">Email</p>
+                  <p className="font-semibold">avrtourss@gmail.com</p>
+                </div>
+              </div>
+
+              {/* Location */}
+              <div className="flex items-center gap-4 p-6 rounded-2xl bg-[#4F6F52]/10">
+                <FaMapMarkerAlt className="text-2xl text-[#4F6F52]" />
+                <div>
+                  <p className="text-sm text-gray-500">Location</p>
+                  <p className="font-semibold">Colombo, Sri Lanka</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://wa.me/94773344167"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2
+                  bg-[#4F6F52] text-white px-8 py-4 rounded-2xl
+                  font-semibold shadow-lg hover:bg-[#3b5540] transition"
+              >
+                <FaWhatsapp />
+                Chat on WhatsApp
+              </a>
+
+              <Link
+                to="/packages"
+                className="inline-flex items-center justify-center
+                  border border-[#4F6F52] text-[#4F6F52]
+                  px-8 py-4 rounded-2xl font-semibold
+                  hover:bg-[#4F6F52] hover:text-white transition"
+              >
+                View Tour Packages
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </section>
     </div>
   );
