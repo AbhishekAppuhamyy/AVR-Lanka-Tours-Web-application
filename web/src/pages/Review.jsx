@@ -25,77 +25,67 @@ export default function Reviews() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Modern Header Section */}
-      <section className="relative py-20 overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#4F6F52]/5 to-transparent"></div>
-        <div className="absolute top-10 right-10 w-72 h-72 bg-[#4F6F52]/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#4F6F52]/5 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#4F6F52]/10 border border-[#4F6F52]/20 text-[#4F6F52] text-sm font-medium mb-8"
-            >
-              <span className="w-2 h-2 bg-[#4F6F52] rounded-full animate-pulse"></span>
-              Trusted by Thousands of Travelers Worldwide
-            </motion.div>
-            
-            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Real Stories from{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F6F52] to-[#5A7D5A]">
-                Real Travelers
-              </span>
-            </h1>
-            
-            <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Don't just take our word for it. Read authentic experiences from travelers who've 
-              explored Sri Lanka with us and created memories that last a lifetime.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* ===== Editorial Header Section with Background Image ===== */}
+<section className="relative py-24 sm:py-28 lg:py-36 overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="../assets/destinations-pics/sigiriya.jpg"
+      alt="Sri Lanka Travel Experience"
+      className="w-full h-full object-cover"
+    />
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/70 to-white/95" />
+  </div>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className="flex justify-center text-2xl mb-3">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl lg:text-4xl font-bold text-[#4F6F52] mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+  {/* Soft grid texture */}
+  <div className="absolute inset-0 bg-[radial-gradient(#4F6F52_1px,transparent_1px)] 
+                  [background-size:28px_28px] opacity-[0.04]" />
 
-      
+  {/* Accent line */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-32 
+                  bg-gradient-to-b from-[#4F6F52] to-transparent" />
+
+  <div className="relative max-w-6xl mx-auto px-4 sm:px-6 text-center">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9, ease: "easeOut" }}
+    >
+      {/* Minimal badge */}
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        className="inline-block mb-6 text-xs tracking-[0.3em] 
+                   uppercase text-[#4F6F52] font-semibold"
+      >
+        Traveler Reviews
+      </motion.span>
+
+      {/* Statement headline */}
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold 
+                     text-gray-900 leading-tight mb-8">
+        Journeys remembered.
+        <br />
+        <span className="text-[#4F6F52]">Stories shared.</span>
+      </h1>
+
+      {/* Divider */}
+      <div className="w-16 h-[2px] bg-[#4F6F52] mx-auto mb-8 rounded-full" />
+
+      {/* Supporting copy */}
+      <p className="text-lg sm:text-xl text-gray-600 leading-relaxed 
+                    max-w-2xl mx-auto">
+        Thoughtful reflections from travelers who experienced Sri Lanka beyond
+        the guidebooks — authentic, personal, and unforgettable.
+      </p>
+    </motion.div>
+  </div>
+
+  {/* Bottom fade */}
+  <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-white to-transparent" />
+</section>
 
       {/* Main Reviews Widget Section */}
       <section className="py-12 bg-gradient-to-br from-white to-gray-50">
@@ -130,6 +120,56 @@ export default function Reviews() {
           </motion.div>
         </div>
       </section>
+
+
+      {/* ===== Bold Modern Stats Section ===== */}
+<section className="relative py-20 bg-[#0F1F17] overflow-hidden">
+  {/* background accents */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#4F6F52]/20 via-transparent to-transparent" />
+  <div className="absolute -top-32 -right-32 w-[28rem] h-[28rem] bg-[#4F6F52]/30 rounded-full blur-[140px]" />
+
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+    >
+      {stats.map((stat, index) => (
+        <motion.div
+          key={stat.label}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.12 }}
+          whileHover={{ y: -8 }}
+          className="relative p-8 rounded-3xl border border-white/10 
+                     bg-white/5 backdrop-blur-sm 
+                     hover:bg-white/10 transition-all duration-300"
+        >
+          {/* Accent bar */}
+          <span className="absolute top-0 left-8 right-8 h-[2px] 
+                           bg-gradient-to-r from-transparent via-[#8BC4A4] to-transparent" />
+
+          {/* Icon */}
+          <div className="mb-6 text-[#8BC4A4] text-2xl">
+            {stat.icon}
+          </div>
+
+          {/* Number */}
+          <div className="text-4xl font-extrabold text-white mb-2">
+            {stat.number}
+          </div>
+
+          {/* Label */}
+          <div className="text-sm uppercase tracking-widest text-white/70">
+            {stat.label}
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="py-20">
