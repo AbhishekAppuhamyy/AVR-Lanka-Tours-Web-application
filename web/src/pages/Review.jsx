@@ -44,35 +44,37 @@ export default function Reviews() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 ">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* ===== REVIEWS HERO ===== */}
-      <section className="relative py-24 sm:py-28 lg:py-36 overflow-hidden ">
+      <section className="relative py-16 sm:py-24 lg:py-36 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
             src="/assets/destinations-pics/sigiriya.jpg"
             alt="Sri Lanka Traveler Reviews"
             className="w-full h-full object-cover"
-            style={{ objectPosition: "40% 22%" }}
+            style={{
+              objectPosition: "center 24% ", // safer on mobile
+            }}
           />
 
-          {/* Dark overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/45 to-black/70" />
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/75" />
         </div>
 
-        {/* Subtle texture overlay */}
+        {/* Subtle texture */}
         <div
-          className="absolute inset-0 opacity-[0.06]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
+            backgroundSize: "32px 32px",
           }}
         />
 
         {/* Content */}
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 text-center text-white">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
@@ -81,69 +83,107 @@ export default function Reviews() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-block mb-6 text-xs tracking-[0.3em] uppercase 
-                   text-white/80 font-semibold"
+              className="inline-block mb-2 sm:mb-4 text-[11px] sm:text-xs tracking-[0.28em] uppercase 
+                     text-white/80 font-semibold mt-20"
             >
               Traveler Reviews
             </motion.span>
 
             {/* Heading */}
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold 
-                     leading-tight mb-6"
+              className="text-3xl sm:text-5xl lg:text-6xl 
+                     font-serif font-bold leading-tight sm:leading-tight 
+                     mt-2"
             >
               Journeys remembered.
-              <br />
+              <br className="hidden sm:block" />
               <span
                 className="text-transparent bg-clip-text bg-gradient-to-r 
-                         from-[#E8F5E9] to-[#C8E6C9]"
+                       from-[#E8F5E9] to-[#C8E6C9]"
               >
                 Stories shared.
               </span>
             </h1>
-
-            {/* Divider */}
-            <div className="w-16 h-[2px] bg-[#E8F5E9] mx-auto mb-6 rounded-full" />
-
-            {/* Description */}
-            <p
-              className="text-lg sm:text-xl text-white/90 leading-relaxed 
-                    max-w-2xl mx-auto"
-            >
-              Thoughtful reflections from travelers who explored Sri Lanka with
-              us — authentic stories, honest moments, unforgettable journeys.
-            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Main Reviews Widget Section */}
-      <section className="py-12 bg-gradient-to-br from-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ================= TRAVELER VIEWS ================= */}
+      <section
+        className="relative py-12 sm:py-16 lg:py-20 
+                    bg-gradient-to-br from-[#f7faf7] via-white to-[#eef5f0] 
+                    overflow-hidden"
+      >
+        {/* Soft background accents (extra small on mobile) */}
+        <div
+          className="absolute -top-24 -left-24 
+                  w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 
+                  bg-[#4F6F52]/10 rounded-full blur-3xl"
+        />
+        <div
+          className="absolute -bottom-24 -right-24 
+                  w-56 h-56 sm:w-80 sm:h-80 lg:w-96 lg:h-96 
+                  bg-[#4F6F52]/10 rounded-full blur-3xl"
+        />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="relative"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            {/* Background Decoration */}
-            <div className="absolute -inset-4 bg-white/50 rounded-3xl blur-xl"></div>
+            {/* Glass Card */}
+            <div
+              className="bg-white/85 backdrop-blur-xl 
+                      rounded-2xl sm:rounded-3xl 
+                      border border-white/60 
+                      p-5 sm:p-8 lg:p-12"
+            >
+              {/* Header */}
+              <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10">
+                <span
+                  className="inline-block text-[11px] sm:text-sm 
+                           font-semibold tracking-widest 
+                           text-[#4F6F52] uppercase mb-2"
+                >
+                  Real Experiences
+                </span>
 
-            {/* Widget Container */}
-            <div className="relative bg-white rounded-3xl shadow-2xl shadow-[#4F6F52]/10 border border-gray-100 p-8">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-2">
-                  More Traveler Reviews
+                <h3
+                  className="text-2xl sm:text-3xl lg:text-4xl 
+                         font-extrabold text-gray-900 
+                         leading-tight sm:leading-snug mb-3"
+                >
+                  Traveler Views
                 </h3>
-                <p className="text-gray-600">
-                  See what hundreds of other travelers are saying about their
-                  experiences
+
+                <p
+                  className="text-sm sm:text-base lg:text-lg 
+                        text-gray-600 leading-relaxed 
+                        px-1 sm:px-0 text-balance"
+                >
+                  Honest stories, real moments, and unforgettable journeys
+                  shared by travelers who explored Sri Lanka with us.
                 </p>
+
+                {/* Accent line */}
+                <div className="mt-4 sm:mt-6 flex justify-center">
+                  <div
+                    className="w-14 sm:w-20 h-[3px] rounded-full 
+                            bg-gradient-to-r from-[#4F6F52] to-[#88a98c]"
+                  />
+                </div>
               </div>
 
+              {/* Reviews Widget */}
               <div className="flex justify-center">
                 <div
-                  className="elfsight-app-2e49e47f-c2dc-4c48-83d7-3d01918e04e8 w-full min-h-[400px]"
+                  className="elfsight-app-2e49e47f-c2dc-4c48-83d7-3d01918e04e8 
+                       w-full 
+                       min-h-[320px] sm:min-h-[380px] lg:min-h-[420px]
+                       rounded-xl sm:rounded-2xl 
+                       "
                   data-elfsight-app-lazy
                 ></div>
               </div>
@@ -152,54 +192,7 @@ export default function Reviews() {
         </div>
       </section>
 
-      {/* ===== Bold Modern Stats Section ===== */}
-      <section className="relative py-20 bg-[#0F1F17] overflow-hidden">
-        {/* background accents */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#4F6F52]/20 via-transparent to-transparent" />
-        <div className="absolute -top-32 -right-32 w-[28rem] h-[28rem] bg-[#4F6F52]/30 rounded-full blur-[140px]" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.12 }}
-                whileHover={{ y: -8 }}
-                className="relative p-8 rounded-3xl border border-white/10 
-                     bg-white/5 backdrop-blur-sm 
-                     hover:bg-white/10 transition-all duration-300"
-              >
-                {/* Accent bar */}
-                <span
-                  className="absolute top-0 left-8 right-8 h-[2px] 
-                           bg-gradient-to-r from-transparent via-[#8BC4A4] to-transparent"
-                />
-
-                {/* Icon */}
-                <div className="mb-6 text-[#8BC4A4] text-2xl">{stat.icon}</div>
-
-                {/* Number */}
-                <div className="text-4xl font-extrabold text-white mb-2">
-                  {stat.number}
-                </div>
-
-                {/* Label */}
-                <div className="text-sm uppercase tracking-widest text-white/70">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      
 
       {/* CTA Section */}
       <section className="py-20">
@@ -298,6 +291,55 @@ export default function Reviews() {
                 </motion.a>
               </div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ===== Bold Modern Stats Section ===== */}
+      <section className="relative py-20 bg-[#0F1F17] overflow-hidden">
+        {/* background accents */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#4F6F52]/20 via-transparent to-transparent" />
+        <div className="absolute -top-32 -right-32 w-[28rem] h-[28rem] bg-[#4F6F52]/30 rounded-full blur-[140px]" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.12 }}
+                whileHover={{ y: -8 }}
+                className="relative p-8 rounded-3xl border border-white/10 
+                     bg-white/5 backdrop-blur-sm 
+                     hover:bg-white/10 transition-all duration-300"
+              >
+                {/* Accent bar */}
+                <span
+                  className="absolute top-0 left-8 right-8 h-[2px] 
+                           bg-gradient-to-r from-transparent via-[#8BC4A4] to-transparent"
+                />
+
+                {/* Icon */}
+                <div className="mb-6 text-[#8BC4A4] text-2xl">{stat.icon}</div>
+
+                {/* Number */}
+                <div className="text-4xl font-extrabold text-white mb-2">
+                  {stat.number}
+                </div>
+
+                {/* Label */}
+                <div className="text-sm uppercase tracking-widest text-white/70">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
