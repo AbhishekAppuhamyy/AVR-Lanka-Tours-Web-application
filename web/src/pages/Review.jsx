@@ -110,9 +110,9 @@ export default function Reviews() {
 
       {/* ================= TRAVELER VIEWS ================= */}
       <section
-        className="relative py-12 sm:py-16 lg:py-20 
+        className="relative py-6 sm:py-6  
                     bg-gradient-to-br from-[#f7faf7] via-white to-[#eef5f0] 
-                    overflow-hidden"
+                    overflow-hidden "
       >
         {/* Soft background accents (extra small on mobile) */}
         <div
@@ -192,40 +192,51 @@ export default function Reviews() {
         </div>
       </section>
 
-      
-
-      {/* CTA Section */}
-      <section className="py-20">
+      {/* ================= CTA SECTION ================= */}
+      <section className="py-10 sm:py-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="relative bg-gradient-to-r from-[#4F6F52] to-[#5A7D5A] rounded-3xl shadow-2xl overflow-hidden"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative bg-gradient-to-r from-[#4F6F52] to-[#5A7D5A] 
+                 rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden"
           >
             {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
               <div
                 className="absolute inset-0"
                 style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
                 }}
-              ></div>
+              />
             </div>
 
-            {/* Animated Background Elements */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12"></div>
+            {/* Soft blobs (smaller on mobile) */}
+            <div
+              className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 
+                      bg-white/10 rounded-full -translate-y-12 translate-x-12"
+            />
+            <div
+              className="absolute bottom-0 left-0 w-20 h-20 sm:w-24 sm:h-24 
+                      bg-white/5 rounded-full translate-y-10 -translate-x-10"
+            />
 
-            <div className="relative py-16 px-8 text-center">
+            {/* Content */}
+            <div className="relative px-5 sm:px-8 py-12 sm:py-16 text-center">
+              {/* Icon */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-2xl backdrop-blur-sm mb-6"
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 }}
+                className="mx-auto w-16 h-16 sm:w-20 sm:h-20 
+                     bg-white/20 rounded-2xl backdrop-blur-sm 
+                     flex items-center justify-center mb-5 sm:mb-6"
               >
                 <svg
-                  className="w-10 h-10 text-white"
+                  className="w-8 h-8 sm:w-10 sm:h-10 text-white"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -233,28 +244,47 @@ export default function Reviews() {
                 </svg>
               </motion.div>
 
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              {/* Heading */}
+              <h2
+                className="text-2xl sm:text-3xl lg:text-4xl 
+                       font-extrabold text-white 
+                       leading-tight mb-3 sm:mb-4"
+              >
                 Share Your Sri Lankan Journey
               </h2>
 
-              <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+              {/* Description */}
+              <p
+                className="text-white/90 text-sm sm:text-base lg:text-lg 
+                      max-w-2xl mx-auto leading-relaxed mb-6 sm:mb-8 px-1"
+              >
                 Loved your adventure with AVR Lanka Tours? Your story could
                 inspire the next traveler to discover the magic of Sri Lanka.
                 Share your experience and help others plan their perfect trip.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              {/* Buttons */}
+              <div
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 
+                        justify-center items-stretch sm:items-center"
+              >
                 <motion.a
                   href="https://g.page/YOUR_GOOGLE_BUSINESS_REVIEW_LINK/review"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group bg-white text-[#4F6F52] px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:shadow-2xl shadow-lg inline-flex items-center gap-3"
+                  className="w-full sm:w-auto 
+                       bg-white text-[#4F6F52] 
+                       px-6 sm:px-8 py-4 
+                       rounded-2xl font-semibold 
+                       shadow-lg hover:shadow-2xl 
+                       transition-all inline-flex 
+                       items-center justify-center gap-3"
                 >
                   <span>Share Your Review</span>
                   <svg
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                    className="w-5 h-5 transition-transform group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -264,28 +294,6 @@ export default function Reviews() {
                       strokeLinejoin="round"
                       strokeWidth={2}
                       d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </motion.a>
-
-                <motion.a
-                  href="/contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group text-white/90 px-6 py-4 rounded-2xl font-medium transition-all duration-300 hover:text-white hover:bg-white/10 inline-flex items-center gap-2 border border-white/30"
-                >
-                  <span>Start Your Adventure</span>
-                  <svg
-                    className="w-4 h-4 group-hover:translate-y-0.5 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
                     />
                   </svg>
                 </motion.a>
