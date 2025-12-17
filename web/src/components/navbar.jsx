@@ -77,8 +77,8 @@ export default function Navbar() {
           <Link
             to="/ContactUs"
             className="ml-2 px-5 py-2 rounded-xl text-sm font-semibold
-            bg-[#4F6F52] text-white
-            hover:bg-[#3b5540]
+             bg-[#3b5540] text-white
+            hover:bg-[#4F6F52]
             hover:scale-105
             transition-all shadow-lg"
           >

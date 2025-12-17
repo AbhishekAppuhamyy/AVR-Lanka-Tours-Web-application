@@ -1,102 +1,146 @@
 import { motion } from "framer-motion";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
-  const iconHover = { scale: 1.3, color: "#D2E3C8" };
-  const linkHover = { scale: 1.05, color: "#D2E3C8", textDecoration: "underline" };
-
   return (
-    <footer className="bg-gradient-to-tr from-[#2c3e2b] to-[#4f6f52] text-white mt- relative z-10">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-12">
+    <footer className="relative mt-32 overflow-hidden">
+      {/* ===== BACKGROUND LAYERS ===== */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0f1a17] via-[#14221e] to-[#0b1411]" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#4F6F52]/20 blur-3xl rounded-full" />
 
-        {/* Brand & Tagline */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-3"
-        >
-          <h2 className="text-3xl font-extrabold text-[#D2E3C8]">AVR Lanka Tours</h2>
-          <p className="text-[#D2E3C8] italic">Best Journeys, Not Just Trips!</p>
-          <p className="text-[#D2E3C8]">More Than a Destination, It’s an Experience</p>
-        </motion.div>
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 py-20">
+        {/* ===== TOP GRID ===== */}
+        <div className="grid gap-16 lg:grid-cols-12 text-center lg:text-left">
 
-        {/* Contact Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="space-y-3"
-        >
-          <h3 className="text-lg font-semibold text-[#D2E3C8]">Contact Us</h3>
-          <p>
-            Phone: <a href="tel:+94773344167" className="underline hover:text-[#86A789] transition">+94 077 334 4167</a>
-          </p>
-          <p>
-            Email: <a href="mailto:avrtourss@gmail.com" className="underline hover:text-[#86A789] transition">avrtourss@gmail.com</a>
-          </p>
-          <p>Location: Colombo, Sri Lanka</p>
-        </motion.div>
+          {/* ===== BRAND ===== */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5 space-y-5"
+          >
+            <h2
+              className="text-3xl sm:text-4xl font-bold tracking-tight
+              bg-gradient-to-r from-[#86a789] via-white to-[#b6c9b8]
+              bg-clip-text text-transparent"
+            >
+              AVR Lanka Tours
+            </h2>
 
-        {/* Socials & Quick Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="space-y-6"
-        >
-          {/* Socials */}
-          <div>
-            <h3 className="text-lg font-semibold text-[#D2E3C8]">Follow Us</h3>
-            <div className="flex space-x-4 mt-2">
-              {[FaFacebookF, FaInstagram, FaTwitter].map((Icon, idx) => (
+            <p className="text-white/70 max-w-md mx-auto lg:mx-0">
+              Curated journeys across Sri Lanka — crafted for comfort,
+              culture, and unforgettable memories.
+            </p>
+
+            {/* SOCIALS */}
+            <div className="flex justify-center lg:justify-start gap-4 pt-4">
+              {[FaFacebookF, FaInstagram, FaTiktok].map((Icon, i) => (
                 <motion.a
-                  key={idx}
-                  whileHover={iconHover}
+                  key={i}
+                  whileHover={{ y: -4, scale: 1.1 }}
                   href="#"
-                  className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-[#D2E3C8] shadow-lg transition"
+                  className="w-12 h-12 flex items-center justify-center
+                  rounded-full bg-white/5 hover:bg-[#4F6F52]
+                  text-white backdrop-blur-md
+                  border border-white/10 shadow-lg transition"
                 >
-                  <Icon className="text-xl" />
+                  <Icon className="text-lg" />
                 </motion.a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold text-[#D2E3C8]">Quick Links</h3>
-            <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-2 sm:space-y-0 mt-2">
-              {["Home", "Packages", "Destinations", "Contact"].map((link) => (
-                <motion.a
-                  key={link}
-                  whileHover={linkHover}
-                  href={link === "Home" ? "/" : `/${link.toLowerCase()}`}
-                  className="text-[#D2E3C8] font-medium transition"
-                >
-                  {link}
-                </motion.a>
+          {/* ===== LINKS ===== */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-3 space-y-4"
+          >
+            <h3 className="text-white font-semibold text-lg">Explore</h3>
+
+            <ul className="space-y-3 text-white/65 text-sm">
+              {[
+                { name: "Home", path: "/" },
+                { name: "Packages", path: "/packages" },
+                { name: "Destinations", path: "/destinations" },
+                { name: "Reviews", path: "/review" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.path}
+                    className="hover:text-white transition"
+                  >
+                    {link.name}
+                  </a>
+                </li>
               ))}
+            </ul>
+          </motion.div>
+
+          {/* ===== CONTACT ===== */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-4 space-y-4"
+          >
+            <h3 className="text-white font-semibold text-lg">
+              Get in Touch
+            </h3>
+
+            <div className="space-y-3 text-white/65 text-sm">
+              <p>
+                📍 Colombo, Sri Lanka
+              </p>
+
+              <p>
+                📞{" "}
+                <a
+                  href="tel:+94773344167"
+                  className="hover:text-white transition"
+                >
+                  +94 077 334 4167
+                </a>
+              </p>
+
+              <p>
+                ✉️{" "}
+                <a
+                  href="mailto:avrtourss@gmail.com"
+                  className="hover:text-white transition"
+                >
+                  avrtourss@gmail.com
+                </a>
+              </p>
             </div>
-          </div>
-        </motion.div>
+
+            {/* CTA BUTTON */}
+            <a
+              href="/ContactUs"
+              className="inline-block mt-4 px-6 py-3 rounded-xl
+              bg-[#4F6F52] hover:bg-[#3b5540]
+              text-white font-semibold text-sm
+              transition shadow-lg"
+            >
+              Plan Your Trip
+            </a>
+          </motion.div>
+        </div>
+
+        {/* ===== BOTTOM BAR ===== */}
+        <div className="mt-20 pt-6 border-t border-white/10
+        flex flex-col sm:flex-row gap-4 items-center justify-center text-xs text-white/50">
+          <span>
+            © {new Date().getFullYear()} AVR Lanka Tours. All rights reserved.
+          </span>
+
+          
+        </div>
       </div>
-
-      {/* Divider */}
-      <div className="border-t border-white/20 mt-12"></div>
-
-      {/* Copyright */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
-        className="mt-6 text-center text-sm text-[#D2E3C8] "
-      >
-        &copy; {new Date().getFullYear()} AVR Lanka Tours. All rights reserved.
-      </motion.div>
     </footer>
   );
 }
