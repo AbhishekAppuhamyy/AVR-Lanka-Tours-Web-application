@@ -21,7 +21,7 @@ export default function Contact() {
       </div>
 
       {/* ================= HERO ================= */}
-      <section className="mt-40 flex items-center justify-center px-4">
+      <section className="mt-[110px] sm:mt-28 lg:mt-40 flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
