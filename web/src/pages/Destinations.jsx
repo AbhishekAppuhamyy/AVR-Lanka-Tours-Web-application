@@ -548,7 +548,7 @@ export default function Destinations() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <Link
-              to="/contact"
+              to="https://wa.me/message/3MPU2NAFVVW6I1"
               className="bg-white text-[#4F6F52] px-6 py-3 rounded-xl font-semibold text-base hover:scale-105 shadow-lg transition-all"
             >
               Start Your Journey

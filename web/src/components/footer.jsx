@@ -35,20 +35,36 @@ export default function Footer() {
 
             {/* SOCIALS */}
             <div className="flex justify-center lg:justify-start gap-4 pt-4">
-              {[FaFacebookF, FaInstagram, FaTiktok].map((Icon, i) => (
-                <motion.a
-                  key={i}
-                  whileHover={{ y: -4, scale: 1.1 }}
-                  href="#"
-                  className="w-12 h-12 flex items-center justify-center
-                  rounded-full bg-white/5 hover:bg-[#4F6F52]
-                  text-white backdrop-blur-md
-                  border border-white/10 shadow-lg transition"
-                >
-                  <Icon className="text-lg" />
-                </motion.a>
-              ))}
-            </div>
+  {[
+    {
+      icon: FaFacebookF,
+      link: "https://web.facebook.com/profile.php?id=61585105842155&sk=friends",
+    },
+    {
+      icon: FaInstagram,
+      link: "https://www.instagram.com/avrlankatours",
+    },
+    {
+      icon: FaTiktok,
+      link: "https://www.tiktok.com/@avrlankatourss",
+    },
+  ].map(({ icon: Icon, link }, i) => (
+    <motion.a
+      key={i}
+      whileHover={{ y: -4, scale: 1.1 }}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-12 h-12 flex items-center justify-center
+                 rounded-full bg-white/5 hover:bg-[#4F6F52]
+                 text-white backdrop-blur-md
+                 border border-white/10 shadow-lg transition"
+    >
+      <Icon className="text-lg" />
+    </motion.a>
+  ))}
+</div>
+
           </motion.div>
 
           {/* ===== LINKS ===== */}

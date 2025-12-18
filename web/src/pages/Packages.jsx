@@ -170,7 +170,7 @@ export default function Packages() {
                     </Link>
 
                     <Link
-                      to="/contact"
+                      to="/contactus"
                       className="flex-1 border border-[#4F6F52] text-[#4F6F52] py-2 rounded-xl text-center text-sm font-semibold hover:bg-[#4F6F52] hover:text-white transition"
                     >
                       Book Now
@@ -203,7 +203,7 @@ export default function Packages() {
             </p>
 
             <Link
-              to="/contact"
+              to="https://wa.me/message/3MPU2NAFVVW6I1"
               className="inline-flex items-center justify-center
                    w-full sm:w-auto
                    bg-white text-[#4F6F52]

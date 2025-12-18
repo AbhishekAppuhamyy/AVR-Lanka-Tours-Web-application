@@ -36,7 +36,8 @@ export default function Contact() {
           </h1>
 
           <p className="text-base sm:text-xl text-white/85 max-w-2xl mx-auto">
-            Let’s plan your perfect Sri Lankan journey — authentic, curated, and unforgettable.
+            Let’s plan your perfect Sri Lankan journey — authentic, curated, and
+            unforgettable.
           </p>
         </motion.div>
       </section>
@@ -61,15 +62,18 @@ export default function Contact() {
                 Get in Touch With Us
               </h2>
               <p className="text-sm sm:text-base text-white/75 mt-3 max-w-2xl mx-auto">
-                Custom tours, bookings, or travel advice — our team is ready to assist you anytime.
+                Custom tours, bookings, or travel advice — our team is ready to
+                assist you anytime.
               </p>
             </div>
 
             {/* Contact Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {/* Phone */}
-              <div className="flex items-center gap-4 p-5 sm:p-6 rounded-2xl
-                              bg-white/5 border border-white/10">
+              <div
+                className="flex items-center gap-4 p-5 sm:p-6 rounded-2xl
+                              bg-white/5 border border-white/10"
+              >
                 <FaPhoneAlt className="text-2xl text-brand shrink-0" />
                 <div>
                   <p className="text-xs sm:text-sm text-white/60">Phone</p>
@@ -80,25 +84,35 @@ export default function Contact() {
               </div>
 
               {/* Email */}
-              <div className="flex items-center gap-4 p-5 sm:p-6 rounded-2xl
-                              bg-white/5 border border-white/10">
+           
+              <div
+                className="flex items-center gap-4 p-5 sm:p-6 rounded-2xl
+             bg-white/5 border border-white/10"
+              >
                 <FaEnvelope className="text-2xl text-brand shrink-0" />
-                <div className="break-all">
-                  <p className="text-xs sm:text-sm text-white/60">Email</p>
-                  <p className="font-semibold text-sm sm:text-base text-white">
-                    avrtourss@gmail.com
+
+                <div className="w-full">
+                  <p className="text-xs text-white/60">Email</p>
+
+                  <p
+                    className="font-semibold text-sm sm:text-base text-white
+                 break-all sm:break-normal sm:whitespace-nowrap"
+                  >
+                    avrlankatours@gmail.com
                   </p>
                 </div>
               </div>
 
               {/* Location */}
-              <div className="flex items-center gap-4 p-5 sm:p-6 rounded-2xl
-                              bg-white/5 border border-white/10">
+              <div
+                className="flex items-center gap-4 p-5 sm:p-6 rounded-2xl
+                              bg-white/5 border border-white/10"
+              >
                 <FaMapMarkerAlt className="text-2xl text-brand shrink-0" />
                 <div>
                   <p className="text-xs sm:text-sm text-white/60">Location</p>
                   <p className="font-semibold text-sm sm:text-base text-white">
-                    Colombo, Sri Lanka
+                    Negombo, Sri Lanka
                   </p>
                 </div>
               </div>
@@ -107,7 +121,7 @@ export default function Contact() {
             {/* CTA Buttons */}
             <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/94773344167"
+                href="https://wa.me/message/3MPU2NAFVVW6I1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2
