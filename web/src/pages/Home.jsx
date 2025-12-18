@@ -123,18 +123,33 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="space-y-5 sm:space-y-8"
           >
+            {/* Logo */}
+            <div className="flex justify-center mb-4 sm:mb-6">
+              <div
+                className="flex items-center justify-center
+                  h-12 sm:h-16 lg:h-25
+                  px-4 sm:px-6
+                  rounded-xl
+                  ">
+                {/* Replace with your logo */}
+                <img
+                  src="/assets/AVRLogo.png"
+                  alt="AVR Logo"
+                  className="h-[54px] sm:h-[70px] lg:h-[80px] object-contain"
+                />
+              </div>
+            </div>
             {/* Title */}
-            <h1 className="text-2xl sm:text-5xl lg:text-6xl font-bold leading-snug sm:leading-tight mt-10">
-              Discover The{" "}
+            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold leading-snug sm:leading-tight mt-10">
+              An Island of{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8F5E9] to-[#C8E6C9]">
-                Pearl of the Indian Ocean
+                Endless Wonders to Explore
               </span>
             </h1>
 
             {/* Description */}
             <p className="text-sm sm:text-lg text-white/90 max-w-xl sm:max-w-2xl mx-auto">
-              From sun-kissed beaches to misty highlands, ancient cities to
-              wildlife adventures — experience Sri Lanka like never before.
+              From beaches to highlands, history to wildlife, discover Sri Lanka
             </p>
 
             {/* Buttons */}

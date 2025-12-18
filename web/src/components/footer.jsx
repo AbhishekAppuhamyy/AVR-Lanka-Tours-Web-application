@@ -94,7 +94,7 @@ export default function Footer() {
 
             <div className="space-y-3 text-white/65 text-sm">
               <p>
-                📍 Colombo, Sri Lanka
+                📍 Negombo, Sri Lanka
               </p>
 
               <p>
@@ -113,7 +113,7 @@ export default function Footer() {
                   href="mailto:avrtourss@gmail.com"
                   className="hover:text-white transition"
                 >
-                  avrtourss@gmail.com
+                  avrlankatours@gmail.com
                 </a>
               </p>
             </div>
