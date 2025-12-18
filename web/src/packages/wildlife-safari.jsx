@@ -66,7 +66,7 @@ export default function WildlifeSafariAdventure() {
           </p>
 
           <Link
-            to="/contact"
+            to="/contactus"
             className="mx-auto sm:mx-0 bg-[#4F6F52] w-fit px-7 py-3 rounded-xl font-semibold hover:scale-105 transition"
           >
             Plan Your Safari
@@ -303,7 +303,7 @@ export default function WildlifeSafariAdventure() {
           </p>
 
           <Link
-            to="/contact"
+            to="/contactus"
             className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-[#4F6F52] px-8 py-4 rounded-xl font-semibold shadow-md hover:scale-105"
           >
             Customize My Trip
