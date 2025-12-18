@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   FaMapMarkedAlt,
@@ -9,9 +10,23 @@ import {
   FaHeart,
   FaShieldAlt,
   FaShuttleVan,
+  FaStar,
+  FaRoute,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 export default function Home() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const features = [
     {
       icon: <FaMapMarkedAlt />,
@@ -50,174 +65,315 @@ export default function Home() {
     },
   ];
 
-  const popularTours = [
+  const homePackages = [
     {
-      title: "Cultural Triangle Tour",
-      image:
-        "https://images.unsplash.com/photo-1602934585418-8ec9b8b3d08f?auto=format&fit=crop&w=800&q=80",
-      duration: "6 Days",
-      price: "From LKR 85,000",
-      highlights: ["Sigiriya", "Dambulla", "Ancient Cities"],
+      name: "Cultural Triangle Tour",
+      image: "/assets/packages-pic/cultural.webp",
+      duration: "6 Days / 5 Nights",
+      description:
+        "Explore ancient wonders like Sigiriya, Dambulla, and Kandy while experiencing Sri Lanka’s rich heritage.",
+      highlights: ["Sigiriya", "Dambulla", "Kandy"],
+      link: "/packages/Cultural-triangle",
     },
     {
-      title: "Hill Country Escape",
-      image:
-        "https://images.unsplash.com/photo-1577968897966-3d62df5f4953?auto=format&fit=crop&w=800&q=80",
-      duration: "5 Days",
-      price: "From LKR 72,000",
-      highlights: ["Tea Plantations", "Ella", "Waterfalls"],
+      name: "Hill Country Escape",
+      image: "/assets/packages-pic/hill.jpg",
+      duration: "5 Days / 4 Nights",
+      description:
+        "Misty mountains, tea plantations, waterfalls, and scenic train rides.",
+      highlights: ["Ella", "Tea Estates", "Waterfalls"],
+      link: "/packages/hill-country",
     },
     {
-      title: "Southern Beach Getaway",
-      image:
-        "https://images.unsplash.com/photo-1540206352-093d6281c5d3?auto=format&fit=crop&w=800&q=80",
-      duration: "4 Days",
-      price: "From LKR 65,000",
-      highlights: ["Mirissa", "Galle", "Whale Watching"],
+      name: "Southern Beach Getaway",
+      image: "/assets/packages-pic/beach.webp",
+      duration: "4 Days / 3 Nights",
+      description:
+        "Golden beaches, whale watching, and colonial charm in Galle.",
+      highlights: ["Mirissa", "Galle", "Beaches"],
+      link: "/packages/southern-beach",
     },
-  ];
-
-  const stats = [
-    { number: "2K+", label: "Happy Travelers" },
-    { number: "50+", label: "Destinations" },
-    { number: "4.9★", label: "Customer Rating" },
-    { number: "15+", label: "Years Experience" },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       {/* HERO SECTION */}
       <section className="relative min-h-[100svh] sm:min-h-screen flex items-center justify-center overflow-hidden">
-  
-  {/* Background Video */}
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    preload="none"
-    className="absolute inset-0 w-full h-full object-cover"
-    poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
-  >
-    <source src="/assets/beach.mp4" type="video/mp4" />
-  </video>
-
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
-
-  {/* Content */}
-  <div className="relative max-w-6xl mx-auto px-4 sm:px-6 text-center text-white">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="space-y-5 sm:space-y-8"
-    >
-      {/* Title */}
-      <h1 className="text-2xl sm:text-5xl lg:text-6xl font-bold leading-snug sm:leading-tight mt-10">
-        Discover The{" "}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8F5E9] to-[#C8E6C9]">
-          Pearl of the Indian Ocean
-        </span>
-      </h1>
-
-      {/* Description */}
-      <p className="text-sm sm:text-lg text-white/90 max-w-xl sm:max-w-2xl mx-auto">
-        From sun-kissed beaches to misty highlands, ancient cities to wildlife
-        adventures — experience Sri Lanka like never before.
-      </p>
-
-      {/* Buttons */}
-      <div className="flex justify-center gap-3 pt-3 sm:pt-4">
-        <Link
-          to="/tours"
-          className="flex items-center gap-2
-            bg-white text-[#4F6F52]
-            px-5 py-2.5 sm:px-6 sm:py-3
-            rounded-full font-semibold
-            text-sm sm:text-lg shadow-lg"
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
         >
-          Tours
-        </Link>
+          <source src="/assets/beach.mp4" type="video/mp4" />
+        </video>
 
-        <Link
-          to="/destinations"
-          className="flex items-center gap-2
-            border border-white/40 text-white
-            px-5 py-2.5 sm:px-6 sm:py-3
-            rounded-full text-sm sm:text-lg"
-        >
-          Destinations
-        </Link>
-      </div>
-    </motion.div>
-  </div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
 
-  {/* Scroll Indicator */}
-  {/* Scroll Indicator */}
-<div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center">
-  <div className="relative flex items-center justify-center w-9 h-14 rounded-full
-                  border border-white/40 bg-white/10 backdrop-blur-md">
-
-    {/* Inner moving dot */}
-    <motion.div
-      animate={{ y: [0, 14, 0], opacity: [1, 0.4, 1] }}
-      transition={{ repeat: Infinity, duration: 1.4, ease: "easeInOut" }}
-      className="w-1.5 h-1.5 rounded-full bg-[#C8E6C9]"
-    />
-  </div>
-
-  <motion.span
-    animate={{ opacity: [0.6, 1, 0.6] }}
-    transition={{ repeat: Infinity, duration: 1.6 }}
-    className="mt-2 text-[11px] font-semibold tracking-widest text-[#E8F5E9]"
-  >
-    SCROLL
-  </motion.span>
-</div>
-
-</section>
-
-
-      {/* FEATURES SECTION */}
-      <section className="py-16 sm:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        {/* Content */}
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 text-center text-white">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12 sm:mb-16"
+            className="space-y-5 sm:space-y-8"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              Why Choose <span className="text-[#4F6F52]">AVR Lanka Tours</span>
-              ?
-            </h2>
-            <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-              We combine local expertise with personalized service to create
-              unforgettable Sri Lankan adventures.
-            </p>
-          </motion.div>
+            {/* Title */}
+            <h1 className="text-2xl sm:text-5xl lg:text-6xl font-bold leading-snug sm:leading-tight mt-10">
+              Discover The{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8F5E9] to-[#C8E6C9]">
+                Pearl of the Indian Ocean
+              </span>
+            </h1>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {features.map((f, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -6 }}
-                className="bg-white rounded-3xl p-6 shadow-md hover:shadow-xl transition-all"
+            {/* Description */}
+            <p className="text-sm sm:text-lg text-white/90 max-w-xl sm:max-w-2xl mx-auto">
+              From sun-kissed beaches to misty highlands, ancient cities to
+              wildlife adventures — experience Sri Lanka like never before.
+            </p>
+
+            {/* Buttons */}
+            <div className="flex justify-center gap-3 pt-3 sm:pt-4">
+              <Link
+                to="/tours"
+                className="flex items-center gap-2
+             bg-white text-[#4F6F52]
+             px-5 py-2.5 sm:px-6 sm:py-3
+             rounded-full font-semibold
+             text-sm sm:text-lg shadow-lg"
               >
-                <div className="text-[#4F6F52] text-3xl mb-4">{f.icon}</div>
-                <h3 className="font-bold text-lg mb-2">{f.title}</h3>
-                <p className="text-gray-600 text-sm">{f.description}</p>
-              </motion.div>
-            ))}
+                <FaRoute className="text-base sm:text-lg" />
+                Tours
+              </Link>
+
+              <Link
+                to="/destinations"
+                className="flex items-center gap-2
+             border border-white/40 text-white
+             px-5 py-2.5 sm:px-6 sm:py-3
+             rounded-full text-sm sm:text-lg"
+              >
+                <FaMapMarkerAlt className="text-base sm:text-lg" />
+                Destinations
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center">
+          <div
+            className="relative flex items-center justify-center w-9 h-14 rounded-full
+                  border border-white/40 bg-white/10 backdrop-blur-md"
+          >
+            {/* Inner moving dot */}
+            <motion.div
+              animate={{ y: [0, 14, 0], opacity: [1, 0.4, 1] }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.4,
+                ease: "easeInOut",
+              }}
+              className="w-1.5 h-1.5 rounded-full bg-[#C8E6C9]"
+            />
           </div>
+
+          <motion.span
+            animate={{ opacity: [0.6, 1, 0.6] }}
+            transition={{ repeat: Infinity, duration: 1.6 }}
+            className="mt-2 text-[11px] font-semibold tracking-widest text-[#E8F5E9]"
+          >
+            SCROLL
+          </motion.span>
         </div>
       </section>
 
-      {/* POPULAR TOURS SECTION */}
+      {/* ================= FEATURES SECTION ================= */}
+      <section className="py-12 sm:py-[47px] bg-gradient-to-b from-white to-gray-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          {/* ================= HEADER ================= */}
+          <div className="relative mb-12 sm:mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-end">
+              {/* LEFT — TITLE */}
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                <div className="mb-3 w-14 h-[3px] bg-gradient-to-r from-[#4F6F52] to-[#88a98c] rounded-full" />
+
+                <span className="block text-[#4F6F52] text-xs sm:text-sm font-semibold uppercase tracking-widest mb-3">
+                  Our Expertise
+                </span>
+
+                <h2 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-gray-900 leading-tight">
+                  Redefining
+                  <span className="block text-[#4F6F52] mt-1 sm:mt-2">
+                    Travel in
+                  </span>
+                  <span className="block mt-1 sm:mt-2">Sri Lanka</span>
+                </h2>
+              </motion.div>
+
+              {/* RIGHT — DESCRIPTION */}
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="relative mt-6 lg:mt-0 lg:pl-12"
+              >
+                <div className="hidden lg:block absolute left-0 top-2 bottom-2 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
+
+                <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6 max-w-xl">
+                  We blend traditional Sri Lankan hospitality with modern
+                  innovation to create journeys that feel authentic, personal,
+                  and unforgettable.
+                </p>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-[2px] bg-[#4F6F52]" />
+                  <span className="text-sm text-gray-500 tracking-wide">
+                    Established 2015
+                  </span>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* ================= FEATURES GRID ================= */}
+          <div className="relative mb-10">
+            <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
+
+            <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {features.map((f, i) => {
+                const isLarge = i === 1 || i === 4;
+
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: i * 0.12,
+                      type: "spring",
+                      stiffness: 100,
+                    }}
+                    viewport={{ once: true }}
+                    className={`relative ${
+                      isLarge ? "sm:col-span-2 lg:col-span-1" : ""
+                    }
+                lg:${i % 2 === 0 ? "-translate-y-6" : "translate-y-6"}`}
+                  >
+                    <div className="group h-full bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:border-[#4F6F52]/30 relative overflow-hidden">
+                      {/* Hover glow */}
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#4F6F52]/5 to-transparent rounded-full translate-x-16 -translate-y-16 group-hover:translate-x-8 group-hover:-translate-y-8 transition-transform duration-500" />
+
+                      <div className="relative">
+                        {/* Icon */}
+                        <div className="relative mb-6 sm:mb-8">
+                          <div className="absolute -inset-3 bg-gradient-to-r from-[#4F6F52]/10 to-transparent rounded-xl -rotate-6 group-hover:rotate-0 transition-transform duration-500" />
+                          <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-white to-gray-50 rounded-xl border border-gray-100 flex items-center justify-center shadow-sm">
+                            <div className="text-xl sm:text-2xl text-[#4F6F52]">
+                              {f.icon}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Content */}
+                        <h3 className="font-bold text-lg sm:text-xl text-gray-900 mb-3 group-hover:text-[#4F6F52] transition-colors">
+                          {f.title}
+                        </h3>
+
+                        <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                          {f.description}
+                        </p>
+
+                        {/* Progress */}
+                        <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: "100%" }}
+                            transition={{ duration: 1.2, delay: i * 0.1 }}
+                            viewport={{ once: true }}
+                            className="h-full bg-gradient-to-r from-[#4F6F52] to-[#3A5A40]"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Index badge */}
+                      <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-br from-[#4F6F52] to-[#3A5A40] rounded-lg flex items-center justify-center text-xs font-bold text-white rotate-12 group-hover:rotate-0 transition-transform">
+                        {i + 1}
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* ================= CTA ================= */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <div className="inline-flex flex-col sm:flex-row items-center gap-6 sm:gap-8 bg-white rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-100">
+              <div className="text-center sm:text-left">
+                <h4 className="font-bold text-lg sm:text-xl text-gray-900 mb-1">
+                  Ready to explore?
+                </h4>
+                <p className="text-gray-600 text-sm sm:text-base">
+                  Get your personalized itinerary in 24 hours
+                </p>
+              </div>
+
+              <button className="group px-8 py-3 bg-gradient-to-r from-[#4F6F52] to-[#3A5A40] text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <span className="flex items-center gap-2">
+                  Start Planning
+                  <svg
+                    className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Grid background */}
+        <style jsx>{`
+          .bg-grid-pattern {
+            background-image: linear-gradient(
+                to right,
+                #00000008 1px,
+                transparent 1px
+              ),
+              linear-gradient(to bottom, #00000008 1px, transparent 1px);
+            background-size: 48px 48px;
+          }
+        `}</style>
+      </section>
+
+      {/* FEATURED PACKAGES SECTION */}
       <section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -227,56 +383,73 @@ export default function Home() {
             className="text-center mb-12 sm:mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
-              Most <span className="text-[#4F6F52]">Popular Tours</span>
+              Featured <span className="text-[#4F6F52]">Tour Packages</span>
             </h2>
             <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-              Handpicked experiences loved by travelers. Discover the best of
-              Sri Lanka.
+              Carefully curated journeys across Sri Lanka — culture, nature, and
+              unforgettable experiences.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {popularTours.map((tour, i) => (
+            {homePackages.map((pkg, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -6 }}
                 className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all"
               >
-                <div className="relative h-56 sm:h-64">
+                {/* Image */}
+                <div className="relative h-56">
                   <img
-                    src={tour.image}
-                    alt={tour.title}
+                    src={pkg.image}
+                    alt={pkg.name}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                  <div className="absolute top-3 left-3 bg-white/90 text-gray-900 px-3 py-1 rounded-full text-xs font-semibold">
-                    {tour.duration}
-                  </div>
-                  <div className="absolute bottom-3 left-3 text-white font-semibold text-lg">
-                    {tour.price}
+                  <div className="absolute top-3 right-3 bg-white/90 px-3 py-1 rounded-full text-xs font-semibold">
+                    {pkg.duration}
                   </div>
                 </div>
 
+                {/* Content */}
                 <div className="p-5">
-                  <h3 className="font-bold text-lg mb-2">{tour.title}</h3>
+                  <h3 className="font-bold text-lg mb-2 text-gray-900">
+                    {pkg.name}
+                  </h3>
+
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                    {pkg.description}
+                  </p>
+
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {tour.highlights.map((h, j) => (
+                    {pkg.highlights.map((h, j) => (
                       <span
                         key={j}
-                        className="px-2 py-1 bg-[#4F6F52]/10 text-[#4F6F52] rounded-full text-xs"
+                        className="px-3 py-1 bg-[#4F6F52]/10 text-[#4F6F52] rounded-full text-xs"
                       >
                         {h}
                       </span>
                     ))}
                   </div>
-                  <Link
-                    to="/tours"
-                    className="block w-full bg-[#4F6F52] text-white py-3 rounded-xl font-semibold text-sm hover:bg-[#3b5540] transition"
-                  >
-                    Explore Tour
-                  </Link>
+
+                  <div className="flex gap-2">
+                    <Link
+                      to={pkg.link}
+                      className="flex-1 bg-[#4F6F52] text-white py-2 rounded-xl text-center text-sm font-semibold hover:bg-[#3b5540] transition"
+                    >
+                      View Details
+                    </Link>
+
+                    <Link
+                      to="/contact"
+                      className="flex-1 border border-[#4F6F52] text-[#4F6F52] py-2 rounded-xl text-center text-sm font-semibold hover:bg-[#4F6F52] hover:text-white transition"
+                    >
+                      Book Now
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -290,6 +463,95 @@ export default function Home() {
               View All Tour Packages →
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ================= HOME REVIEWS SECTION ================= */}
+      {/* ================= HOME REVIEWS SECTION ================= */}
+      <section className="relative py-20 bg-gradient-to-br from-[#f7faf7] via-white to-[#eef5f0] overflow-hidden">
+        {/* Soft background glow */}
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#4F6F52]/15 rounded-full blur-3xl" />
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#4F6F52]/10 rounded-full blur-3xl" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center max-w-3xl mx-auto mb-12"
+          >
+            <span className="text-xs tracking-widest uppercase font-semibold text-[#4F6F52]">
+              Traveler Reviews
+            </span>
+
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 mb-4">
+              Loved by Travelers Worldwide
+            </h2>
+
+            <p className="text-gray-600 text-base sm:text-lg">
+              Real stories from travelers who explored Sri Lanka with AVR Lanka
+              Tours.
+            </p>
+          </motion.div>
+
+          {/* Reviews Widget */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white/80 backdrop-blur-xl rounded-3xl 
+                 border border-white/60 shadow-xl p-6 sm:p-8"
+          >
+            <div
+              className="elfsight-app-2e49e47f-c2dc-4c48-83d7-3d01918e04e8 
+                   min-h-[320px] sm:min-h-[380px]"
+              data-elfsight-app-lazy
+            />
+          </motion.div>
+
+          {/* Write Review – UNDER REVIEWS */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="mt-10"
+          >
+            <div
+              className="relative bg-gradient-to-r from-[#4F6F52] to-[#5A7D5A]
+                   rounded-3xl p-8 sm:p-10 text-white shadow-2xl
+                   flex flex-col sm:flex-row items-center justify-between gap-6"
+            >
+              {/* Left */}
+              <div className="flex items-start gap-4 text-center sm:text-left">
+                <FaStar className="text-4xl text-white/90 shrink-0" />
+                <div>
+                  <h3 className="text-2xl font-bold mb-1">
+                    Share Your Experience
+                  </h3>
+                  <p className="text-white/90 text-sm sm:text-base max-w-xl">
+                    Traveled with us? Your review helps future travelers plan
+                    their perfect Sri Lankan journey.
+                  </p>
+                </div>
+              </div>
+
+              {/* CTA */}
+              <a
+                href="https://g.page/r/CRsm9F0Mya_mEAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-[#4F6F52]
+                     px-7 py-3 rounded-xl font-semibold
+                     hover:scale-105 transition-all shadow-lg"
+              >
+                Write a Review
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -310,12 +572,6 @@ export default function Home() {
               className="bg-white text-[#4F6F52] px-6 py-3 rounded-xl font-semibold text-base hover:scale-105 shadow-lg transition-all"
             >
               Start Your Journey
-            </Link>
-            <Link
-              to="/about"
-              className="border border-white/40 px-6 py-3 rounded-xl text-base text-white/90 hover:bg-white/10"
-            >
-              Learn About Us
             </Link>
           </div>
         </div>
