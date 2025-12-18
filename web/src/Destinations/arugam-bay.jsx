@@ -128,7 +128,7 @@ export default function ArugamBay() {
               className="mt-5 sm:mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
               <Link
-                to="/contact"
+                to="/contactus"
                 className="inline-flex justify-center items-center px-6 py-3 rounded-xl text-sm sm:text-base font-semibold bg-[#4F6F52] text-white hover:bg-[#3b5540] transition shadow-lg shadow-black/30"
               >
                 Plan Your Surf Trip
@@ -214,7 +214,7 @@ export default function ArugamBay() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  to="/contact"
+                  to="/contactus"
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-[#4F6F52] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#3b5540] transition shadow-md"
                 >
                   Book Surf Holiday
@@ -295,7 +295,7 @@ export default function ArugamBay() {
 
                 <div className="mt-8 pt-6 border-t border-white/20">
                   <Link
-                    to="/contact"
+                    to="/contactus"
                     className="block w-full bg-white text-[#4F6F52] text-center font-semibold py-3 rounded-xl hover:bg-gray-100 transition"
                   >
                     Book Your Visit
@@ -371,7 +371,7 @@ export default function ArugamBay() {
               Still have questions about visiting Sigiriya?
             </p>
             <Link
-              to="/contact"
+              to="/contactus"
               className="inline-flex items-center gap-2 text-[#4F6F52] font-semibold hover:text-[#3b5540] transition"
             >
               Contact our travel experts
