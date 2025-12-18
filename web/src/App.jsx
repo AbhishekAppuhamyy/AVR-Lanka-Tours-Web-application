@@ -1,15 +1,15 @@
 // App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
 
 // Pages
-import Home from "./pages/Home";
-import Packages from "./pages/Packages";
-import Destinations from "./pages/Destinations";
-import Review from "./pages/Review";
-import Contact from "./pages/ContactUs";
+import Home from "./pages/Home.jsx";
+import Packages from "./pages/Packages.jsx";
+import Destinations from "./pages/Destinations.jsx";
+import Review from "./pages/Review.jsx";
+import Contact from "./pages/ContactUs.jsx";
 
 // Destinations
 import Sigiriya from "./Destinations/sigiriya.jsx";
@@ -30,8 +30,8 @@ import ArugamBay from "./Destinations/arugam-bay.jsx";
 
 
 // Packages
-import Cultural from "./Packages/cultural-triangle.jsx";
-import HillCountry from "./Packages/hill-country.jsx";
+import Cultural from "./packages/cultural-triangle.jsx";
+import HillCountry from "./packages/hill-country.jsx";
 import SouthernBeachGetaway from "./packages/southern-beach.jsx";
 import WildlifeSafariAdventure from "./packages/wildlife-safari.jsx";
 import UltimateAdventureExpedition from "./packages/adventure.jsx";
