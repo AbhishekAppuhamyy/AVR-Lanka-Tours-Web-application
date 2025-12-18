@@ -130,7 +130,8 @@ export default function Home() {
                   h-12 sm:h-16 lg:h-25
                   px-4 sm:px-6
                   rounded-xl
-                  ">
+                  "
+              >
                 {/* Replace with your logo */}
                 <img
                   src="/assets/AVRLogo.png"
@@ -155,7 +156,7 @@ export default function Home() {
             {/* Buttons */}
             <div className="flex justify-center gap-3 pt-3 sm:pt-4">
               <Link
-                to="/tours"
+                to="/Packages"
                 className="flex items-center gap-2
              bg-white text-[#4F6F52]
              px-5 py-2.5 sm:px-6 sm:py-3
@@ -352,24 +353,26 @@ export default function Home() {
                 </p>
               </div>
 
-              <button className="group px-8 py-3 bg-gradient-to-r from-[#4F6F52] to-[#3A5A40] text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300">
-                <span className="flex items-center gap-2">
-                  Start Planning
-                  <svg
-                    className="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </span>
-              </button>
+              <Link to="/contactus">
+                <button className="group px-8 py-3 bg-gradient-to-r from-[#4F6F52] to-[#3A5A40] text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300">
+                  <span className="flex items-center gap-2">
+                    Start Planning
+                    <svg
+                      className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -459,7 +462,7 @@ export default function Home() {
                     </Link>
 
                     <Link
-                      to="/contact"
+                      to="/contactus"
                       className="flex-1 border border-[#4F6F52] text-[#4F6F52] py-2 rounded-xl text-center text-sm font-semibold hover:bg-[#4F6F52] hover:text-white transition"
                     >
                       Book Now
@@ -583,7 +586,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             <Link
-              to="/contact"
+              to="/contactus"
               className="bg-white text-[#4F6F52] px-6 py-3 rounded-xl font-semibold text-base hover:scale-105 shadow-lg transition-all"
             >
               Start Your Journey
