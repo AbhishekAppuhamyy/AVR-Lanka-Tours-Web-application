@@ -58,6 +58,20 @@ export default function Packages() {
         "An action-packed journey featuring thrilling outdoor adventures, rugged landscapes, and unforgettable adrenaline-filled experiences.",
       highlights: ["Mountain Hiking", "White Water Rafting", "Jungle Camping"],
     },
+    {
+      id: 6,
+      name: "Custom Sri Lanka Explorer",
+      image: "/assets/destinations-pics/sigiriya.jpg",
+      duration: "5–10 Days (Flexible)",
+      description:
+        "A fully personalized journey designed around your interests, pace, and budget — from beaches and culture to wildlife and hill country escapes.",
+      highlights: [
+        "Tailor-Made Itinerary",
+        "Private Transport & Guide",
+        "Beaches, Culture & Nature",
+        "Flexible Dates & Stays",
+      ],
+    },
   ];
 
   // ✅ Special routes like Sigiriya, fallback for others
