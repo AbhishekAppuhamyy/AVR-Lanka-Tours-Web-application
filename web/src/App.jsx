@@ -35,6 +35,7 @@ import HillCountry from "./Packages/hill-country.jsx";
 import SouthernBeachGetaway from "./packages/southern-beach.jsx";
 import WildlifeSafariAdventure from "./packages/wildlife-safari.jsx";
 import UltimateAdventureExpedition from "./packages/adventure.jsx";
+import Custom from "./packages/custom.jsx";
 
 
 
@@ -76,6 +77,7 @@ function App() {
         <Route path="/packages/southern-beach" element={<SouthernBeachGetaway />} />
         <Route path="/packages/wildlife-safari" element={<WildlifeSafariAdventure />} />
         <Route path="/packages/adventure" element={<UltimateAdventureExpedition />} />
+        <Route path="/packages/custom" element={<Custom />} />
         
         
       </Routes>

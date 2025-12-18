@@ -90,6 +90,8 @@ export default function Packages() {
     if (pkg.name === "Ultimate Adventure Expedition")
       return "/packages/adventure";
 
+    if (pkg.name === "Custom Sri Lanka Explorer") return "/packages/custom";
+
     return `/packages/${index}`;
   };
 
