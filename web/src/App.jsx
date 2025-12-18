@@ -30,7 +30,7 @@ import ArugamBay from "./Destinations/arugam-bay.jsx";
 
 
 // Packages
-import Cultural from "./packages/cultural-triangle.jsx";
+import Cultural from "./packages/Cultural-triangle.jsx";
 import HillCountry from "./packages/hill-country.jsx";
 import SouthernBeachGetaway from "./packages/southern-beach.jsx";
 import WildlifeSafariAdventure from "./packages/wildlife-safari.jsx";
