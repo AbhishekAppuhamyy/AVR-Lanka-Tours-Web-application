@@ -107,7 +107,7 @@ export default function Home() {
           playsInline
           preload="none"
           className="absolute inset-0 w-full h-full object-cover"
-          
+          poster="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80"
         >
           <source src="/assets/beach.mp4" type="video/mp4" />
         </video>
