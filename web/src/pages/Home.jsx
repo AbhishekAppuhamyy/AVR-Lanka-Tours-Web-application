@@ -38,7 +38,7 @@ export default function Home() {
       icon: <FaShuttleVan />,
       title: "Private Transport",
       description:
-        "Comfortable private vehicles for safe and reliable travel across destinationshgjdsrjsrhrth",
+        "Comfortable private vehicles for safe and reliable travel across destinations",
     },
     {
       icon: <FaHotel />,
