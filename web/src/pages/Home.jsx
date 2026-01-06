@@ -552,7 +552,7 @@ export default function Home() {
                   </h3>
                   <p className="text-white/90 text-sm sm:text-base max-w-xl">
                     Traveled with us? Your review helps future travelers plan
-                    their perfect Sri Lankan journey. hwlo word
+                    their perfect Sri Lankan journey. 
                   </p>
                 </div>
               </div>
