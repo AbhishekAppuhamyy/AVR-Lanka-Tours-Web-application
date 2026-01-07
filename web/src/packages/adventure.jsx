@@ -138,7 +138,7 @@ export default function UltimateAdventureExpedition() {
             className="relative backdrop-blur-xl bg-white/80 border border-white/40 rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-lg sm:shadow-xl"
           >
             <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
-              Quick Facts.
+              Quick Facts
             </h3>
 
             <ul className="space-y-4 sm:space-y-5">
