@@ -478,7 +478,7 @@ export default function Home() {
               to="/packages"
               className="text-[#4F6F52] font-semibold hover:text-[#3b5540]"
             >
-              View All Tour Packages →
+              View All Tour Packages. →
             </Link>
           </div>
         </div>
