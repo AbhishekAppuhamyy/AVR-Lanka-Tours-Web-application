@@ -501,7 +501,7 @@ export default function Home() {
             className="text-center max-w-3xl mx-auto mb-12"
           >
             <span className="text-xs tracking-widest uppercase font-semibold text-[#4F6F52]">
-              Traveler Reviews.
+              Traveler Reviews
             </span>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 mb-4">
