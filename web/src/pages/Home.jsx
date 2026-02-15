@@ -465,7 +465,7 @@ export default function Home() {
                       to="/contactus"
                       className="flex-1 border border-[#4F6F52] text-[#4F6F52] py-2 rounded-xl text-center text-sm font-semibold hover:bg-[#4F6F52] hover:text-white transition"
                     >
-                      Book Now
+                      Book Now.
                     </Link>
                   </div>
                 </div>
